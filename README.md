@@ -2,29 +2,32 @@
 
 旅行网站：<https://japan2026.wenchanyuan.com/>
 
-## 一起修改旅行计划
+## 日常修改：本地预览后直接发布
 
-网页源码是仓库根目录的 `index.html`，主页面样式和脚本包含在这个文件里，导游卡位于 `assets/`，不需要安装依赖或构建。图片独立存放在百度智能云 BOS，避免每次打开网页都下载全部图片。
-
-1. 在 GitHub 打开 `index.html`，点击编辑按钮；也可以在本地编辑。
-2. 有仓库写入权限的成员，请创建新分支并提交修改；没有写入权限的朋友，可以先 Fork 本仓库。
-3. 向本仓库的 `main` 分支发起 Pull Request，说明改动内容。
-4. 等待 **Validate site** 检查通过，并预览修改后的页面。仓库维护者确认后合并。
-5. 合并到 `main` 后，GitHub Actions 自动检查并更新网站。检查失败时不会执行部署，线上保留上次成功发布的版本。
-
-有写入权限的成员直接提交到 `main` 时，也会触发自动检查和发布。仓库目前没有强制的分支保护规则，因此建议团队遵循 Pull Request 流程。
-
-网站是公开的，请只提交愿意公开的内容。需要直接写入权限时，由仓库所有者在 Settings → Collaborators 邀请指定 GitHub 用户；其他人可直接通过 Fork 和 Pull Request 协作。
-
-## 本地预览
-
-在仓库目录执行：
+本机目录：`/Users/wenchanyuan/Code/japan-autumn-2026`。网页源码为 `index.html`，导游卡在 `assets/`；无需安装依赖或构建。
 
 ```sh
-python3 -m http.server 8000
+cd /Users/wenchanyuan/Code/japan-autumn-2026
+git pull --ff-only
+npm run preview
 ```
 
-然后访问 <http://localhost:8000/>，检查城市、行程、图片和地图。自动检查主要覆盖文件完整性、静态文件路径和 JavaScript 语法，不能代替浏览器中的功能检查。
+打开 <http://127.0.0.1:8000/>，修改后刷新预览。检查城市主题、行程、照片和导游卡，确认效果后在另一个终端执行：
+
+```sh
+npm run check
+git add <本次修改的文件>
+git commit -m "说明本次修改"
+git push origin main
+```
+
+`main` 的每次推送都会自动检查并发布到 GitHub Pages，无需 Pull Request 或网页合并。检查失败时不部署，线上保留上次成功发布的版本。本地检查与线上检查共用 `scripts/check-site.mjs`。Node.js 和 Python 3 为本地命令所需工具，无第三方依赖。
+
+GitHub 认证只需首次完成 `gh auth login`，并让 Git 使用该登录凭据。若命令行连接 GitHub 超时，检查是否沿用了电脑现有的网络代理；本机仓库已单独配置现有代理，不影响其他仓库。
+
+## 朋友协作
+
+有仓库写入权限的成员也可以预览、检查后直接推送 `main`；开始修改前先拉取最新版本。多人同时修改或希望先讨论时可选用分支和 Pull Request，没有写入权限的朋友可以 Fork 后提交 Pull Request。网站公开，请只提交愿意公开的内容。
 
 ## 自动检查与发布
 
@@ -42,7 +45,7 @@ python3 -m http.server 8000
 - BOS Bucket：`wenchanyuan-travel`，华北北京，标准存储。图片通过百度云默认 HTTPS 域名 `https://wenchanyuan-travel.bj.bcebos.com/` 访问。
 - `image-manifest.json` 记录景点名称、文件名、地址、大小、尺寸和 SHA-256。31 张照片及票据加上 2 个界面图片，共 33 个对象。
 - 文件名采用景点或内容的英文名和内容哈希，例如 `kiyomizu-dera-7521cfad.webp`。替换图片时使用新文件名，避免旧缓存。
-- 在百度云控制台上传新图片并验证地址可访问后，更新 `index.html` 中对应的 `DATA.assets` 地址及图片清单，再通过 Pull Request 合并。图片可使用 WebP；含文字的票据采用无损压缩，保留原始清晰度。
+- 在百度云控制台上传新图片并验证地址可访问后，更新 `index.html` 中对应的 `DATA.assets` 地址及图片清单，检查和预览后直接推送 `main`。图片可使用 WebP；含文字的票据采用无损压缩，保留原始清晰度。
 - 图片设置一年浏览器缓存，文件名中的内容哈希保证替换后使用新地址。首屏大图优先加载，其他图片按需加载。网站继续由 GitHub Pages 自动发布；修改已有文字或调整行程无需重新上传图片，也无需百度云密钥。
 - Bucket 只用于公开展示图片，写入仍需账号授权。自动检查验证清单一致性，图片是否可访问及实际显示效果仍需在浏览器确认。
 
@@ -58,4 +61,4 @@ python3 -m http.server 8000
 
 在 Actions 查看运行结果。**Validate site** 和 **Deploy to GitHub Pages** 都显示成功后，网站已更新，浏览器可能还需要刷新缓存。
 
-如果发布后发现问题，在 GitHub 对引入问题的 Pull Request 使用 Revert，再合并恢复的 Pull Request；也可以在本地执行 `git revert <commit>` 并提交。恢复提交同样会自动部署。
+如果发布后发现问题，在本地执行 `git revert <commit>`，检查后推送 `main`；恢复提交同样会自动部署。

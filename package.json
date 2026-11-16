@@ -1,0 +1,8 @@
+{
+  "name": "japan-autumn-2026",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/check-site.mjs",
+    "preview": "python3 -m http.server 8000 --bind 127.0.0.1"
+  }
+}
