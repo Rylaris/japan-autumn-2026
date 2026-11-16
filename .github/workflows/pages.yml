@@ -1,0 +1,98 @@
+name: Check and deploy travel site
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Check entry page, domain, local files and JavaScript syntax
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync, existsSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+          import { resolve, sep, join } from 'node:path';
+          import { tmpdir } from 'node:os';
+          import { spawnSync } from 'node:child_process';
+          const root = process.cwd();
+          const html = readFileSync('index.html', 'utf8');
+          assert.match(html, /<!doctype\s+html\s*>/i, 'index.html needs an HTML doctype');
+          assert.match(html, /<html\b/i, 'Missing HTML root');
+          assert.match(html, /<title>\s*[^<]+<\/title>/i, 'Missing page title');
+          assert.match(html, /<\/html>\s*$/i, 'HTML appears incomplete');
+          assert.equal(readFileSync('CNAME', 'utf8').trim(), 'japan2026.wenchanyuan.com', 'Keep the travel subdomain unchanged');
+          const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)];
+          assert.equal(scripts.length, (html.match(/<script\b/gi) || []).length, 'Unclosed script element');
+          const temp = mkdtempSync(join(tmpdir(), 'travel-site-'));
+          let checked = 0;
+          try {
+            for (const [i, match] of scripts.entries()) {
+              const type = match[1].match(/\btype\s*=\s*["']([^"']*)["']/i)?.[1] || '';
+              if (type && !/^(module|(?:text|application)\/(?:java|ecma)script)$/i.test(type)) continue;
+              if (/\bsrc\s*=/i.test(match[1])) continue;
+              const file = join(temp, `${i}.${type === 'module' ? 'mjs' : 'js'}`);
+              writeFileSync(file, match[2]);
+              const result = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
+              assert.equal(result.status, 0, `Script ${i + 1}: ${result.stderr}`);
+              checked++;
+            }
+          } finally {
+            rmSync(temp, { recursive: true, force: true });
+          }
+          for (const [, value] of html.matchAll(/\b(?:src|href)\s*=\s*["']([^"']+)["']/gi)) {
+            if (/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(value) || value.includes('${')) continue;
+            const path = resolve(root, decodeURIComponent(value.split(/[?#]/)[0]).replace(/^\//, ''));
+            assert.ok(path === root || path.startsWith(root + sep), `Reference outside site: ${value}`);
+            assert.ok(existsSync(path), `Missing local file: ${value}`);
+            assert.ok(path === resolve(root, 'index.html') || path.startsWith(resolve(root, 'assets') + sep), `Put supporting files in assets/: ${value}`);
+          }
+          console.log(`Site checks passed; ${checked} inline scripts checked.`);
+          NODE
+      - name: Prepare website files
+        run: |
+          mkdir -p _site
+          cp index.html CNAME _site/
+          touch _site/.nojekyll
+          if [ -d assets ]; then cp -R assets _site/assets; fi
+      - name: Upload website artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
