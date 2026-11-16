@@ -29,7 +29,7 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import assert from 'node:assert/strict';
-          import { readFileSync, existsSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+          import { readFileSync, existsSync, mkdtempSync, writeFileSync, rmSync, readdirSync } from 'node:fs';
           import { resolve, sep, join } from 'node:path';
           import { tmpdir } from 'node:os';
           import { spawnSync } from 'node:child_process';
@@ -44,6 +44,20 @@ jobs:
           assert.ok(dataMatch, 'Missing travel data');
           const data = JSON.parse(dataMatch[1]);
           assert.ok(data.assets.length > 0, 'Missing travel images');
+          const guideData = JSON.parse(readFileSync('assets/guide-data.json', 'utf8'));
+          const covered = guideData.guides.flatMap(guide => guide.assetIndices).sort((a,b) => a-b);
+          const landscape = data.assets.flatMap((asset,index) => asset.group === '票据' ? [] : [index]);
+          assert.deepEqual(covered, landscape, 'Every landscape photo needs exactly one guide card');
+          assert.equal(new Set(guideData.guides.map(guide => guide.id)).size, guideData.guides.length, 'Duplicate guide ID');
+          for (const guide of guideData.guides) {
+            assert.ok(guide.title && guide.intro.length >= 2 && guide.sections.length >= 2 && guide.observe.length >= 2, 'Incomplete guide card');
+            assert.deepEqual(guide.images.map(image => image.assetIndex), guide.assetIndices, 'Guide photos do not match covered indices');
+            for (const image of guide.images) assert.equal(image.url, data.assets[image.assetIndex].src, 'Keep guide images on BOS');
+            for (const section of guide.sections) {
+              assert.ok(section.text && section.sources.length, 'Guide history needs a source');
+              for (const id of section.sources) assert.match(guideData.sources[id]?.url || '', /^https:\/\//, 'Missing HTTPS guide source');
+            }
+          }
           assert.equal(manifest.images.filter(image => Number.isInteger(image.assetIndex)).length, data.assets.length, 'Update the image manifest when adding photos');
           for (const image of manifest.images) {
             assert.match(image.file, /^[a-z0-9]+(?:-[a-z0-9]+)*-[a-f0-9]{8}\.(?:webp|jpg|png|svg|gif)$/, 'Use descriptive English image filenames with a content hash');
@@ -72,6 +86,17 @@ jobs:
               assert.equal(result.status, 0, `Script ${i + 1}: ${result.stderr}`);
               checked++;
             }
+            const checkAssets = directory => {
+              for (const entry of readdirSync(directory, { withFileTypes:true })) {
+                const file = join(directory, entry.name);
+                if (entry.isDirectory()) checkAssets(file);
+                else if (/\.m?js$/i.test(entry.name)) {
+                  const result = spawnSync(process.execPath, ['--check', file], { encoding:'utf8' });
+                  assert.equal(result.status, 0, `${file}: ${result.stderr}`);
+                }
+              }
+            };
+            if (existsSync('assets')) checkAssets('assets');
           } finally {
             rmSync(temp, { recursive: true, force: true });
           }
