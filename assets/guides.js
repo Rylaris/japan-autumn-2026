@@ -2,12 +2,14 @@
 (() => {
   'use strict';
   const root = new URL('.', document.currentScript.src);
+  const version = new URL(document.currentScript.src).search;
+  const resource = name => new URL(name + version, root);
   const lightbox = document.getElementById('lightbox');
   const photo = document.getElementById('lbImg');
   if (!lightbox || !photo || typeof DATA === 'undefined') return;
   const style = document.createElement('link');
   style.rel = 'stylesheet';
-  style.href = new URL('guides.css', root).href;
+  style.href = resource('guides.css').href;
   document.head.append(style);
   const launcher = document.createElement('button');
   launcher.type = 'button';
@@ -43,7 +45,7 @@
   let opener = null;
   const fetchGuides = () => {
     if (!dataPromise) {
-      dataPromise = fetch(new URL('guide-data.json', root), {signal:AbortSignal.timeout(15000)}).then(response => {
+      dataPromise = fetch(resource('guide-data.json'), {signal:AbortSignal.timeout(15000)}).then(response => {
         if (!response.ok) throw new Error('Guide data unavailable');
         return response.json();
       }).then(value => {

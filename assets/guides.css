@@ -7,8 +7,8 @@
 html.gc-open{overflow:hidden}
 .guide-card{--gc-bg:#07080d;--gc-ink:#e6edf7;--gc-muted:#a1adc1;--gc-line:#263248;--gc-accent:#22e3ff;--gc-soft:#22e3ff0b;--gc-display:"Avenir Next","Helvetica Neue","PingFang SC",sans-serif;--gc-latin:"Avenir Next","Helvetica Neue",sans-serif;--gc-radius:0px;--gc-on:#04060a;box-sizing:border-box;width:min(1100px,calc(100vw - 64px));height:min(830px,calc(100dvh - 64px));max-width:none;max-height:none;margin:auto;padding:0;overflow:hidden;border:1px solid var(--gc-line);border-radius:var(--gc-radius);background:var(--gc-bg);color:var(--gc-ink);box-shadow:0 24px 100px #0008;font:14px/1.85 var(--f-body)}
 .guide-card::backdrop{background:#030509c9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.guide-card[data-city=kyoto]{--gc-bg:#f3ede1;--gc-ink:#2b2420;--gc-muted:#746452;--gc-line:#d6c9b4;--gc-accent:#a82f23;--gc-soft:#b23a2a08;--gc-display:"Hiragino Mincho ProN","Yu Mincho","Songti SC",serif;--gc-latin:"Didot","Bodoni 72",Georgia,serif;--gc-on:#fbf7ef}
-.guide-card[data-city=nara]{--gc-bg:#eef0e4;--gc-ink:#22301f;--gc-muted:#5f6d58;--gc-line:#c9d3ba;--gc-accent:#4f6b3a;--gc-soft:#4f6b3a0a;--gc-display:"Songti SC","Hiragino Mincho ProN",Georgia,serif;--gc-latin:"Iowan Old Style",Georgia,serif;--gc-radius:26px;--gc-on:#f8f8ef}
+.guide-card[data-city=kyoto]{--gc-bg:#f3ede1;--gc-ink:#2b2420;--gc-muted:#746452;--gc-line:#d6c9b4;--gc-accent:#a82f23;--gc-soft:#b23a2a08;--gc-display:var(--f-serif);--gc-latin:"Didot","Bodoni 72",Georgia,var(--f-serif);--gc-on:#fbf7ef}
+.guide-card[data-city=nara]{--gc-bg:#eef0e4;--gc-ink:#22301f;--gc-muted:#5f6d58;--gc-line:#c9d3ba;--gc-accent:#4f6b3a;--gc-soft:#4f6b3a0a;--gc-display:var(--f-serif);--gc-latin:"Iowan Old Style",Georgia,var(--f-serif);--gc-radius:26px;--gc-on:#f8f8ef}
 .guide-card[open]{animation:gc-arrive .38s cubic-bezier(.16,1,.3,1) both}
 .gc-shell{height:100%;display:flex;flex-direction:column;min-height:0}
 .gc-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:67px;padding:15px 22px;border-bottom:1px solid var(--gc-line)}
