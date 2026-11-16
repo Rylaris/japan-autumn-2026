@@ -1,0 +1,1438 @@
+{
+  "version": 1,
+  "researchedAt": "2026-11-17",
+  "sources": {
+    "station": {
+      "title": "富士山麓电气铁道｜富士山站",
+      "url": "https://www.fujikyu-railway.jp/station/timetable.php?no=16"
+    },
+    "station-design": {
+      "title": "富士急行｜2011 年富士山站改名与改造公告",
+      "url": "https://prtimes.jp/main/html/rd/p/000000052.000001110.html"
+    },
+    "honcho": {
+      "title": "富士吉田观光协会｜富士道·本町通",
+      "url": "https://www.fujiyoshida.net/spot/index.php?p=410"
+    },
+    "oshi": {
+      "title": "日本国土交通省｜登拜据点：吉田与川口",
+      "url": "https://www.mlit.go.jp/tagengo-db/R2-00085.html"
+    },
+    "arakura": {
+      "title": "新仓富士浅间神社｜祭神与由绪",
+      "url": "https://www.arakurafujisengen.com/blank-1"
+    },
+    "pagoda": {
+      "title": "富士吉田市｜忠灵塔的建造与沿革",
+      "url": "https://www.city.fujiyoshida.yamanashi.jp/page/14944.html"
+    },
+    "gyoen-history": {
+      "title": "日本环境省｜新宿御苑的历史",
+      "url": "https://policies.env.go.jp/national-garden/shinjukugyoen/intro/history/"
+    },
+    "gyoen-garden": {
+      "title": "日本环境省｜新宿御苑的代表庭园",
+      "url": "https://policies.env.go.jp/national-garden/shinjukugyoen/intro/garden/"
+    },
+    "gaien-history": {
+      "title": "明治神宫外苑｜历史",
+      "url": "https://www.meijijingugaien.jp/history/"
+    },
+    "gaien-trees": {
+      "title": "明治神宫外苑｜银杏并木的四季与造园",
+      "url": "https://www.meijijingugaien.jp/walk/sight/season.html"
+    },
+    "meiji": {
+      "title": "明治神宫｜神宫与人工森林",
+      "url": "https://www.meijijingu.or.jp/about/"
+    },
+    "kiyomizu": {
+      "title": "清水寺｜历史与舞台建筑",
+      "url": "https://www.kiyomizudera.or.jp/history.php"
+    },
+    "kiyomizu-craft": {
+      "title": "清水寺｜舞台背后的手艺",
+      "url": "https://www.kiyomizudera.or.jp/read/%E6%B8%85%E6%B0%B4%E5%AF%BA%E3%81%AE%E8%88%9E%E5%8F%B0%E8%A3%8F"
+    },
+    "yamanaka": {
+      "title": "山中湖村｜山中湖村概况",
+      "url": "https://www.vill.yamanakako.lg.jp/info/1"
+    },
+    "yamanaka-pilgrimage": {
+      "title": "山梨县观光机构｜山中湖与巡礼传统",
+      "url": "https://www.yamanashi-kankou.jp/kankou/spot/p1_4819.html"
+    },
+    "diamond": {
+      "title": "山中湖观光协会｜钻石富士",
+      "url": "https://lake-yamanakako.com/feature/diamondfuji"
+    },
+    "eikando": {
+      "title": "永观堂｜禅林寺的历史与永观律师",
+      "url": "https://eikando.or.jp/eikando.html"
+    },
+    "eikando-amida": {
+      "title": "永观堂｜回首阿弥陀",
+      "url": "https://eikando.or.jp/mikaeriamida.html"
+    },
+    "shinnyodo": {
+      "title": "真如堂｜历史与传承",
+      "url": "https://shin-nyo-do.jp/about/history/"
+    },
+    "shinnyodo-statue": {
+      "title": "真如堂｜佛像与点头阿弥陀的传说",
+      "url": "https://shin-nyo-do.jp/about/statue/"
+    },
+    "tofukuji": {
+      "title": "东福寺｜创寺缘起",
+      "url": "https://renewal.tofukuji.jp/history/"
+    },
+    "tofukuji-bridge": {
+      "title": "京都府观光联盟｜东福寺与通天桥",
+      "url": "https://www.kyoto-kankou.or.jp/info_search/9514"
+    },
+    "inari": {
+      "title": "伏见稻荷大社｜境内与千本鸟居",
+      "url": "https://inari.jp/trip/map01/"
+    },
+    "inari-details": {
+      "title": "伏见稻荷大社｜狐狸、鸟居与稻荷山",
+      "url": "https://inari.jp/kanban/index_01.html"
+    },
+    "tenjuan": {
+      "title": "京都市观光协会｜天授庵",
+      "url": "https://ja.kyoto.travel/tourism/single01.php?category_id=7&tourism_id=523"
+    },
+    "tenjuan-gardens": {
+      "title": "JR 东海｜南禅寺天授庵的两座庭园",
+      "url": "https://souda-kyoto.jp/guide/spot/nanzenji-tenjuan.html"
+    },
+    "togetsukyo": {
+      "title": "京都市观光协会｜渡月桥",
+      "url": "https://ja.kyoto.travel/tourism/single01.php?category_id=8&tourism_id=2682"
+    },
+    "togetsukyo-engineering": {
+      "title": "京都市建设局｜渡月桥：历史与结构",
+      "url": "https://www.city.kyoto.lg.jp/kensetu/cmsfiles/contents/0000149/149842/hashishirube06.pdf"
+    },
+    "arashiyama": {
+      "title": "岚山保胜会｜岚山的历史与景观",
+      "url": "https://www.arashiyamahoshokai.com/history"
+    },
+    "arashiyama-bamboo": {
+      "title": "京都市观光协会｜竹林小径",
+      "url": "https://ja.kyoto.travel/tourism/single01.php?category_id=8&tourism_id=2683"
+    },
+    "jojakkoji": {
+      "title": "常寂光寺｜寺历",
+      "url": "https://www.jojakko-ji.or.jp/history.html"
+    },
+    "jojakkoji-gate": {
+      "title": "常寂光寺｜仁王门",
+      "url": "https://www.jojakko-ji.or.jp/niomon/"
+    },
+    "rurikoin": {
+      "title": "琉璃光院｜庭园、书院与寺名",
+      "url": "https://rurikoin.komyoji.com/about/"
+    },
+    "rurikoin-building": {
+      "title": "京都市文化市民局｜琉璃光院建筑与庭园",
+      "url": "https://kyoto-irodoru.city.kyoto.lg.jp/sakyo/rurikoin.html"
+    },
+    "hogonin": {
+      "title": "宝严院｜历史",
+      "url": "https://hogonin.jp/about/index.html"
+    },
+    "hogonin-garden": {
+      "title": "宝严院｜狮子吼之庭",
+      "url": "https://www.hogonin.jp/visit/shishiku_garden.html"
+    },
+    "shikayose": {
+      "title": "奈良鹿爱护会｜鹿寄的历史与方式",
+      "url": "https://naradeer.com/event/shikayose.html"
+    },
+    "shikayose-nara": {
+      "title": "奈良市观光协会｜随自然圆号而来的鹿群",
+      "url": "https://narashikanko.or.jp/feature/shikayose"
+    },
+    "kasuga": {
+      "title": "春日大社｜神社由来与神鹿信仰",
+      "url": "https://www.kasugataisha.or.jp/about/"
+    },
+    "kasuga-lantern": {
+      "title": "春日大社｜御本社回廊与灯笼",
+      "url": "https://www.kasugataisha.or.jp/guidance/index/"
+    },
+    "ukimido": {
+      "title": "日本观光厅｜浮见堂",
+      "url": "https://www.mlit.go.jp/tagengo-db/en/H30-00889.html"
+    },
+    "ukimido-nara": {
+      "title": "奈良县官方旅行指南｜浮见堂",
+      "url": "https://www.visitnara.jp/venues/A01113/"
+    },
+    "nara-park": {
+      "title": "奈良县｜奈良公园的历史",
+      "url": "https://www.pref.nara.lg.jp/site/park/1001.html"
+    },
+    "nara-deer": {
+      "title": "奈良鹿爱护会｜野生鹿与鹿仙贝",
+      "url": "https://naradeer.com/learning/problem.html"
+    },
+    "yasukuni-history": {
+      "title": "千代田区｜靖国神社本殿的历史与文化特征",
+      "url": "https://www.city.chiyoda.lg.jp/documents/4200/9-1-yasukunijinjahonden-r405.pdf"
+    },
+    "yasukuni-1978": {
+      "title": "靖国神社｜合祀经过的神社方面记述",
+      "url": "https://kudan-biyori.yasukuni.or.jp/articles/yasukuni-kiso.html"
+    },
+    "yasukuni-context": {
+      "title": "日本外务省｜1986 年官房长官就参拜争议发表的谈话",
+      "url": "https://www.mofa.go.jp/a_o/rp/page25e_000360.html"
+    },
+    "akiba-history": {
+      "title": "秋叶原电气街振兴会｜地名由来与电气街的起点",
+      "url": "https://akiba.or.jp/archives/history00/"
+    },
+    "akiba-today": {
+      "title": "东京都官方旅行指南｜秋叶原",
+      "url": "https://www.gotokyo.org/jp/destinations/central-tokyo/akihabara/index.html"
+    },
+    "todaiji": {
+      "title": "东大寺｜大佛殿与莲华藏世界",
+      "url": "https://www.todaiji.or.jp/information/daibutsuden/"
+    },
+    "todaiji-rebuilding": {
+      "title": "东大寺｜江户时期的再兴",
+      "url": "https://www.todaiji.or.jp/history/edoki/"
+    }
+  },
+  "guides": [
+    {
+      "id": "shinjuku-gyoen",
+      "assetIndices": [
+        3
+      ],
+      "city": "tokyo",
+      "region": "东京",
+      "title": "新宿御苑",
+      "jp": "新宿御苑",
+      "en": "Shinjuku Gyoen",
+      "kicker": "都市里的另一种时间",
+      "tagline": "城市没有远去，只是树木接过了声音。",
+      "intro": [
+        "新宿的高楼仍在树梢之外，眼前却只剩一片草地、一段池岸和缓慢变色的叶子。走进御苑，东京没有消失，只是忽然换了一种说话的音量。",
+        "这里适合把“下一站”暂时放下。沿着一条不太确定的园路，看看不同形状的树，如何容纳同一个秋天。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "从大名宅地，走向人人可来的庭园",
+          "text": "御苑的前身与江户时代内藤家的宅地有关，后来经历农事试验与皇室园地的阶段。1906 年，大规模改造后的皇室庭园完成；1949 年，它作为国民公园向公众开放。一片土地的用途改变，也让原本封闭的景色进入了普通人的生活。",
+          "sources": [
+            "gyoen-history"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "同一座园里，有几种观看自然的方法",
+          "text": "整形式庭园以对称和笔直的悬铃木并列营造秩序；风景式庭园让草坪与巨树舒展开来；日本庭园则把池水、岸线与近处的细节交给步行的人。园中的乐趣，在于亲自走过这些不同的尺度，而不必急着选出最漂亮的一种。",
+          "sources": [
+            "gyoen-garden"
+          ]
+        }
+      ],
+      "observe": [
+        "从整齐的树列走向开阔草地，感受视野何时收紧、何时展开。",
+        "把远处楼宇留在画面里：城市与庭园并置，正是这里独有的风景。"
+      ],
+      "images": [
+        {
+          "assetIndex": 3,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/shinjuku-gyoen-00487fcf.webp",
+          "alt": "新宿御苑",
+          "width": 1080,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "id": "meiji-jingu-gaien",
+      "assetIndices": [
+        4
+      ],
+      "city": "tokyo",
+      "region": "东京",
+      "title": "明治神宫外苑",
+      "jp": "明治神宮外苑",
+      "en": "Meiji Jingu Gaien",
+      "kicker": "被设计的秋色",
+      "tagline": "一条金色长廊，把目光送向远处。",
+      "intro": [
+        "银杏把街道的两侧轻轻合拢，行人的脚步被落叶放慢。顺着道路望去，绘画馆安静地站在尽头，像早已等在那里的一枚句号。",
+        "这份自然的从容，其实经过精细安排。知道一点造园的心思，再走一次，会发现眼前的秋天也有构图。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "外苑与内苑，是两种不同的纪念空间",
+          "text": "明治神宫外苑于近代营造，圣德纪念绘画馆是其中的重要建筑。这里以艺术、运动设施与开放景观展开，和代代木的明治神宫森林并非同一个步行园区。银杏并木在 1923 年形成，把青山口与外苑的核心景观连成一条清晰轴线。",
+          "sources": [
+            "gaien-history",
+            "gaien-trees"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "树木也会使用透视法",
+          "text": "造园利用地势的下行与树高的排列，让绘画馆方向的景深更鲜明。银杏并木整体计 146 株，包含向秩父宫橄榄球场转折的树列。比起记住数字，更有趣的是在现场发现：你以为自然形成的整齐，背后有人长年修剪与照料。",
+          "sources": [
+            "gaien-trees"
+          ]
+        }
+      ],
+      "observe": [
+        "在安全的人行空间朝绘画馆方向看，比较近处与远处的树冠。",
+        "试着拍一张不以人像为中心的照片，只留下树列、道路和尽头的建筑。"
+      ],
+      "images": [
+        {
+          "assetIndex": 4,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/meiji-jingu-gaien-8a5e3ba3.webp",
+          "alt": "明治神宫外苑",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "meiji-jingu",
+      "assetIndices": [
+        5
+      ],
+      "city": "tokyo",
+      "region": "东京",
+      "title": "明治神宫",
+      "jp": "明治神宮",
+      "en": "Meiji Jingu",
+      "kicker": "一座森林的约定",
+      "tagline": "有些安静，是人们为后来者种下的。",
+      "intro": [
+        "砂石在脚下发出轻响，参道把城市的轮廓慢慢藏到背后。树冠一层层合拢时，很容易以为自己走进了一片比东京更古老的森林。",
+        "而这里最动人的一层故事，恰恰在于这些树曾经并不在这里。今天的阴凉，是上一代人为未来留下的空间。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "1920 年，一座神宫和它的森林",
+          "text": "明治神宫创建于 1920 年，祭祀明治天皇与昭宪皇太后。约 70 万平方米的神宫之森，在营建时以各地捐献的约十万株树木种植而成。它拥有近代的起点，眼前的茂密则是此后不断生长的结果。",
+          "sources": [
+            "meiji"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "“永远之森”，把完成交给时间",
+          "text": "神宫以“永远之森”为营造目标。与花坛需要维持一幅固定图案不同，森林的魅力在于树木逐渐形成自己的层次。人工种下的起点与后来生长的生命并不矛盾；走在其中，正好可以想一想，人怎样为自然留下一点长远的余地。",
+          "sources": [
+            "meiji"
+          ]
+        }
+      ],
+      "observe": [
+        "留意树冠、灌木与地面之间不同高度的绿，看看光从哪里落下来。",
+        "进入祭祀空间时放轻音量；把参观森林与尊重仍在进行的信仰生活放在一起。"
+      ],
+      "images": [
+        {
+          "assetIndex": 5,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/meiji-jingu-8d947d90.webp",
+          "alt": "明治神宫",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "yasukuni",
+      "assetIndices": [
+        23
+      ],
+      "city": "tokyo",
+      "region": "东京",
+      "title": "靖国神社",
+      "jp": "靖国神社",
+      "en": "Yasukuni Jinja",
+      "kicker": "带着历史意识观看",
+      "tagline": "景色可以安静，历史仍需要被认真理解。",
+      "intro": [
+        "鸟居、树影与笔直的参道，构成一处可以从建筑与城市空间阅读的地方。但在靖国神社，观看也需要另一层准备：景物背后，有战争、纪念以及从未简单落定的历史问题。",
+        "不急着把它归入“古寺之美”，也不让一张照片替代背景。给事实与不同的历史经验留出位置，是理解这里的开始。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "一座与近代战争纪念相连的神社",
+          "text": "神社于 1869 年以“东京招魂社”之名创立，1879 年改称靖国神社，祭祀对象与近代日本战争及战殁者纪念相连。它的建立处于明治时期，并非从远古延续而来的同一种地方守护信仰；认识这一点，有助于读懂其空间与象征。",
+          "sources": [
+            "yasukuni-history"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "为什么这里始终伴随争议",
+          "text": "1978 年，神社将东条英机等甲级战犯合祀其中。合祀与政要参拜因此牵连战争责任、受害记忆与国际关系，日本外务省公开的相关谈话也记载了邻国由此提出的批评。神社自身对祭祀的解释是一方立场，不宜作为理解历史的唯一框架。",
+          "sources": [
+            "yasukuni-1978",
+            "yasukuni-context"
+          ]
+        }
+      ],
+      "observe": [
+        "可以观察鸟居、参道轴线与周围城市的关系，同时保留对其历史语境的辨别。",
+        "若阅读现场陈列，将事实、祭祀叙述与价值判断分开；不把景观的宁静误作历史没有争议。"
+      ],
+      "images": [
+        {
+          "assetIndex": 23,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/yasukuni-shrine-14dc7b96.webp",
+          "alt": "靖国神社",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "akihabara",
+      "assetIndices": [
+        24
+      ],
+      "city": "tokyo",
+      "region": "东京",
+      "title": "秋叶原",
+      "jp": "秋葉原",
+      "en": "Akihabara",
+      "kicker": "让热爱发出光",
+      "tagline": "在密集的招牌之间，读一座城市不断更新的兴趣。",
+      "intro": [
+        "高架桥下、狭小店面里、整栋楼的招牌上，秋叶原把不同人的热爱一层层摆出来。灯光很亮，但真正让街区持续发光的，是那些愿意为一个零件、一套作品或一种爱好停留的人。",
+        "不必熟悉所有角色，也可以喜欢这里。顺着一块招牌走进一条侧街，城市的另一种细密，就会开始出现。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "电气街，先从零件与动手的热情长出来",
+          "text": "秋叶原电气街的形成，与战后逐渐聚集的无线电零件商贩及此后的店铺集中相连。后来，家电、电脑，再到动漫、游戏与相关商品不断加入。它的变化并不是简单替换，而是不同年代的兴趣与生意叠在同一片街区里。",
+          "sources": [
+            "akiba-history",
+            "akiba-today"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "这个地名，曾经先与防火有关",
+          "text": "地名的沿革与明治初期火灾后的防火空地、秋叶神社相关，1890 年车站开设后，“秋叶原”的名称进一步普及。今天遍布光与电的街区，名字却保留着与火灾防备有关的来历；城市的旧故事，有时就在最现代的招牌背后。",
+          "sources": [
+            "akiba-history"
+          ]
+        }
+      ],
+      "observe": [
+        "留意高架附近的零件店与大型招牌的差别，看看两种尺度怎样共存。",
+        "选择一家与你的兴趣真正有关的小店慢慢看，而不只沿着最亮的灯光走。"
+      ],
+      "images": [
+        {
+          "assetIndex": 24,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/akihabara-c50c1356.webp",
+          "alt": "秋叶原",
+          "width": 780,
+          "height": 438
+        }
+      ]
+    },
+    {
+      "id": "fujisan-station",
+      "assetIndices": [
+        0
+      ],
+      "city": "tokyo",
+      "region": "富士山麓",
+      "title": "富士山站",
+      "jp": "富士山駅",
+      "en": "Fujisan Station",
+      "kicker": "山麓的序章",
+      "tagline": "还没登山，山已经走进了旅程。",
+      "intro": [
+        "列车停下，站台的屋檐把天空切成一道低低的边。屋檐之上，富士山显得很近；站台之下，人们仍在赶车、等人，过着普通的一天。",
+        "不妨把这一站当作山与城市的交接处。抵达的兴奋，可以先交给一张长椅和几分钟安静的眺望。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "一个站名，两段抵达的历史",
+          "text": "这里在 1929 年以“富士吉田站”之名开业，伴随铁路将山麓城镇与更远的地方连起来。2011 年 7 月 1 日，车站改名为“富士山站”，进一步强调通往富士山的门户身份。旧名属于城市的生活史，新名则把旅人的目光引向了山。",
+          "sources": [
+            "station"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "为一座山重新设计的车站",
+          "text": "改名同时，车站进行了更新，工业设计师水户冈锐治参与其中。因而，站台不只承担上下车的功能，也被当作感受山麓气质的公共空间。照片里的木质构件、灯光和远山，值得分别看一遍，再把它们重新收进同一个画面。",
+          "sources": [
+            "station-design"
+          ]
+        }
+      ],
+      "observe": [
+        "看看站牌，再看屋檐如何框住山体：交通设施也可以成为风景的取景器。",
+        "这里位于富士吉田市区；“富士山站”是一处山麓门户，并非登顶起点。"
+      ],
+      "images": [
+        {
+          "assetIndex": 0,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/fujisan-station-71df235d.webp",
+          "alt": "富士山站",
+          "width": 780,
+          "height": 1012
+        }
+      ]
+    },
+    {
+      "id": "fujiyoshida",
+      "assetIndices": [
+        1
+      ],
+      "city": "tokyo",
+      "region": "富士山麓",
+      "title": "富士吉田市",
+      "jp": "富士吉田",
+      "en": "Fujiyoshida",
+      "kicker": "山与街的日常",
+      "tagline": "一条街尽头，是一座山；街的两侧，是生活。",
+      "intro": [
+        "富士山在这里不只属于明信片。它也出现在电线之间、商店招牌的上方，以及居民每天走过的路口。山的尺度很大，生活的细节很小，两者在富士吉田相遇。",
+        "沿着本町通慢慢走，先看山，再把目光收回来。那些旧店面与窄巷，会让这一眼远景有了可以靠近的温度。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "从御师之町到织物街区",
+          "text": "富士吉田的不同街区保存着不同层次的历史。上吉田因富士山信仰而形成御师町，为登拜者提供住宿、饮食和宗教引导；下吉田则留下织物产业与商业街发展的痕迹。照片常见的本町通位于下吉田，不能把整座城市简单读作同一种宿场风景。",
+          "sources": [
+            "oshi",
+            "honcho"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "山前的街，不是为照片搭的布景",
+          "text": "本町通两侧的“东里”“西里”，曾伴随织物产业繁荣，尤其东里聚集过许多批发商。镜头里密密的招牌和电线，记录的是一座产业城镇的日常层次。远山固然醒目，街边的人情与工作，也值得进入你的记忆。",
+          "sources": [
+            "honcho"
+          ]
+        }
+      ],
+      "observe": [
+        "从人行道观察商店与山体的尺度，不在车道上停留取景。",
+        "若还有余裕，再读一读上吉田的御师文化；那会是认识同一座城市的另一扇门。"
+      ],
+      "images": [
+        {
+          "assetIndex": 1,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/fujiyoshida-city-cbe0cf26.webp",
+          "alt": "富士吉田市",
+          "width": 780,
+          "height": 1170
+        }
+      ]
+    },
+    {
+      "id": "arakura-fuji-sengen",
+      "assetIndices": [
+        2
+      ],
+      "city": "tokyo",
+      "region": "富士山麓",
+      "title": "新仓富士浅间神社",
+      "jp": "新倉富士浅間神社",
+      "en": "Arakura Fuji Sengen Shrine",
+      "kicker": "山麓的信仰",
+      "tagline": "红色塔影之外，还有一座守望山的神社。",
+      "intro": [
+        "先是树木间的朱色鸟居，然后是石阶、屋顶与渐渐展开的城市。等富士山出现在视野里，熟悉的照片才终于有了上山时的呼吸。",
+        "这里值得看的，不只是塔与山同框的一瞬。沿途的神社和身后的城镇，也在讲述人们如何与这座山相处。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "在火山身旁，长久地祈愿",
+          "text": "神社由绪将创立追溯至 706 年，奉祀木花咲耶姬命等神祇。这样的年代属于神社自身的历史传承。富士山既带来壮丽景色，也曾使山麓居民面对喷发的威胁；祈求平安的信仰，因而与望山的生活紧紧相连。",
+          "sources": [
+            "arakura"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "照片中的五重塔，身份另有所指",
+          "text": "山上的“忠灵塔”是富士吉田市战殁者慰灵塔，与神社本殿应当区分。市政府记录其于 1962 年建成，用于追悼本市出身的战争死者。辨认这层身份后，再看红色塔影，会多一分对地方记忆与和平的理解。",
+          "sources": [
+            "pagoda"
+          ]
+        }
+      ],
+      "observe": [
+        "把神社、忠灵塔和展望空间当作三个层次来读，不只追逐同一处拍摄角度。",
+        "在石阶中途回望一次；城市与远山的距离，会随着高度悄悄改变。"
+      ],
+      "images": [
+        {
+          "assetIndex": 2,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/arakura-fuji-sengen-shrine-ae718343.webp",
+          "alt": "新仓山浅间神社",
+          "width": 960,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "lake-yamanaka",
+      "assetIndices": [
+        7,
+        8
+      ],
+      "city": "tokyo",
+      "region": "富士山麓",
+      "title": "山中湖",
+      "jp": "山中湖",
+      "en": "Lake Yamanaka",
+      "kicker": "等待一束光",
+      "tagline": "山不曾移动，光却让相逢每次不同。",
+      "intro": [
+        "山中湖的傍晚，景色并不急着发生。湖面先安静下来，山的边缘逐渐变深，然后一束光在山顶附近停留，把等待的人们带进同一瞬间。",
+        "即使没有等到钻石富士，也可以继续留一会儿。太阳落下以后，湖水、远山与天空还会交换几次颜色。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "高原上的湖，也是巡礼的一站",
+          "text": "山中湖是富士五湖中面积最大的湖，湖面海拔约 980 米。对于今天的旅人，它是亲近山水的高原湖泊；在富士山信仰的历史中，五湖也曾是巡礼与水行的场所。湖与山之间，既有地理上的联系，也有人反复走来的路线。",
+          "sources": [
+            "yamanaka",
+            "yamanaka-pilgrimage"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "“钻石”是一场位置与时间的相遇",
+          "text": "钻石富士指太阳与富士山顶重叠时出现的光景。山中湖所见的是落日一侧，适合观察的湖岸位置会随日期移动；同一地点并非每天都能看到。它与平静水面形成的倒影是两件不同的事，两者能否同时出现，还要看天气与风。",
+          "sources": [
+            "diamond"
+          ]
+        }
+      ],
+      "observe": [
+        "先观察太阳、山顶和你所在湖岸的相对位置，再决定是否挪动。",
+        "为落日后的湖色留一点时间，也为日落后迅速下降的气温带好御寒衣物。"
+      ],
+      "images": [
+        {
+          "assetIndex": 7,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/lake-yamanaka-diamond-fuji-b4f56ca6.webp",
+          "alt": "山中湖钻石富士",
+          "width": 780,
+          "height": 520
+        },
+        {
+          "assetIndex": 8,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/lake-yamanaka-sunset-043aa816.webp",
+          "alt": "山中湖日落",
+          "width": 700,
+          "height": 460
+        }
+      ]
+    },
+    {
+      "id": "kiyomizu-dera",
+      "assetIndices": [
+        6
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "清水寺",
+      "jp": "清水寺",
+      "en": "Kiyomizu-dera",
+      "kicker": "东山的高处",
+      "tagline": "木构托起远景，流水留下寺名。",
+      "intro": [
+        "沿着东山的坡道抵达清水寺，街巷的热闹渐渐被山风接走。舞台从山坡上伸出去，京都的屋顶和红叶一起铺开，像一封刚刚展开的长信。",
+        "先看远处，再低头看支撑脚下的木头。这里的震撼，一半来自开阔的景色，一半来自不肯退到背景里的手艺。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "从音羽山的水声开始",
+          "text": "寺方将开创追溯至 778 年，寺名与音羽瀑布的清泉相连。此后寺院经历多次火灾与重建，今日熟悉的本堂与舞台属于江户时代的再建。它的历史并非一座建筑完整不变地存留，而是一代代人持续修复、延续信仰与技艺。",
+          "sources": [
+            "kiyomizu",
+            "kiyomizu-craft"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "托住舞台的，是木头之间的关系",
+          "text": "舞台下方的柱梁以传统木构接合，支撑部分不依赖铁钉。这里值得赞叹的不只是“没有钉子”，更是工匠对受力、坡地和木材特性的理解。把视线从舞台边缘移到纵横的梁柱，会看见风景背后有一套清晰而有力的秩序。",
+          "sources": [
+            "kiyomizu"
+          ]
+        }
+      ],
+      "observe": [
+        "从可以观看舞台侧面的参道回望，比较建筑与山坡的关系。",
+        "给音羽瀑布留一次停步的机会：寺名、山水与人的祈愿，在水声里重新连起来。"
+      ],
+      "images": [
+        {
+          "assetIndex": 6,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/kiyomizu-dera-7521cfad.webp",
+          "alt": "清水寺",
+          "width": 780,
+          "height": 480
+        }
+      ]
+    },
+    {
+      "id": "eikando",
+      "assetIndices": [
+        9
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "禅林寺·永观堂",
+      "jp": "永観堂 禅林寺",
+      "en": "Eikando Zenrin-ji",
+      "kicker": "一回首的温柔",
+      "tagline": "满山秋色里，最值得记住的也许是一次回头。",
+      "intro": [
+        "红叶在池水边聚拢，廊道把目光带进更深的院落。永观堂的秋色很丰盛，但不必急着一眼看尽；它最亲近人的故事，藏在一尊回首的佛像里。",
+        "等脚步慢下来，再去看那个微微偏转的姿态。千年之后，关照身后的人，依然是一件容易被理解的事。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "寺名记住了一位照顾人的僧侣",
+          "text": "禅林寺的开创追溯至 853 年，“永观堂”的称呼则与永观律师相连。寺方记述，他重视念佛修行，也设施疗之所，救济困苦者，并培育梅林以果实助人。因而，这座红叶名所的另一面，是具体而日常的照护。",
+          "sources": [
+            "eikando"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "回首阿弥陀，是一段信仰传说",
+          "text": "寺中传说，永观行道念佛时，阿弥陀走在前面，回头顾望停下脚步的他。“回首阿弥陀”的形象因此受到珍爱。这里不必把传说当作可考的事件；那种不愿把落在后面的人留下的慈悲，正是寺方希望人们从姿态中读到的意思。",
+          "sources": [
+            "eikando-amida"
+          ]
+        }
+      ],
+      "observe": [
+        "除了看红叶，也看看池边倒影和廊柱怎样改变同一片庭园的边界。",
+        "观佛时留意头部与身体方向的差异；一处小小的转折，就是整段故事的入口。"
+      ],
+      "images": [
+        {
+          "assetIndex": 9,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/eikando-zenrinji-f47ba112.webp",
+          "alt": "禅林寺（永观堂）",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "shinnyodo",
+      "assetIndices": [
+        10
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "真如堂",
+      "jp": "真正極楽寺 真如堂",
+      "en": "Shinnyo-do",
+      "kicker": "红叶深处的回答",
+      "tagline": "在一声轻轻的应允里，读到这座寺的来处。",
+      "intro": [
+        "三重塔从层层枝叶中露出来，红色并不一次铺满眼前，而是跟着脚步一片片显现。真如堂的动人，在于让你有时间把目光停在一处，再走向下一处。",
+        "寺院的名字听来庄严，流传的故事却很接近人：关于一尊佛如何回应愿望，也关于一座庭院曾经怎样进入银幕。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "真正极乐寺与“点头的阿弥陀”",
+          "text": "真如堂的正式寺名为铃声山真正极乐寺，开创于 984 年，属天台宗。寺方传说，阿弥陀像听到救济众生、尤其女性的请求时点头应允，因而被称为“点头的阿弥陀”。故事折射的是寺院对救济与亲近民众的理解，不是需要按现实事件去验证的神迹。",
+          "sources": [
+            "shinnyodo",
+            "shinnyodo-statue"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "古寺也曾走进电影的早年",
+          "text": "寺方历史记述，牧野省三于 1908 年拍摄的早期剧情片《本能寺合战》，曾以真如堂境内为舞台。今天的游客与当年的摄影机，在同一片寺院里寻找画面。这条线索让古寺的时间不只停留在平安时代，也连接着近代影像文化。",
+          "sources": [
+            "shinnyodo"
+          ]
+        }
+      ],
+      "observe": [
+        "试着用树干或塔的屋檐为画面留一道边，看看红叶如何成为背景，而不是全部。",
+        "再望一眼境内的空间：知道这里拍过早期电影后，普通的一段园路也多了一层想象。"
+      ],
+      "images": [
+        {
+          "assetIndex": 10,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/shinnyodo-temple-cdb230be.webp",
+          "alt": "真如堂",
+          "width": 780,
+          "height": 654
+        }
+      ]
+    },
+    {
+      "id": "tofukuji",
+      "assetIndices": [
+        11
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "东福寺",
+      "jp": "東福寺",
+      "en": "Tofuku-ji",
+      "kicker": "跨过一条秋色的溪谷",
+      "tagline": "桥让人走过去，也让人学会停下来。",
+      "intro": [
+        "在东福寺，秋色不只挂在枝头，也填满了桥下的溪谷。人从廊桥上经过，视线却不断往下走，被一层层叶色带向深处。",
+        "桥的两端连接着寺院，桥的中段则把你交给风景。哪怕只短暂停一步，也能感到这里的开阔与庭院不同。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "“东”与“福”，借来了奈良的雄心",
+          "text": "东福寺创建于 1236 年，由九条道家发愿营造，寺名分别取自奈良东大寺的“东”和兴福寺的“福”。这一命名寄托着建造宏大伽蓝的期望，也让京都与奈良在两个字里相遇。读懂寺名，再看建筑的尺度，会更容易理解它的气势。",
+          "sources": [
+            "tofukuji",
+            "tofukuji-bridge"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "通天桥让风景有了上下两层",
+          "text": "通天桥跨越洗玉涧，桥下的谷地让树木得以层层展开。站在高处看到的是叶冠的起伏，走到较低处则能感受枝干、坡地与桥廊的关系。这里的红叶之所以有立体感，溪谷的地形与桥的位置和颜色一样重要。",
+          "sources": [
+            "tofukuji-bridge"
+          ]
+        }
+      ],
+      "observe": [
+        "留意桥廊的水平线与树木的高低起伏；它们在画面里形成不同的节奏。",
+        "在人流允许时停看，不在狭窄通道久占位置；换一个角度也能读到同一条溪谷。"
+      ],
+      "images": [
+        {
+          "assetIndex": 11,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/tofukuji-temple-a5fb8241.webp",
+          "alt": "东福寺",
+          "width": 780,
+          "height": 585
+        }
+      ]
+    },
+    {
+      "id": "fushimi-inari",
+      "assetIndices": [
+        12
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "伏见稻荷大社",
+      "jp": "伏見稲荷大社",
+      "en": "Fushimi Inari Taisha",
+      "kicker": "朱色里的愿望",
+      "tagline": "每一段鸟居，都让一份心愿有了形状。",
+      "intro": [
+        "朱色的柱子一座接着一座，日光被切成细长的缝隙。走进伏见稻荷，最先感受到的是节奏：脚步、光影、名字，再是下一座鸟居。",
+        "往前走一段，也回头看一眼。属于摄影的通道，另一面写着奉纳者的名字，是许多人把祈愿留在山中的方式。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "从祈愿丰收到日常生计",
+          "text": "伏见稻荷以稻荷信仰为中心，稻荷山是重要的信仰空间。参道鸟居的奉纳传统在江户时代逐渐兴盛，以愿望能够“通过”或已经“实现”的意思表达祈愿与感谢。眼前的朱色长廊，因此也是不同年代的人留下的生活痕迹。",
+          "sources": [
+            "inari",
+            "inari-details"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "狐狸是使者，不是稻荷神本身",
+          "text": "大社明确区分稻荷大神与狐狸：狐狸被视作神的使者。看见狐像时，可以留意它们的姿态，再想一想神社如何用可见的形象传达不可见的信仰。山中还有许多奉祀之处，所谓“千本鸟居”只是认识整个稻荷山的一扇门。",
+          "sources": [
+            "inari-details"
+          ]
+        }
+      ],
+      "observe": [
+        "在一段不妨碍通行的地方回望，观察鸟居正面与背面的不同。",
+        "不必为收集鸟居数量赶路；让脚步顺着体力与现场人流，找到自己愿意走的一段。"
+      ],
+      "images": [
+        {
+          "assetIndex": 12,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/fushimi-inari-taisha-164496f4.webp",
+          "alt": "伏见稻荷大社",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "tenjuan",
+      "assetIndices": [
+        13
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "天授庵",
+      "jp": "南禅寺 天授庵",
+      "en": "Nanzen-ji Tenju-an",
+      "kicker": "两座庭园之间",
+      "tagline": "白砂与池水，写出两种安静。",
+      "intro": [
+        "天授庵并不急着把景色全部交出来。白砂先让视线停住，苔的边界把一条石路轻轻托起；再往里走，水面与树影才换一种方式展开。",
+        "这座小小的庵院，很适合练习慢看。不是寻找更多景物，而是感受同样的红叶，落在不同庭园里为何会有不同的表情。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "为南禅寺开山而建的一处塔头",
+          "text": "天授庵是南禅寺的塔头寺院，1339 年为纪念南禅寺开山无关普门而创建。经历战乱与衰落后，细川幽斋于 1602 年重兴。比起主寺的大尺度，这里让历史收束到庵院与庭园，可以在不长的步行里细读。",
+          "sources": [
+            "tenjuan"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "枯山水与池泉，是两套不同的语法",
+          "text": "东庭以白砂、苔与石径组成枯山水；南庭则以池水为中心，供人回游观看。前者借留白和线条建立秩序，后者让转弯、倒影与枝叶不断改变眼前的组合。两座庭园并置，是天授庵值得专程停步的原因。",
+          "sources": [
+            "tenjuan-gardens"
+          ]
+        }
+      ],
+      "observe": [
+        "先看白砂中石径的方向，再找一找苔如何替几何形状画出柔软的边。",
+        "来到池边，把视线降低一点：同一棵树，在水面里会出现另一种姿态。"
+      ],
+      "images": [
+        {
+          "assetIndex": 13,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/nanzenji-tenjuan-8a1137da.webp",
+          "alt": "天授庵",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "togetsukyo",
+      "assetIndices": [
+        14
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "渡月桥",
+      "jp": "渡月橋",
+      "en": "Togetsukyo Bridge",
+      "kicker": "让月色经过",
+      "tagline": "一座桥，把山水和人的想象连在一起。",
+      "intro": [
+        "桥在水面上铺出一条平直的线，背后的山却随季节不断换色。渡月桥的好看，并不只在桥本身，而在它如何让河、岸与远山恰好站到一起。",
+        "走到岸边再回头，比一直站在桥上更容易看清这份关系。旅途中，有些风景适合穿过，也适合隔一点距离观看。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "桥名里的月，是流传下来的故事",
+          "text": "这处渡河之地有悠久沿革，“渡月”的命名则相传与龟山上皇看月色从桥上方经过有关。这是一段地名传说，而不是需要精确还原的目击记录。它之所以动人，是因为把一段短暂的月影，留成了人们今天仍在使用的名字。",
+          "sources": [
+            "togetsukyo"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "古意的外表，近代的结构",
+          "text": "现今桥梁于 1934 年完成，主体采用钢筋混凝土等近代结构，同时延续旧木桥的意匠，以便融入岚山景观。知道这一点，桥就多了一层趣味：它并非把时间停住，而是在不断使用和修建中，努力保留熟悉的轮廓。",
+          "sources": [
+            "togetsukyo",
+            "togetsukyo-engineering"
+          ]
+        }
+      ],
+      "observe": [
+        "从岸边观察桥身的水平线如何衬托山坡，把远山也放进取景。",
+        "走桥时感受水面的开阔，停看则尽量留在不影响通行的岸侧空间。"
+      ],
+      "images": [
+        {
+          "assetIndex": 14,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/togetsukyo-bridge-f8a42904.webp",
+          "alt": "渡月桥",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "arashiyama",
+      "assetIndices": [
+        15
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "岚山",
+      "jp": "嵐山",
+      "en": "Arashiyama",
+      "kicker": "山水缓行",
+      "tagline": "把脚步交给河流，把目光留给山。",
+      "intro": [
+        "岚山的景色不是一下子抵达的。河道转过山脚，树色在斜坡上层层展开，等人慢下来，才会发现桥、竹林与寺院各有自己的位置。",
+        "与其把这里当作一串必须走完的名字，不如选一段岸边、一条林间路，看看水怎样把不同的风景串联起来。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "很久以前，这里就是向往郊野的地方",
+          "text": "嵯峨、岚山一带在平安时代与皇室离宫、贵族别业相联系，后来寺院与园林不断积累，形成今天可步行穿行的文化景观。人们来到这里亲近山水的愿望很早就有；今天的旅人，只是以自己的步调，加入了一条长久的游赏传统。",
+          "sources": [
+            "arashiyama"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "岚山是区域，不只是一条竹林",
+          "text": "渡月桥附近的河景、较深处的山坡和竹林小径，呈现的是不同的空间。竹林的小径因修整与维护而保持可供通行的尺度，竹梢的风声与河岸的开阔也并不相同。愿意在几种空间之间换一换，才能感到岚山不只是一个拍摄点。",
+          "sources": [
+            "arashiyama",
+            "arashiyama-bamboo"
+          ]
+        }
+      ],
+      "observe": [
+        "在河岸看看山坡叶色的层次，再进入竹林体会光线怎样收拢。",
+        "留一段没有目的地的短步行；眼前某个转弯，可能比清单上的下一项更值得停留。"
+      ],
+      "images": [
+        {
+          "assetIndex": 15,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/arashiyama-eeb6592c.webp",
+          "alt": "岚山",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "jojakkoji",
+      "assetIndices": [
+        16
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "常寂光寺",
+      "jp": "常寂光寺",
+      "en": "Jojakko-ji",
+      "kicker": "小仓山的层次",
+      "tagline": "顺着石阶，走进一片渐渐展开的秋天。",
+      "intro": [
+        "茅葺的门把山坡藏在身后，跨过去，石阶与红叶才慢慢出现。常寂光寺像把庭院交给了小仓山：每上一层，枝叶、屋顶与远处的嵯峨野都会重新排列。",
+        "不必一口气走到最高处。这里的风景，是在停步和回望之间，一点一点被看见的。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "一位僧人的隐居，让山中有了寺院",
+          "text": "寺院的开创与日莲宗僧人日祯相连，始于 1596 年前后。此后堂宇与多宝塔逐渐构成今天的山坡景观。它没有用一道平整轴线收服地势，而是顺着起伏，让参拜与登高发生在同一段路上。",
+          "sources": [
+            "jojakkoji"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "门比寺的开创，还要年长",
+          "text": "仁王门原是本圀寺客殿的南门，建于 14 世纪，1616 年移筑到此。因而，进入常寂光寺时跨过的这道门，带着另一座寺院的经历。建筑在迁移中延续生命，也让一处看似完整的古寺，拥有来自不同地点的时间。",
+          "sources": [
+            "jojakkoji-gate"
+          ]
+        }
+      ],
+      "observe": [
+        "在仁王门内外各停一次，比较茅檐、石阶与红叶形成的框景。",
+        "登高后回望，不只寻找塔；也看看近处的屋顶怎样连接远处的嵯峨野。"
+      ],
+      "images": [
+        {
+          "assetIndex": 16,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/jojakkoji-temple-f377f3d8.webp",
+          "alt": "常寂光寺",
+          "width": 900,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "id": "rurikoin",
+      "assetIndices": [
+        17
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "琉璃光院",
+      "jp": "瑠璃光院",
+      "en": "Rurikoin",
+      "kicker": "把一座庭园看两遍",
+      "tagline": "树在窗外生长，光在室内延续。",
+      "intro": [
+        "窗框把庭园分成几幅，枝叶却不肯停在框内。光从树梢来到苔上，再沿着室内的表面轻轻折返，让同一片秋色有了第二次出现的机会。",
+        "先别急着找到著名的那个角度。让眼睛适应室内的明暗，庭园会慢慢显出照片之外的深度。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "近代营造的书院，容纳更长的想象",
+          "text": "京都市对建筑的介绍指出，这里的数寄屋建筑与借景庭园主要形成于大正末至昭和初期。今天的琉璃光院是光明寺京都本院。“瑠璃”与佛教净土的色彩意象相连，寺名也寄托于主庭苔色、清泉与光共同营造的境界。",
+          "sources": [
+            "rurikoin-building",
+            "rurikoin"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "寺名的颜色，藏在苔里",
+          "text": "“瑠璃之庭”的主角不仅是秋天的枫叶。苔铺成的地面、穿行其间的细流、不同高度的枝叶，共同构成了庭园的层次。与其只追求一张对称的倒影照，不如再看一遍地面：在那里，院名的来意比照片的构图更接近眼前。",
+          "sources": [
+            "rurikoin"
+          ]
+        }
+      ],
+      "observe": [
+        "先看窗外真实的枝叶，再看室内的映影，感受边界如何被光变得柔和。",
+        "把注意力从红叶移到苔与细流；同一座庭园，可以有不止一个主角。"
+      ],
+      "images": [
+        {
+          "assetIndex": 17,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/rurikoin-temple-85d0e0a1.webp",
+          "alt": "琉璃光院",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "hogonin",
+      "assetIndices": [
+        18
+      ],
+      "city": "kyoto",
+      "region": "京都",
+      "title": "宝严院",
+      "jp": "宝厳院",
+      "en": "Hogon-in",
+      "kicker": "在庭园里听一听",
+      "tagline": "没有谁开口，风景却一直在说话。",
+      "intro": [
+        "走近宝严院，先让耳朵进入庭园。脚步经过小径，风掠过枝叶，近处的苔与远处的山，在同一阵安静里有了联系。",
+        "红叶当然值得看，但这里还有石头的分量、地面的柔软，以及被借进院中的山色。慢一点，才能把这些细微的关系读出来。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "天龙寺塔头的一段绵长身世",
+          "text": "宝严院为天龙寺的塔头，寺方将开创记为 1461 年，开山为圣仲永光。寺院此后经历变迁，今天人们前来，往往为的是名为“狮子吼”的庭园。认识它的寺院身份后，这片精心营造的自然也就有了信仰与历史的背景。",
+          "sources": [
+            "hogonin"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "“狮子吼”，不一定意味着喧响",
+          "text": "佛教语汇中的“狮子吼”指佛的说法。寺方以此解释庭园：行走其间，听鸟声、风声，借自然感受生命的道理。庭中巨石与岚山借景同样重要；这里邀请你感受的，并非一段声量很大的宣告，而是留意平常容易错过的声音与形状。",
+          "sources": [
+            "hogonin-garden"
+          ]
+        }
+      ],
+      "observe": [
+        "看看巨石与苔的尺度差异，再把视线送向院外的山。",
+        "在不妨碍通行的位置安静站一会儿，试着记住一种声音，而不仅是一种颜色。"
+      ],
+      "images": [
+        {
+          "assetIndex": 18,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/hogonin-temple-d13a83d8.webp",
+          "alt": "宝严院",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "nara-shikayose",
+      "assetIndices": [
+        19
+      ],
+      "city": "nara",
+      "region": "奈良",
+      "title": "鹿寄",
+      "jp": "鹿寄せ",
+      "en": "Shikayose",
+      "kicker": "林间的相逢",
+      "tagline": "先有一声圆号，然后森林慢慢有了动静。",
+      "intro": [
+        "圆号声落进飞火野，草地暂时像一张空白的纸。接着，树影里出现第一只鹿，更多身影从林缘走来，人与动物把这片空地重新填满。",
+        "鹿寄的动人不在于整齐划一，而在于每只鹿都有自己的步调。你可以期待相遇，也给它们保留不必靠近的自由。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "从照护鹿群的工作，成为奈良的风物",
+          "text": "奈良鹿爱护会将鹿寄的起点记为 1892 年鹿苑竣工奉告祭，当时使用的是号声。今天在春日大社参道南侧的飞火野，人们以自然圆号唤来鹿群。百余年的延续，让一项与鹿相处的经验，成为旅人认识奈良的方式。",
+          "sources": [
+            "shikayose"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "来到面前的，仍然是野生动物",
+          "text": "奈良的鹿并非被圈养来完成表演的宠物。圆号、熟悉的环境与人群构成了它们可以回应的线索，但每一次到来的数量和状态都可能不同。把这看作一次受照护传统引导的相遇，会比期待固定节目更贴近它的本来面目。",
+          "sources": [
+            "shikayose-nara",
+            "nara-deer"
+          ]
+        }
+      ],
+      "observe": [
+        "听到号声后先看林缘，而不是只盯着演奏者；鹿群会让空间渐渐发生变化。",
+        "站在不挡住鹿群行进的地方，不追赶、不围拢，让相逢保持轻盈。"
+      ],
+      "images": [
+        {
+          "assetIndex": 19,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/nara-shikayose-deer-gathering-3a827441.webp",
+          "alt": "鹿寄",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "kasuga-taisha",
+      "assetIndices": [
+        20
+      ],
+      "city": "nara",
+      "region": "奈良",
+      "title": "春日大社",
+      "jp": "春日大社",
+      "en": "Kasuga Taisha",
+      "kicker": "树影里的灯火",
+      "tagline": "石灯笼一盏一盏，把人引向更深的绿。",
+      "intro": [
+        "参道旁的灯笼带着苔色，朱红的建筑在树木之间时隐时现。春日大社不急于让你抵达中心，它先让森林、石头与行走的人彼此熟悉。",
+        "沿途的鹿与灯都不是偶然的装饰。一边走，一边听它们背后的故事，神社会比远远看见的一抹朱色更加完整。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "从平城京的守护，走来的神社",
+          "text": "春日大社本社在 768 年营建，与奈良都城及藤原氏的信仰历史相连。关于神鹿，神社流传武瓮槌命骑白鹿来到御盖山的故事。那是信仰传说；它也解释了为什么当地长久以来把鹿视为神的使者，形成特别的照护关系。",
+          "sources": [
+            "kasuga"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "灯笼，也是一种累积的时间",
+          "text": "参道石灯笼与回廊吊灯笼，来自不同年代的奉纳。与其只把它们看成重复的背景，不如观察形状、材质和铭文：每一处差异，都可能指向不同的人与愿望。森林让灯笼显得古老，人的持续奉纳又让这里始终是一处活着的信仰空间。",
+          "sources": [
+            "kasuga-lantern"
+          ]
+        }
+      ],
+      "observe": [
+        "沿参道找两盏外形不同的石灯笼，比较苔、石面与字迹。",
+        "进入回廊后再看金属吊灯笼，感受石与金属如何用不同方式留住光。"
+      ],
+      "images": [
+        {
+          "assetIndex": 20,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/kasuga-taisha-bf0ff2de.webp",
+          "alt": "春日大社",
+          "width": 780,
+          "height": 976
+        }
+      ]
+    },
+    {
+      "id": "ukimido",
+      "assetIndices": [
+        21
+      ],
+      "city": "nara",
+      "region": "奈良",
+      "title": "浮见堂",
+      "jp": "浮見堂",
+      "en": "Ukimido",
+      "kicker": "湖水替风景留白",
+      "tagline": "让一座小亭，把天空和水面轻轻分开。",
+      "intro": [
+        "鹭池的水面把亭子托在中央，岸上的树伸出枝条，又在水里重新长出一遍。浮见堂的景色没有宏大的开场，只邀请人沿着池岸，慢慢走近。",
+        "当倒影被风打散，也不必等它恢复完美。那一点轻微的变化，正是眼前与照片不同的地方。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "一座近代小亭，沿用传统的身段",
+          "text": "浮见堂始建于 1916 年，位于奈良公园的鹭池。它采用六角形木构与桧皮葺屋顶，借传统建筑的比例与材料融入周围景色。虽然看上去像古都很久以前就有的一笔，它也拥有明确的近代起点。",
+          "sources": [
+            "ukimido"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "看起来“浮着”，是岸与水共同完成的效果",
+          "text": "亭子与岸之间由桥相连，六角形屋顶的倒影则把建筑继续向水下延伸。比起只走到亭内，从不同岸侧看它，更容易发现建筑、连接的小桥与树影怎样组成画面。亭子没有换位置，风景却会跟着你绕池的步伐改变。",
+          "sources": [
+            "ukimido",
+            "ukimido-nara"
+          ]
+        }
+      ],
+      "observe": [
+        "到亭内看一次，再回岸上看一次；比较“身在其中”与“隔水相望”的差别。",
+        "给波纹一点时间，让倒影保持它自己的样子，而不是只等待无风的一秒。"
+      ],
+      "images": [
+        {
+          "assetIndex": 21,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/ukimido-pavilion-7c8e85d2.webp",
+          "alt": "浮见堂",
+          "width": 780,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "nara-park",
+      "assetIndices": [
+        22
+      ],
+      "city": "nara",
+      "region": "奈良",
+      "title": "奈良公园",
+      "jp": "奈良公園",
+      "en": "Nara Park",
+      "kicker": "古都与生灵之间",
+      "tagline": "这里的日常，比一张鹿的合影辽阔得多。",
+      "intro": [
+        "草地从寺院旁展开，鹿从树影里走过，远处的人流又缓慢散开。奈良公园像一处没有急着划清边界的空间，让古都的建筑、动物与季节彼此相遇。",
+        "如果愿意暂时放下喂鹿与拍照，就会看见更多：一段普通的觅食，一次不受催促的休息，以及人与它们保持距离时的从容。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "公园的名字很近代，景观的根却很深",
+          "text": "奈良公园于 1880 年开设，后来范围与管理方式经历调整。它所依托的景观，却与更早的寺社、山林和古都生活相连。今天行走其中，看到的不是同一时代建成的一座园，而是许多历史层次长期相处的结果。",
+          "sources": [
+            "nara-park"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "鹿仙贝只是点心",
+          "text": "奈良鹿爱护会说明，公园的鹿是野生动物，主要吃草、木叶与坚果，鹿仙贝并非主食。知道这一点，就不必用“有没有向我靠近”衡量一次相遇。观察它们安静觅食或休息，也是在认识奈良；适当的距离，同样可以很亲近。",
+          "sources": [
+            "nara-deer"
+          ]
+        }
+      ],
+      "observe": [
+        "挑一处林缘看看鹿怎样选择草地与树荫，给它们完整走过的空间。",
+        "不投喂人的食物，收好纸袋与随身物品；让来访成为对这片日常的温和参与。"
+      ],
+      "images": [
+        {
+          "assetIndex": 22,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/nara-park-b89a4602.webp",
+          "alt": "奈良公园",
+          "width": 780,
+          "height": 1297
+        }
+      ]
+    },
+    {
+      "id": "todaiji",
+      "assetIndices": [
+        30
+      ],
+      "city": "nara",
+      "region": "奈良",
+      "title": "东大寺大佛殿",
+      "jp": "東大寺 大仏殿",
+      "en": "Todai-ji Daibutsuden",
+      "kicker": "仰望之后，再靠近",
+      "tagline": "一尊大佛的尺度，也来自许多双手的累积。",
+      "intro": [
+        "大佛殿的屋顶先占据视野，人走近时，才逐渐感到自己的脚步有多小。等进入殿内，巨大的铜像与幽深的木构一起，把仰望变成一件自然而然的事。",
+        "但这里不只适合抬头。请也看看佛座边的一片莲瓣：宏大的世界，有时恰恰从很细小的地方展开。"
+      ],
+      "sections": [
+        {
+          "label": "时间的底色",
+          "title": "752 年的开眼，与后来不断重建的殿宇",
+          "text": "大佛于 752 年举行开眼供养，成为奈良时代重要的宗教与营建事业。寺院此后历经兵火，现今大佛殿于 1709 年落庆。江户时期公庆上人为重建奔走募缘，殿宇才重新为大佛遮风避雨；眼前的庄严，也包含修复与重新出发的历史。",
+          "sources": [
+            "todaiji",
+            "todaiji-rebuilding"
+          ]
+        },
+        {
+          "label": "藏在细节里",
+          "title": "一片莲瓣里，也容得下世界",
+          "text": "大佛为卢舍那佛，莲座上的线刻表现《华严经》中的莲华藏世界。寺方借此解释万物彼此联系、层层展开的观念。由此再看佛像，巨大不只是体积的震撼，也是一种把人放回更广阔关系中的表达。",
+          "sources": [
+            "todaiji"
+          ]
+        }
+      ],
+      "observe": [
+        "从殿外看屋顶与人的比例，入殿后再看看梁柱如何组织内部的高大空间。",
+        "在允许观看的位置留意莲座细部，让仰望大佛与靠近一片莲瓣，成为同一次参观的两种尺度。"
+      ],
+      "images": [
+        {
+          "assetIndex": 30,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/todaiji-daibutsuden-f79b70fb.jpg",
+          "alt": "东大寺大佛殿（新增）",
+          "width": 2283,
+          "height": 1142,
+          "credit": "PlusMinus · CC BY 2.5 · 2006-09-03 · 图片未修改",
+          "source": "https://commons.wikimedia.org/wiki/File:TodaijiDaibutsuden.jpg",
+          "license": "https://creativecommons.org/licenses/by/2.5/"
+        }
+      ]
+    }
+  ]
+}
