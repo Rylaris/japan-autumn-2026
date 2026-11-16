@@ -709,7 +709,7 @@
       ],
       "city": "kyoto",
       "region": "京都",
-      "title": "禅林寺·永观堂",
+      "title": "禅林寺·永観堂",
       "jp": "永観堂 禅林寺",
       "en": "Eikando Zenrin-ji",
       "kicker": "一回首的温柔",
@@ -744,7 +744,7 @@
         {
           "assetIndex": 9,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/eikando-zenrinji-f47ba112.webp",
-          "alt": "禅林寺（永观堂）",
+          "alt": "禅林寺（永観堂）",
           "width": 780,
           "height": 520
         }
@@ -806,7 +806,7 @@
       ],
       "city": "kyoto",
       "region": "京都",
-      "title": "东福寺",
+      "title": "東福寺",
       "jp": "東福寺",
       "en": "Tofuku-ji",
       "kicker": "跨过一条秋色的溪谷",
@@ -842,7 +842,7 @@
         {
           "assetIndex": 11,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/tofukuji-temple-a5fb8241.webp",
-          "alt": "东福寺",
+          "alt": "東福寺",
           "width": 780,
           "height": 585
         }
@@ -855,7 +855,7 @@
       ],
       "city": "kyoto",
       "region": "京都",
-      "title": "伏见稻荷大社",
+      "title": "伏見稲荷大社",
       "jp": "伏見稲荷大社",
       "en": "Fushimi Inari Taisha",
       "kicker": "朱色里的愿望",
@@ -891,7 +891,7 @@
         {
           "assetIndex": 12,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/fushimi-inari-taisha-164496f4.webp",
-          "alt": "伏见稻荷大社",
+          "alt": "伏見稲荷大社",
           "width": 780,
           "height": 520
         }
@@ -952,7 +952,7 @@
       ],
       "city": "kyoto",
       "region": "京都",
-      "title": "渡月桥",
+      "title": "渡月橋",
       "jp": "渡月橋",
       "en": "Togetsukyo Bridge",
       "kicker": "让月色经过",
@@ -988,7 +988,7 @@
         {
           "assetIndex": 14,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/togetsukyo-bridge-f8a42904.webp",
-          "alt": "渡月桥",
+          "alt": "渡月橋",
           "width": 780,
           "height": 520
         }
@@ -1001,7 +1001,7 @@
       ],
       "city": "kyoto",
       "region": "京都",
-      "title": "岚山",
+      "title": "嵐山",
       "jp": "嵐山",
       "en": "Arashiyama",
       "kicker": "山水缓行",
@@ -1037,7 +1037,7 @@
         {
           "assetIndex": 15,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/arashiyama-eeb6592c.webp",
-          "alt": "岚山",
+          "alt": "嵐山",
           "width": 780,
           "height": 520
         }
@@ -1098,7 +1098,7 @@
       ],
       "city": "kyoto",
       "region": "京都",
-      "title": "琉璃光院",
+      "title": "瑠璃光院",
       "jp": "瑠璃光院",
       "en": "Rurikoin",
       "kicker": "把一座庭园看两遍",
@@ -1134,7 +1134,7 @@
         {
           "assetIndex": 17,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/rurikoin-temple-85d0e0a1.webp",
-          "alt": "琉璃光院",
+          "alt": "瑠璃光院",
           "width": 780,
           "height": 520
         }
@@ -1147,7 +1147,7 @@
       ],
       "city": "kyoto",
       "region": "京都",
-      "title": "宝严院",
+      "title": "宝厳院",
       "jp": "宝厳院",
       "en": "Hogon-in",
       "kicker": "在庭园里听一听",
@@ -1182,7 +1182,7 @@
         {
           "assetIndex": 18,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/hogonin-temple-d13a83d8.webp",
-          "alt": "宝严院",
+          "alt": "宝厳院",
           "width": 780,
           "height": 520
         }
@@ -1195,7 +1195,7 @@
       ],
       "city": "nara",
       "region": "奈良",
-      "title": "鹿寄",
+      "title": "鹿寄せ",
       "jp": "鹿寄せ",
       "en": "Shikayose",
       "kicker": "林间的相逢",
@@ -1231,7 +1231,7 @@
         {
           "assetIndex": 19,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/nara-shikayose-deer-gathering-3a827441.webp",
-          "alt": "鹿寄",
+          "alt": "鹿寄せ（招鹿）",
           "width": 780,
           "height": 520
         }
@@ -1292,7 +1292,7 @@
       ],
       "city": "nara",
       "region": "奈良",
-      "title": "浮见堂",
+      "title": "浮見堂",
       "jp": "浮見堂",
       "en": "Ukimido",
       "kicker": "湖水替风景留白",
@@ -1328,7 +1328,7 @@
         {
           "assetIndex": 21,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/ukimido-pavilion-7c8e85d2.webp",
-          "alt": "浮见堂",
+          "alt": "浮見堂",
           "width": 780,
           "height": 520
         }
@@ -1341,7 +1341,7 @@
       ],
       "city": "nara",
       "region": "奈良",
-      "title": "奈良公园",
+      "title": "奈良公園",
       "jp": "奈良公園",
       "en": "Nara Park",
       "kicker": "古都与生灵之间",
@@ -1376,7 +1376,7 @@
         {
           "assetIndex": 22,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/nara-park-b89a4602.webp",
-          "alt": "奈良公园",
+          "alt": "奈良公園",
           "width": 780,
           "height": 1297
         }
@@ -1389,7 +1389,7 @@
       ],
       "city": "nara",
       "region": "奈良",
-      "title": "东大寺大佛殿",
+      "title": "東大寺 大仏殿",
       "jp": "東大寺 大仏殿",
       "en": "Todai-ji Daibutsuden",
       "kicker": "仰望之后，再靠近",
@@ -1425,7 +1425,7 @@
         {
           "assetIndex": 30,
           "url": "https://wenchanyuan-travel.bj.bcebos.com/todaiji-daibutsuden-f79b70fb.jpg",
-          "alt": "东大寺大佛殿（新增）",
+          "alt": "東大寺 大仏殿",
           "width": 2283,
           "height": 1142,
           "credit": "PlusMinus · CC BY 2.5 · 2006-09-03 · 图片未修改",
