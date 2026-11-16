@@ -1,0 +1,331 @@
+{
+  "bucket": "wenchanyuan-travel",
+  "region": "bj",
+  "baseUrl": "https://wenchanyuan-travel.bj.bcebos.com/",
+  "images": [
+    {
+      "title": "富士山站",
+      "file": "fujisan-station-71df235d.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/fujisan-station-71df235d.webp",
+      "bytes": 77228,
+      "sha256": "71df235d83404c016c4c26f8498fb1813b2f9654a4c57868d63088a047e57082",
+      "assetIndex": 0,
+      "width": 780,
+      "height": 1012
+    },
+    {
+      "title": "富士吉田市",
+      "file": "fujiyoshida-city-cbe0cf26.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/fujiyoshida-city-cbe0cf26.webp",
+      "bytes": 163228,
+      "sha256": "cbe0cf26a8167bc9584d2898e2ee1beb4071b32f67ad72023fe48c2bd3bdc3f8",
+      "assetIndex": 1,
+      "width": 780,
+      "height": 1170
+    },
+    {
+      "title": "新仓山浅间神社",
+      "file": "arakura-fuji-sengen-shrine-ae718343.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/arakura-fuji-sengen-shrine-ae718343.webp",
+      "bytes": 92274,
+      "sha256": "ae718343729ddacdb52920be789f29dc37a0ee3c4d1c3d65a8579941f0e7c3c1",
+      "assetIndex": 2,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "title": "新宿御苑",
+      "file": "shinjuku-gyoen-00487fcf.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/shinjuku-gyoen-00487fcf.webp",
+      "bytes": 347052,
+      "sha256": "00487fcf8a9835a5a69e5ee18838fcc40420cfca0d634ef9c6456ba263f96c8a",
+      "assetIndex": 3,
+      "width": 1080,
+      "height": 800
+    },
+    {
+      "title": "明治神宫外苑",
+      "file": "meiji-jingu-gaien-8a5e3ba3.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/meiji-jingu-gaien-8a5e3ba3.webp",
+      "bytes": 100898,
+      "sha256": "8a5e3ba3a2314fcf7393e09c56858833f3f408b4ffc2c683c114140f64459c89",
+      "assetIndex": 4,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "明治神宫",
+      "file": "meiji-jingu-8d947d90.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/meiji-jingu-8d947d90.webp",
+      "bytes": 114198,
+      "sha256": "8d947d90f6336865c8565de528a3c5a47fe21b3c571956b3d312c0513ce840c6",
+      "assetIndex": 5,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "清水寺",
+      "file": "kiyomizu-dera-7521cfad.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/kiyomizu-dera-7521cfad.webp",
+      "bytes": 99194,
+      "sha256": "7521cfad5c39fe9f20c4673badb653c13e16dee0e6d650f6eee5b862ccf920d5",
+      "assetIndex": 6,
+      "width": 780,
+      "height": 480
+    },
+    {
+      "title": "山中湖钻石富士",
+      "file": "lake-yamanaka-diamond-fuji-b4f56ca6.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/lake-yamanaka-diamond-fuji-b4f56ca6.webp",
+      "bytes": 9966,
+      "sha256": "b4f56ca64104bb0efcf5f6c3773f870233e3f5098cc7d11a58c0019314fd89d4",
+      "assetIndex": 7,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "山中湖日落",
+      "file": "lake-yamanaka-sunset-043aa816.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/lake-yamanaka-sunset-043aa816.webp",
+      "bytes": 9706,
+      "sha256": "043aa816aa33fa5321aca0c5dd66b04a94c7d757f8acb6af12f3db0224cdf6a0",
+      "assetIndex": 8,
+      "width": 700,
+      "height": 460
+    },
+    {
+      "title": "禅林寺（永观堂）",
+      "file": "eikando-zenrinji-f47ba112.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/eikando-zenrinji-f47ba112.webp",
+      "bytes": 108210,
+      "sha256": "f47ba1125e1dcbce26a789ebec2c8ad52bef648a01e7ef1202016e18b3a58856",
+      "assetIndex": 9,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "真如堂",
+      "file": "shinnyodo-temple-cdb230be.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/shinnyodo-temple-cdb230be.webp",
+      "bytes": 128674,
+      "sha256": "cdb230be0a72beacf0708b93769464017a5991c9d3b9e14738013b4bbf746e1d",
+      "assetIndex": 10,
+      "width": 780,
+      "height": 654
+    },
+    {
+      "title": "东福寺",
+      "file": "tofukuji-temple-a5fb8241.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/tofukuji-temple-a5fb8241.webp",
+      "bytes": 99364,
+      "sha256": "a5fb8241682d2715a0b0972e163b8ae7975d7b2d0f26ca1bea8166297398f6f5",
+      "assetIndex": 11,
+      "width": 780,
+      "height": 585
+    },
+    {
+      "title": "伏见稻荷大社",
+      "file": "fushimi-inari-taisha-164496f4.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/fushimi-inari-taisha-164496f4.webp",
+      "bytes": 66290,
+      "sha256": "164496f42fa1edd620389e158a49fed8933dfbe892c83dba60a8a437af511776",
+      "assetIndex": 12,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "天授庵",
+      "file": "nanzenji-tenjuan-8a1137da.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/nanzenji-tenjuan-8a1137da.webp",
+      "bytes": 97802,
+      "sha256": "8a1137da32488e994d2ead38f33c3f8bbcf2d3794960865a978db579f5e067e2",
+      "assetIndex": 13,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "渡月桥",
+      "file": "togetsukyo-bridge-f8a42904.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/togetsukyo-bridge-f8a42904.webp",
+      "bytes": 95030,
+      "sha256": "f8a4290428ea880f263703b091468f598d8c15043f66a0b534fc0474135a7a70",
+      "assetIndex": 14,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "岚山",
+      "file": "arashiyama-eeb6592c.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/arashiyama-eeb6592c.webp",
+      "bytes": 110148,
+      "sha256": "eeb6592ceb4a9eced1bbc6987f1868ccb6bcf19e66fa57c302b215485f784907",
+      "assetIndex": 15,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "常寂光寺",
+      "file": "jojakkoji-temple-f377f3d8.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/jojakkoji-temple-f377f3d8.webp",
+      "bytes": 157236,
+      "sha256": "f377f3d856636e1063d0435fdcd5a207c80b16034e44e80e07a3fdea282ea222",
+      "assetIndex": 16,
+      "width": 900,
+      "height": 600
+    },
+    {
+      "title": "琉璃光院",
+      "file": "rurikoin-temple-85d0e0a1.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/rurikoin-temple-85d0e0a1.webp",
+      "bytes": 86372,
+      "sha256": "85d0e0a199fee76f006093ec4da6bf7b161faa000d943f3aa0814e697f9527bb",
+      "assetIndex": 17,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "宝严院",
+      "file": "hogonin-temple-d13a83d8.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/hogonin-temple-d13a83d8.webp",
+      "bytes": 62806,
+      "sha256": "d13a83d8fbc92caa71c7ee14255ad5375084ce5623275f083413fb1f2ac3703a",
+      "assetIndex": 18,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "鹿寄",
+      "file": "nara-shikayose-deer-gathering-3a827441.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/nara-shikayose-deer-gathering-3a827441.webp",
+      "bytes": 77502,
+      "sha256": "3a82744138da690c3cd190b905a2bf6deb52f488d70f5995c0164d26908bb60b",
+      "assetIndex": 19,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "春日大社",
+      "file": "kasuga-taisha-bf0ff2de.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/kasuga-taisha-bf0ff2de.webp",
+      "bytes": 103594,
+      "sha256": "bf0ff2de904791174a46748963514c166803c4a69659c27a81cee9a830369348",
+      "assetIndex": 20,
+      "width": 780,
+      "height": 976
+    },
+    {
+      "title": "浮见堂",
+      "file": "ukimido-pavilion-7c8e85d2.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/ukimido-pavilion-7c8e85d2.webp",
+      "bytes": 97114,
+      "sha256": "7c8e85d2b2d6e879880d4d79b3463c8a38c3e083a7ba4c9e0bea518e2f5c0552",
+      "assetIndex": 21,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "奈良公园",
+      "file": "nara-park-b89a4602.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/nara-park-b89a4602.webp",
+      "bytes": 174748,
+      "sha256": "b89a460219f5eb618feec8e2cf45b2c551a891cfb5b371e67d795460f923bcad",
+      "assetIndex": 22,
+      "width": 780,
+      "height": 1297
+    },
+    {
+      "title": "靖国神社",
+      "file": "yasukuni-shrine-14dc7b96.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/yasukuni-shrine-14dc7b96.webp",
+      "bytes": 90342,
+      "sha256": "14dc7b9685d053728948e8f13ee4f23518f7bbc3ba0625866bcbc2446dd9d1d5",
+      "assetIndex": 23,
+      "width": 780,
+      "height": 520
+    },
+    {
+      "title": "秋叶原",
+      "file": "akihabara-c50c1356.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/akihabara-c50c1356.webp",
+      "bytes": 57470,
+      "sha256": "c50c1356c870f6e8bdd78290d4aa061e22f85677a3379b772a2f028a27a9a084",
+      "assetIndex": 24,
+      "width": 780,
+      "height": 438
+    },
+    {
+      "title": "新宿酒店订单",
+      "file": "shinjuku-hotel-booking-65743b94.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/shinjuku-hotel-booking-65743b94.webp",
+      "bytes": 621806,
+      "sha256": "65743b9463fdf298b611a8fddd5604d1debfa640d7b24a3106ebf851b63a7b27",
+      "assetIndex": 25,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "title": "京都酒店订单",
+      "file": "kyoto-hotel-booking-8ae310ac.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/kyoto-hotel-booking-8ae310ac.webp",
+      "bytes": 169058,
+      "sha256": "8ae310ac49ee7e66adcd6c9f5318b70f3a95be10e79da638cff6f9d1c29e2de1",
+      "assetIndex": 26,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "title": "东京酒店订单",
+      "file": "tokyo-hotel-booking-78dba8eb.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/tokyo-hotel-booking-78dba8eb.webp",
+      "bytes": 221758,
+      "sha256": "78dba8eb926e6439f0921509e3bcc571b30cb0bcc1117f2eb2345896a587a653",
+      "assetIndex": 27,
+      "width": 1179,
+      "height": 2556
+    },
+    {
+      "title": "夜巴订单",
+      "file": "kawaguchiko-kyoto-night-bus-booking-e0079a97.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/kawaguchiko-kyoto-night-bus-booking-e0079a97.webp",
+      "bytes": 102978,
+      "sha256": "e0079a97b09065d0dc421fe0774ccf4830201c930bae9716ed32a68739fd584c",
+      "assetIndex": 28,
+      "width": 1320,
+      "height": 2868
+    },
+    {
+      "title": "夜巴时刻表",
+      "file": "kawaguchiko-kyoto-night-bus-timetable-c0314e8d.webp",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/kawaguchiko-kyoto-night-bus-timetable-c0314e8d.webp",
+      "bytes": 45592,
+      "sha256": "c0314e8d44537da748d267d46d25614443ab207192d275709b7abe73c6d2f699",
+      "assetIndex": 29,
+      "width": 2418,
+      "height": 1562
+    },
+    {
+      "title": "东大寺大佛殿（新增）",
+      "file": "todaiji-daibutsuden-f79b70fb.jpg",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/todaiji-daibutsuden-f79b70fb.jpg",
+      "bytes": 471761,
+      "sha256": "f79b70fb237f32e3535937ee662f08047b605d6626e85126cbf4d665abe78838",
+      "assetIndex": 30,
+      "width": 2283,
+      "height": 1142
+    },
+    {
+      "title": "京都纸张纹理",
+      "file": "kyoto-paper-texture-c6629197.svg",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/kyoto-paper-texture-c6629197.svg",
+      "bytes": 261,
+      "sha256": "c66291971f8f0f876d539eb7136c90ee4dbc9603baa41f3e58f05d1958b1e6ef"
+    },
+    {
+      "title": "地图透明占位图",
+      "file": "map-transparent-pixel-3b7b8a4b.gif",
+      "url": "https://wenchanyuan-travel.bj.bcebos.com/map-transparent-pixel-3b7b8a4b.gif",
+      "bytes": 26,
+      "sha256": "3b7b8a4b411ddf8db9bacc2f3aabf406f8e4c0c087829b336ca331c40adfdff1"
+    }
+  ]
+}
