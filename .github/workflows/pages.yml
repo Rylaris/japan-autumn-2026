@@ -35,6 +35,23 @@ jobs:
           import { spawnSync } from 'node:child_process';
           const root = process.cwd();
           const html = readFileSync('index.html', 'utf8');
+          assert.ok(Buffer.byteLength(html) < 500_000, 'Keep index.html below 500 KB; upload images to BOS');
+          assert.ok(!html.includes('data:image/'), 'Use BOS image URLs instead of embedded images');
+          const manifest = JSON.parse(readFileSync('image-manifest.json', 'utf8'));
+          const base = 'https://wenchanyuan-travel.bj.bcebos.com/';
+          assert.equal(manifest.baseUrl, base, 'Keep the BOS HTTPS endpoint');
+          const dataMatch = html.match(/const DATA=([\s\S]*?);const MAP_POIS=/);
+          assert.ok(dataMatch, 'Missing travel data');
+          const data = JSON.parse(dataMatch[1]);
+          assert.ok(data.assets.length > 0, 'Missing travel images');
+          assert.equal(manifest.images.filter(image => Number.isInteger(image.assetIndex)).length, data.assets.length, 'Update the image manifest when adding photos');
+          for (const image of manifest.images) {
+            assert.match(image.file, /^[a-z0-9]+(?:-[a-z0-9]+)*-[a-f0-9]{8}\.(?:webp|jpg|png|svg|gif)$/, 'Use descriptive English image filenames with a content hash');
+            assert.equal(image.url, base + image.file, 'Image URL does not match its BOS filename');
+            assert.ok(image.file.includes(image.sha256.slice(0, 8)), 'Image filename hash is inconsistent');
+            assert.ok(html.includes(image.url), `Unused image in manifest: ${image.file}`);
+            if (Number.isInteger(image.assetIndex)) assert.equal(data.assets[image.assetIndex]?.src, image.url, 'Photo URL does not match the manifest');
+          }
           assert.match(html, /<!doctype\s+html\s*>/i, 'index.html needs an HTML doctype');
           assert.match(html, /<html\b/i, 'Missing HTML root');
           assert.match(html, /<title>\s*[^<]+<\/title>/i, 'Missing page title');
