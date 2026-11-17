@@ -1320,6 +1320,95 @@ body[data-city=nara]{
   [data-reveal]{opacity:1;transform:none}
   [data-city=nara] .nr-leaf{display:none}
 }
+/* ----- city portraits: an open chapter between the hero and the itinerary ----- */
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px 24px;margin-top:22px}
+.hero-story-link{font-size:13px;color:var(--mute);text-decoration:none;text-underline-offset:6px;border-bottom:1px solid var(--line);padding-block:8px;transition:color .3s,border-color .3s}
+.hero-story-link:hover{color:var(--accent);border-color:var(--accent)}
+[data-city=kyoto] .hero-actions{align-self:start;justify-self:start;margin-top:0}
+.city-story{padding-block:64px 80px;scroll-margin-top:calc(var(--top-h) + 24px)}
+.city-story .sec-head{margin-bottom:36px}
+.city-story .sec-head h2{line-height:1.45}
+.city-title-phrase{display:inline-block}
+.city-opening{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(28px,6vw,88px);padding-bottom:44px}
+.city-deck{max-width:15em;font:400 clamp(23px,2.5vw,32px)/1.7 var(--f-display);color:var(--accent);text-wrap:pretty}
+.city-facts{display:grid;gap:14px;margin:28px 0 0;padding:0}
+.city-facts div{border-left:1px solid var(--line);padding-left:14px}
+.city-facts dt{font-size:10px;color:var(--mute);letter-spacing:.16em;margin-bottom:2px}
+.city-facts dd{font-size:12px;line-height:1.7;margin:0}
+.city-context{font-size:15px;line-height:2.05;letter-spacing:.015em}
+.city-context p+p{margin-top:20px}
+.city-history{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.65fr);gap:clamp(28px,5vw,72px);padding-block:40px;border-block:1px solid var(--line)}
+.city-history-aside h3{font-size:24px;line-height:1.6;margin:15px 0}
+.city-history-aside>p{font-size:12.5px;color:var(--mute);line-height:1.9;max-width:19em}
+.city-eras{list-style:none;margin:0;padding:0;min-width:0}
+.city-era{display:grid;grid-template-columns:112px minmax(0,1fr);gap:26px;padding:0 0 30px;position:relative}
+.city-era:last-child{padding-bottom:0}
+.city-era:before{content:'';position:absolute;left:0;top:50px;bottom:6px;width:1px;background:var(--line)}
+.city-era-year{font:400 clamp(32px,3.6vw,46px)/1.15 var(--f-latin);color:var(--accent);letter-spacing:-.035em;font-variant-numeric:lining-nums}
+.city-era-year small{display:block;font:400 10px/1.7 var(--f-body);letter-spacing:.03em;color:var(--mute);margin-top:8px;max-width:10em}
+.city-era h4{font:500 21px/1.55 var(--f-display);text-wrap:pretty;margin:0 0 12px}
+.city-era p{font-size:14px;line-height:2;color:var(--mute)}
+.city-citations{display:inline-flex;gap:5px;margin-left:7px;font:400 10px/1.5 var(--f-mono);vertical-align:super;white-space:nowrap}
+.city-citations a{color:var(--accent);text-decoration:none;padding:2px}
+.city-citations a:hover{text-decoration:underline}
+.city-trail{margin-top:32px;padding:30px 32px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg)}
+.city-trail>p{font-size:14px;line-height:1.95;margin:14px 0 24px;max-width:65em}
+.city-stops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.city-stop{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding-top:15px;border-top:1px solid var(--line);min-width:0}
+.city-stop>small{font:400 10px/1.5 var(--f-mono);color:var(--accent);letter-spacing:.1em;margin-bottom:10px}
+.city-stop .place-name{font-size:15px;transition:color .3s}
+.city-stop>em{font:400 11px/1.7 var(--f-body);color:var(--mute);margin-top:8px}
+.city-stop:hover .place-name{color:var(--accent)}
+.city-reading{padding-top:26px}
+.city-reading-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px}
+.city-reading-head>a{color:var(--accent);text-decoration:none;padding-block:6px}
+.city-source-list{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.city-source-list li{min-width:0;border-bottom:1px solid var(--line);scroll-margin-top:calc(var(--top-h) + 100px)}
+.city-source-list a{display:flex;align-items:baseline;gap:10px;font-size:11px;color:var(--mute);line-height:1.8;padding-block:10px;text-decoration:none;overflow-wrap:anywhere}
+.city-source-list a>span{font:400 10px var(--f-mono);color:var(--accent);flex-shrink:0}
+.city-source-list a:hover{color:var(--accent)}
+.city-source-date{font-size:10px;color:var(--mute);margin-top:14px}
+[data-city=tokyo] .city-era-year{font-family:var(--f-mono);text-shadow:0 0 24px #22e3ff26}
+[data-city=tokyo] .city-history{border-top-color:#22e3ff33}
+[data-city=tokyo] .city-trail{background:linear-gradient(130deg,#0f1420,#0a0d15);clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+[data-city=kyoto] .city-history{border-top-color:var(--ink)}
+[data-city=kyoto] .city-era:before{background:repeating-linear-gradient(var(--line) 0 4px,transparent 4px 8px)}
+[data-city=kyoto] .city-trail{background:transparent;border:0;border-block:1px solid var(--line);padding-inline:0}
+[data-city=kyoto] .city-deck{letter-spacing:.07em}
+[data-city=nara] .city-trail{background:#f8f8ef;border:0;border-radius:32px;box-shadow:0 18px 40px -26px #2a3d2244}
+[data-city=nara] .city-era-year{font-style:italic}
+@media(max-width:900px){
+ .city-opening{grid-template-columns:1fr 1.25fr;gap:32px}
+ .city-history{grid-template-columns:1fr;gap:30px}
+ .city-history-aside{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:0 26px;align-items:center}
+ .city-history-aside .eyebrow{grid-column:1/-1}
+ .city-history-aside h3{margin:10px 0 0}
+ .city-history-aside>p{max-width:none;margin-top:10px}
+}
+@media(max-width:600px){
+ .city-story{padding-block:44px 48px}
+ .city-opening{grid-template-columns:1fr;gap:28px;padding-bottom:30px}
+ .city-deck{max-width:none;font-size:24px}
+ .city-facts{grid-template-columns:1fr 1fr;gap:14px 16px;margin-top:20px}
+ .city-facts div:last-child{grid-column:1/-1}
+ .city-context{font-size:14px;line-height:2}
+ .city-history{padding-block:28px;gap:26px}
+ .city-history-aside{display:block}
+ .city-history-aside h3{font-size:22px}
+ .city-era{grid-template-columns:1fr;gap:12px;padding-bottom:30px}
+ .city-era:before{display:none}
+ .city-era-year{display:flex;align-items:baseline;gap:14px;font-size:35px;border-top:1px solid var(--line);padding-top:16px}
+ .city-era-year small{margin:0;max-width:none}
+ .city-era h4{font-size:19px}
+ .city-era p{font-size:13.5px}
+ .city-trail{padding:25px 22px}
+ .city-stops{grid-template-columns:1fr;gap:18px}
+ .city-stop{padding-top:14px}
+ .city-stop>em{margin-top:5px}
+ .city-source-list{grid-template-columns:1fr}
+ .hero-actions{gap:10px 18px}
+}
+
 /* Place names share one registry across itinerary, map, photographs and guide cards. */
 .place-name{display:inline-flex;flex-direction:column;align-items:flex-start;vertical-align:middle;max-width:100%;line-height:1.5;gap:2px;text-align:start;letter-spacing:.02em}
 .place-main{font:inherit;color:inherit}
@@ -1377,6 +1466,347 @@ const EASE='cubic-bezier(.16,1,.3,1)',SWEEP='cubic-bezier(.77,0,.18,1)';
 const KANJI_NUM=['一','二','三','四','五','六','七','八','九'];
 const KANJI_DAY_TITLES=new Set(['東山紅葉，古寺晨光','嵐山緩行，庭院深秋','鹿鳴林間，古都告別']);
 
+/* City history copy and primary sources; edit each city independently here. */
+const CITY_STORIES={
+  "tokyo": {
+    "title": "在霓虹之前，先有江户。",
+    "subtitle": "江户 → 东京 · Edo → Tokyo",
+    "deck": "一座城市的记忆，也会藏在它重新开始的地方。",
+    "facts": [
+      [
+        "旧称",
+        "江户 · Edo"
+      ],
+      [
+        "读城线索",
+        "城濠、街道与重建"
+      ],
+      [
+        "此行相遇",
+        "新宿 · 皇居 · 上野 · 浅草"
+      ]
+    ],
+    "intro": [
+      "东京常常先以速度抵达我们：新宿站里不断汇合的人流、秋叶原向上叠起的招牌，还有隅田川对岸亮起的晴空塔。等脚步慢下来，另一座城便浮现了——城濠转弯的弧度、寺院前的参道，以及一条仍被旧地名牵引的街。",
+      "把这次旅程的东京分成两次相遇，恰好可以读到它的两种呼吸。第一夜在新宿进入当下，回程再从皇居、上野走到浅草，沿着政治、收藏与庶民信仰，向江户的深处走。古老与新生在这里相互穿插；一座看似年轻的门楼，也可能承接着比楼群更长的记忆。"
+    ],
+    "historyLead": "从幕府的城下町，到不断重写的现代都市。先记住四个转折，再把它们放回眼前的街道。",
+    "eras": [
+      {
+        "year": "1603",
+        "label": "江户幕府",
+        "title": "从一座城，长成全国往来的中心",
+        "text": "1603 年，德川家康在江户开设幕府。武家政权在此运转，商人、工匠与往来旅人也逐渐塑造出庞大的城市生活。今日看东京，可以同时想起两种尺度：城与政权的尺度，和参道、店铺、街坊的尺度。浅草的人声，是读懂后者的一把钥匙。",
+        "sources": [
+          0,
+          1
+        ]
+      },
+      {
+        "year": "1868",
+        "label": "名字与身份",
+        "title": "「东边的京都」，在旧城里展开新生活",
+        "text": "明治维新之际，江户改称东京；旧江户城成为皇居所在。权力的转换既改变了城市的名字，也改变了许多空间的用途。1872 年，后来发展为东京国立博物馆的博览会在汤岛圣堂举行。此行从皇居城濠走向上野展室，便能把近代国家如何安置权力、整理文化遗产的两条线连在一起。",
+        "sources": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "year": "1923",
+        "label": "震灾与战火 · 1945",
+        "title": "街道里的断裂，和重新生活的勇气",
+        "text": "1923 年关东大地震与 1945 年的空袭，先后给东京带来沉重创伤。震后道路与街区的重整、战后的复兴，又改变了城市的形态。因此读东京的历史，也要留意建筑上的重建年代：许多熟悉的城市面孔，是在失去之后重新立起的。浅草寺战后复兴的朱红，与新宿街区重新亮起的灯，都可以放在这段历史中理解。",
+        "sources": [
+          4,
+          5
+        ]
+      },
+      {
+        "year": "1964",
+        "label": "都市加速",
+        "title": "车站相连，新的中心不断生长",
+        "text": "1964 年，东京举办奥运会，东海道新干线开通。交通把更远的地方带入日常，也让东京与这次旅程里的古都重新发生联系。夜里回到新宿，看轨道、人流与高层建筑如何汇合，不妨把这幅景象理解为一座持续生长的城市：它的历史，也写在每一次出发和抵达之中。",
+        "sources": [
+          1
+        ]
+      }
+    ],
+    "lens": "这次可以先在新宿看「城市怎样聚人」，再到皇居看旧城的地形，最后把上野的器物与浅草的参道并读。同一天里，东京会从一个抽象的大都市，慢慢变成几种有来历的生活。",
+    "stops": [
+      {
+        "day": 0,
+        "placeId": "kabukicho",
+        "label": "歌舞伎町",
+        "hint": "重建之后的第一夜"
+      },
+      {
+        "day": 6,
+        "placeId": "kokyo-inui",
+        "label": "皇居乾通",
+        "hint": "沿城濠读江户的尺度"
+      },
+      {
+        "day": 7,
+        "placeId": "sensoji",
+        "label": "浅草寺",
+        "hint": "参道里延续的庶民生活"
+      }
+    ],
+    "sources": [
+      {
+        "title": "GO TOKYO｜江户的历史与文化",
+        "url": "https://www.gotokyo.org/jp/see-and-do/history/index.html"
+      },
+      {
+        "title": "东京都｜城市历史年表",
+        "url": "https://www.metro.tokyo.lg.jp/tosei/tokyoto/profile/gaiyo/nenpyo"
+      },
+      {
+        "title": "宫内厅｜从江户城到皇居",
+        "url": "https://www.kunaicho.go.jp/learn/institution/shisetsu/kokyo/index.html"
+      },
+      {
+        "title": "东京国立博物馆｜建馆与收藏",
+        "url": "https://www.tnm.jp/150th/en/about.html"
+      },
+      {
+        "title": "东京都都市整备局｜震灾与战后复兴",
+        "url": "https://www.toshiseibi.metro.tokyo.lg.jp/documents/d/toshiseibi/pdf_keikaku_chousa_singikai_pdf_tokyotoshizukuri_en_2_00"
+      },
+      {
+        "title": "浅草寺｜寺院沿革与战后复兴",
+        "url": "https://www.senso-ji.jp/about/"
+      }
+    ]
+  },
+  "kyoto": {
+    "title": "山水之间，都城仍在续写。",
+    "subtitle": "平安京 → 京都 · Heian-kyo → Kyoto",
+    "deck": "一千多年的古都，也靠一代代人重新发明日常。",
+    "facts": [
+      [
+        "都城起点",
+        "794 · 平安京"
+      ],
+      [
+        "读城线索",
+        "格子街道、町家与水"
+      ],
+      [
+        "此行相遇",
+        "东山 · 岚山 · 宇治"
+      ]
+    ],
+    "intro": [
+      "京都的方向感，常常来自山。东、北、西三面山岭环抱盆地，鸭川与桂川向南流去；古寺的屋顶、庭院的树影，与远处山线彼此照应。清晨从东山抬起头，或在岚山回望河岸，城市的轮廓先于一份地图被记住。",
+      "而山之间的京都，一直有人生活、经营、创造。宫廷的审美进入器物，寺院的门前长出街市，町家里延续着手艺，也不断迎来新的用途。读它的历史，既要看平安京的起点，也要看战乱之后是谁重新开门做生意，又是谁在失去都城地位后，为这座城寻找下一种可能。"
+    ],
+    "historyLead": "从朝廷的方格，到町众的街坊，再到近代水道。京都的绵长，来自一次次接续。",
+    "eras": [
+      {
+        "year": "794",
+        "label": "平安京",
+        "title": "一张方格，铺进山水之间",
+        "text": "794 年，桓武天皇迁都平安京。新都借鉴唐代长安的规划，以南北中轴和格子状街路组织宫城与城区。今天京都许多道路仍能让人感到这种整齐的底稿，但脚下的城市经历过多次增改。看一条直路，再看它怎样遇上山麓与河流，会更容易读懂人工秩序与自然地形之间的商量。",
+        "sources": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "year": "1467",
+        "label": "应仁之乱 · 至 1477",
+        "title": "把城市重新接起来的人，叫「町众」",
+        "text": "应仁之乱使京都遭受严重破坏，重建依靠的也包括商人、工匠组成的町众。他们经营生意、组织街坊，延续祭礼与地方自治。1500 年，因战乱中断的祇园祭由下京町众推动复兴。于是京都的文化史里，除了天皇与将军，也应给一条街共同守护的生活，留下一个位置。",
+        "sources": [
+          0,
+          2
+        ]
+      },
+      {
+        "year": "1591",
+        "label": "街区再编",
+        "title": "今日的古街，也曾是一次新的城市设计",
+        "text": "丰臣秀吉的改造为京都增加御土居、调整地块，并集中寺院，形成寺町一带。此后即使幕府设于江户，京都仍延续宫廷生活与商工传统。今天东山坡道旁的町家，又多保留江户末至大正时期的建筑层次。眼前的「古京都」因而有许多年龄；抬头看窗形、檐线和店屋的关系，能把它们一层层分辨出来。",
+        "sources": [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "year": "1890",
+        "label": "近代转身",
+        "title": "失去都城地位之后，引一湖水来",
+        "text": "1869 年皇室与朝廷东移，京都面对人口与产业衰退。1890 年完成的琵琶湖疏水，以及随后发展的水力发电，为城市带来新的动力。走到南禅寺一带，可以把水道与庭园放在一起看；再到宇治的任天堂博物馆，沿着旧工厂读另一段制造史。京都对美与创造的投入，也在这些新的材料和用途里延伸。",
+        "sources": [
+          4,
+          2,
+          5
+        ]
+      }
+    ],
+    "lens": "这三日，先在清水寺与二三年坂读「寺院怎样和街市相邻」，再到岚山看山水怎样进入庭院，最后去宇治看旧工厂怎样成为博物馆。古都的层次，会在脚步从一处移向另一处时，逐渐显出来。",
+    "stops": [
+      {
+        "day": 2,
+        "placeId": "ninen-sannen",
+        "label": "二三年坂",
+        "hint": "檐下的买卖与住居"
+      },
+      {
+        "day": 3,
+        "placeId": "arashiyama",
+        "label": "岚山",
+        "hint": "山水与庭园彼此借景"
+      },
+      {
+        "day": 4,
+        "placeId": "nintendo-museum",
+        "label": "任天堂博物馆",
+        "hint": "旧厂址里的创造记忆"
+      }
+    ],
+    "sources": [
+      {
+        "title": "京都市｜城市形成与历史变迁",
+        "url": "https://www.city.kyoto.lg.jp/sogo/page/0000035742.html"
+      },
+      {
+        "title": "京都府｜山川与盆地的地理",
+        "url": "https://www.pref.kyoto.jp/kyotodoboku/a_info.html"
+      },
+      {
+        "title": "京都市｜城市沿革与历史年表",
+        "url": "https://www.city.kyoto.lg.jp/sogo/page/0000015599.html"
+      },
+      {
+        "title": "京都市｜产宁坂传统建筑群保存计划",
+        "url": "https://www.city.kyoto.lg.jp/tokei/page/0000281761.html"
+      },
+      {
+        "title": "京都市上下水道局｜琵琶湖疏水的历史",
+        "url": "https://www.city.kyoto.lg.jp/suido/page/0000007472.html"
+      },
+      {
+        "title": "任天堂｜宇治小仓工厂沿革",
+        "url": "https://museum.nintendo.com/en/index.html"
+      }
+    ]
+  },
+  "nara": {
+    "title": "都城远去，林间仍有回声。",
+    "subtitle": "平城京 → 南都 · Heijo-kyo → Nanto",
+    "deck": "在鹿与树林之间，曾有一个向世界张开的都城。",
+    "facts": [
+      [
+        "都城起点",
+        "710 · 平城京"
+      ],
+      [
+        "读城线索",
+        "都城、寺社与森林"
+      ],
+      [
+        "此行相遇",
+        "飞火野 · 春日 · 东大寺"
+      ]
+    ],
+    "intro": [
+      "奈良的第一印象往往很轻：一头鹿走过草地，树叶落在石灯笼旁，通向社殿的路被林荫遮住一半。等走到东大寺抬头，木构建筑的体量忽然把时间拉远——这片安静的地方，曾经承接过建造一座国家都城的雄心。",
+      "奈良也有一种特别的开放。八世纪的平城京吸收来自中国等地的制度、技艺与艺术，留下今天仍能在佛像、建筑和器物中辨认的交流痕迹。此行只有一天，可以把注意力从「看了多少处」移向「它们为什么留在一起」：寺院、神社、森林与人，怎样在迁都以后继续相伴。"
+    ],
+    "historyLead": "都城的时间很短，地方的生命很长。从平城京出发，读到今天树荫下的城市。",
+    "eras": [
+      {
+        "year": "710",
+        "label": "平城京",
+        "title": "面向大陆的都城，落在奈良盆地",
+        "text": "710 年，朝廷迁入平城京。以格子街路、宽阔中轴和北部宫城组织空间的新都，借鉴了中国都城规划。它既是行政中心，也是大陆文化汇入的重要场所。古代宫城遗址与我们此行游览的东部寺社区，并非同一个位置；心里留住这幅更大的城市轮廓，再看大佛与古寺，尺度便会不同。",
+        "sources": [
+          0,
+          1
+        ]
+      },
+      {
+        "year": "752",
+        "label": "大佛开眼",
+        "title": "一尊大佛，也是一代人的共同愿望",
+        "text": "圣武天皇推动造立卢舍那大佛，寄望以佛教凝聚人心、安定国家。752 年，东大寺举行大佛开眼供养。站在佛殿前，不妨把巨大的形体理解为一种公共愿望：许多人的劳动、材料与技术，在这里汇合。佛教艺术也让远方的思想，以可以被看见的方式来到奈良。",
+        "sources": [
+          2,
+          1
+        ]
+      },
+      {
+        "year": "784",
+        "label": "迁都之后",
+        "title": "朝廷离开了，寺院与街坊留下来",
+        "text": "784 年迁都长冈京，794 年再迁平安京。东大寺、兴福寺、元兴寺等寺院仍留在旧都，人们围绕寺院的工作与往来逐渐形成门前聚落，后来发展出奈良町。奈良也经历过 1180 年的兵火与此后的复兴。如今看到的安静街坊，承载着迁移、损毁与重建留下的许多层次。",
+        "sources": [
+          0,
+          3
+        ]
+      },
+      {
+        "year": "1880",
+        "label": "公园与守护",
+        "title": "让寺社、树林和城市继续相邻",
+        "text": "奈良公园在 1880 年开设，后来不断扩展、整备；更早的春日山保护，则与神山信仰相连。1998 年列入世界遗产的「古都奈良的文化财」，把寺院、神社、宫城遗址与春日山原始林一同纳入。今天的景观因此既有古老信仰的延续，也有近代以来的照料。沿参道前行时，林间的留白也值得认真看。",
+        "sources": [
+          4,
+          1
+        ]
+      }
+    ],
+    "lens": "从飞火野的鹿寄走入春日大社，再到东大寺，短短一条线可以依次遇见草地、神域与佛教寺院。听一段鹿蹄落地的声音，再抬头看殿宇的尺度；这座城的温柔与庄重，就在两次观看之间相接。",
+    "stops": [
+      {
+        "day": 5,
+        "placeId": "nara-shikayose",
+        "label": "鹿寄（招鹿）",
+        "hint": "从草地与动物开始"
+      },
+      {
+        "day": 5,
+        "placeId": "kasuga-taisha",
+        "label": "春日大社",
+        "hint": "沿参道走向森林"
+      },
+      {
+        "day": 5,
+        "placeId": "todaiji",
+        "label": "东大寺大佛殿",
+        "hint": "在殿前感受古都尺度"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Web Japan｜平城京与迁都长冈、平安",
+        "url": "https://web-japan.org/atlas/historical/his12.html"
+      },
+      {
+        "title": "UNESCO｜古都奈良的文化财",
+        "url": "https://whc.unesco.org/en/list/870/"
+      },
+      {
+        "title": "东大寺｜大佛造立与开眼供养",
+        "url": "https://www.todaiji.or.jp/faq/"
+      },
+      {
+        "title": "奈良市文化财课｜从门前聚落到奈良町",
+        "url": "https://www.city.nara.lg.jp/site/bunkazai/2331.html"
+      },
+      {
+        "title": "奈良县｜奈良公园历史年表",
+        "url": "https://www.pref.nara.lg.jp/site/park/1001.html"
+      }
+    ]
+  }
+};
 const CITIES={
   tokyo:{key:'tokyo',idx:'01',name:'东京',jp:'東京',en:'TOKYO',kicker:'NEON / METROPOLIS',
     tagline:'霓虹之下，城市仍在生长。',lede:'抵达与归途都在这里：新宿的第一夜、富士山麓的一场落日，以及最后三天的银杏、博物馆与浅草灯火。',
@@ -1534,10 +1964,34 @@ function heroMarkup(c){
         <p class="hero-tag${c.key==='tokyo'?'':' kanji-title'}">${esc(c.tagline)}</p>
         <p class="hero-lede">${esc(c.lede)}</p>
         <dl class="hero-meta">${meta.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
-        <a class="hero-cta" href="#day" data-jump="day"><span>从 DAY ${dayNo(first)} 开始</span><i aria-hidden="true">↓</i></a>
+        <div class="hero-actions"><a class="hero-cta" href="#day" data-jump="day"><span>从 DAY ${dayNo(first)} 开始</span><i aria-hidden="true">↓</i></a><a class="hero-story-link" href="#city-story" data-jump="city-story">阅读${esc(c.name)}的城市故事 ↓</a></div>
       </div>
       ${heroFigure(c)}
     </div>${ticker}
+  </section>`;
+}
+
+/* ---------- city portraits: read in place, then return to the itinerary ---------- */
+function cityStorySection(c){
+  const story=CITY_STORIES[c.key];
+  const sourceId=index=>`city-source-${c.key}-${index+1}`;
+  const citations=indices=>`<span class="city-citations">${indices.map(index=>`<a href="#${sourceId(index)}" data-jump="${sourceId(index)}" aria-label="查看城市资料 ${index+1}">[${index+1}]</a>`).join('')}</span>`;
+  return `<section class="city-story sec wrap" id="city-story" aria-labelledby="city-story-title">
+    <header class="sec-head" data-reveal><span class="eyebrow">CITY PORTRAIT · 城市底稿</span><h2 id="city-story-title">${story.title.split('，').map((phrase,index,parts)=>`<span class="city-title-phrase">${esc(phrase)}${index<parts.length-1?'，':''}</span>`).join('')}</h2><p class="sec-aside">${esc(story.subtitle)}</p></header>
+    <div class="city-opening" data-reveal>
+      <div><p class="city-deck">${esc(story.deck)}</p><dl class="city-facts">${story.facts.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl></div>
+      <div class="city-context">${story.intro.map(text=>`<p>${esc(text)}</p>`).join('')}</div>
+    </div>
+    <div class="city-history">
+      <div class="city-history-aside" data-reveal><span class="eyebrow">THROUGH TIME · 城市的年轮</span><h3>四段时间，<br>读一座城。</h3><p>${esc(story.historyLead)}</p></div>
+      <ol class="city-eras">${story.eras.map(item=>`<li class="city-era" data-reveal><div class="city-era-year">${esc(item.year)}<small>${esc(item.label)}</small></div><div><h4>${esc(item.title)}</h4><p>${esc(item.text)}${citations(item.sources)}</p></div></li>`).join('')}</ol>
+    </div>
+    <div class="city-trail" data-reveal><span class="eyebrow">THIS JOURNEY · 在行程里重逢</span><p>${esc(story.lens)}</p>
+      <div class="city-stops">${story.stops.map(stop=>`<button class="city-stop" type="button" data-story-day="${stop.day}" aria-label="前往 DAY ${dayNo(stop.day)}，${esc(stop.label)}所在日程"><small>DAY ${dayNo(stop.day)} · ${esc(DATA.days[stop.day][0])} ↗</small>${placeLabel(placeById.get(stop.placeId),stop.label)}<em>${esc(stop.hint)}</em></button>`).join('')}</div>
+    </div>
+    <footer class="city-reading" data-reveal><div class="city-reading-head"><span>继续读${esc(c.name)} · 资料来源</span><a href="#day" data-jump="day">回到当前日程 ↓</a></div>
+      <ol class="city-source-list">${story.sources.map((source,index)=>`<li id="${sourceId(index)}"><a href="${esc(source.url)}" target="_blank" rel="noreferrer"><span>${pad(index+1)}</span>${esc(source.title)} ↗</a></li>`).join('')}</ol><p class="city-source-date">资料查阅：2026.11.17 · 现场观看线索结合本次行程撰写。</p>
+    </footer>
   </section>`;
 }
 
@@ -1558,7 +2012,7 @@ function renderCity(){
   document.title=`${c.name}｜秋の旅 2026`;
   renderSwitch();
   const nxt=nextCity();
-  $('#page').innerHTML=heroMarkup(c)+chaptersMarkup(c)+
+  $('#page').innerHTML=heroMarkup(c)+cityStorySection(c)+chaptersMarkup(c)+
     `<section class="day wrap" id="day" aria-live="polite"></section>`+
     mapSection(c)+notesSection(c)+staysSection(c)+(c.key==='tokyo'?bikeSection():'')+albumSection(c)+
     `<section class="nextcity" data-reveal><button data-city="${nxt.c}" data-day="${nxt.d}" data-next><span class="eyebrow">NEXT STOP · 下一站</span><b>${CITIES[nxt.c].jp}</b><em>${CITIES[nxt.c].en}</em><span class="nc-sub">DAY ${dayNo(nxt.d)} · ${day(nxt.d).date} · ${esc(day(nxt.d).title)}</span><i aria-hidden="true">→</i></button></section>`;
@@ -1850,6 +2304,7 @@ document.addEventListener('click',e=>{
   const t=e.target;
   if(t.closest('[data-close-ov]')){closeOverview();return}
   if(t.closest('#openOverview')){openOverview();return}
+  const storyDay=t.closest('[data-story-day]');if(storyDay){const target=Number(storyDay.dataset.storyDay);if(target===state.day)jumpTo('day');else go(state.city,target,{push:false,scrollToDay:true});return}
   const poi=t.closest('[data-poi]');if(poi){selectPoi(poi.dataset.poi);return}
   const ph=t.closest('[data-photo]');if(ph){e.preventDefault();openPhoto(ph);return}
   const jump=t.closest('[data-jump]');if(jump){e.preventDefault();jumpTo(jump.dataset.jump);return}

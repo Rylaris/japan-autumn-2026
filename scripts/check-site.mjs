@@ -34,6 +34,25 @@ for (const place of data.places) {
   assert.match(place.source, /^https:\/\//, 'Place name needs an official source');
 }
 for (const guide of guideData.guides) assert.ok(placeIds.has(guide.placeId), 'Guide needs a shared place name');
+const storiesMatch = html.match(/const CITY_STORIES=([\s\S]*?);\nconst CITIES=/);
+assert.ok(storiesMatch, 'Missing inline city stories');
+const stories = JSON.parse(storiesMatch[1]);
+assert.deepEqual(Object.keys(stories).sort(), ['kyoto', 'nara', 'tokyo'], 'Introduce all three cities');
+for (const [city, story] of Object.entries(stories)) {
+  assert.ok(story.title && story.deck && story.intro.length >= 2 && story.lens, 'Incomplete city introduction');
+  assert.equal(story.eras.length, 4, 'The city chapter presents four historical turning points');
+  for (const source of story.sources) assert.match(source.url, /^https:\/\//, 'City history needs HTTPS sources');
+  for (const era of story.eras) {
+    assert.ok(era.year && era.title && era.text && era.sources.length, 'Incomplete historical turning point');
+    for (const index of era.sources) assert.ok(Number.isInteger(index) && story.sources[index], 'Missing city history source');
+  }
+  for (const stop of story.stops) {
+    assert.ok(placeIds.has(stop.placeId), 'City story stop needs a shared place name');
+    assert.ok(Number.isInteger(stop.day) && data.days[stop.day], 'City story links to a missing day');
+    const area = data.days[stop.day][2];
+    assert.ok(city === area || city === 'tokyo' && area === 'fuji', 'City story links to another city');
+  }
+}
 const covered = guideData.guides.flatMap(guide => guide.assetIndices).sort((a,b) => a-b);
 const landscape = data.assets.flatMap((asset,index) => asset.group === '票据' ? [] : [index]);
 assert.deepEqual(covered, landscape, 'Every landscape photo needs exactly one guide card');
