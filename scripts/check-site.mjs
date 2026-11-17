@@ -14,6 +14,16 @@ const dataMatch = html.match(/const DATA=([\s\S]*?);const MAP_POIS=/);
 assert.ok(dataMatch, 'Missing travel data');
 const data = JSON.parse(dataMatch[1]);
 assert.ok(data.assets.length > 0, 'Missing travel images');
+for (const day of data.days) {
+  for (const index of [day[5], ...day[12]]) {
+    assert.ok(Number.isInteger(index) && data.assets[index], 'Day references a missing photo');
+  }
+}
+for (const asset of data.assets.filter(asset => asset.reference)) {
+  assert.ok(asset.credit && asset.source && asset.license, 'New reference photos need attribution and a license');
+  assert.match(asset.source, /^https:\/\//);
+  assert.match(asset.license, /^https:\/\//);
+}
 const guideData = JSON.parse(readFileSync('assets/guide-data.json', 'utf8'));
 const placeIds = new Set(data.places.map(place => place.id));
 assert.equal(placeIds.size, data.places.length, 'Duplicate place ID');

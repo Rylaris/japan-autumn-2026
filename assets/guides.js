@@ -36,7 +36,7 @@
   document.body.append(dialog);
   const el = id => document.getElementById(id);
   const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-  const supported = index => Number.isInteger(index) && (index >= 0 && index <= 24 || index === 30);
+  const supported = index => Number.isInteger(index) && Boolean(DATA.assets[index]) && DATA.assets[index].group !== '票据';
   let dataPromise = null;
   let data = null;
   let currentIndex = null;
@@ -118,7 +118,7 @@
       <section class="gc-observe"><h3>到这里，慢看两眼</h3><ul>${guide.observe.map(text => `<li>${escape(text)}</li>`).join('')}</ul></section>
       <details class="gc-sources" id="gcSources"><summary>这些故事，从哪里读来 <span aria-hidden="true">↗</span></summary>
       <ol>${sourceIds.map(id => `<li id="gc-source-${escape(id)}" tabindex="-1"><a href="${escape(data.sources[id].url)}" target="_blank" rel="noreferrer">${escape(data.sources[id].title)} ↗</a></li>`).join('')}</ol>
-      <p>资料查阅：${escape(data.researchedAt)}。现场观察提示为导览建议。</p></details><p class="gc-credit">${credit}</p>`;
+      <p>资料查阅：${escape(data.researchedAt)}。现场观察提示为导览建议。</p></details><p class="gc-credit">${credit}${DATA.assets[guide.assetIndices[0]].imageNote?` · ${escape(DATA.assets[guide.assetIndices[0]].imageNote)}`:''}</p>`;
     el('gcReading').removeAttribute('aria-busy');
     const groups = [...new Set(data.guides.map(item => item.region))];
     el('gcSelect').innerHTML = groups.map(group => `<optgroup label="${escape(group)}">${data.guides.filter(item => item.region === group).map(item => `<option value="${escape(item.id)}"${item === guide ? ' selected' : ''}>${escape(item.title)} · ${escape(item.en)}</option>`).join('')}</optgroup>`).join('');

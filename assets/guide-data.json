@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "researchedAt": "2026-11-17",
   "sources": {
     "station": {
@@ -317,6 +317,94 @@
     "todaiji-wiki": {
       "title": "维基百科（日文）｜东大寺",
       "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%A4%A7%E5%AF%BA"
+    },
+    "add-nintendo-history": {
+      "title": "任天堂博物馆｜宇治小仓工厂沿革",
+      "url": "https://museum.nintendo.com/en/index.html"
+    },
+    "add-nintendo-exhibits": {
+      "title": "任天堂博物馆｜展品、互动体验与花札工坊",
+      "url": "https://museum.nintendo.com/en/exhibition/index.html"
+    },
+    "add-nintendo-guide": {
+      "title": "任天堂博物馆｜参观指南",
+      "url": "https://museum.nintendo.com/en/guide/index.html"
+    },
+    "add-senso-history": {
+      "title": "浅草寺｜缘起与观音信仰",
+      "url": "https://www.senso-ji.jp/english/"
+    },
+    "add-senso-gate": {
+      "title": "浅草寺｜雷门的烧毁与重建",
+      "url": "https://www.senso-ji.jp/guide/guide01.html"
+    },
+    "add-senso-rebuild": {
+      "title": "浅草寺｜寺院沿革与战后复兴",
+      "url": "https://www.senso-ji.jp/about/"
+    },
+    "add-tnm-about": {
+      "title": "东京国立博物馆｜建馆、建筑与常设展",
+      "url": "https://www.tnm.jp/150th/en/about.html"
+    },
+    "add-tnm-honkan": {
+      "title": "东京国立博物馆｜1938 年新本馆的诞生",
+      "url": "https://www.tnm.jp/modules/r_free_page/index.php?id=153&lang=en"
+    },
+    "add-tnm-horyuji": {
+      "title": "国立文化财机构｜法隆寺宝物馆与献纳宝物",
+      "url": "https://cpcp.nich.go.jp/uploads/r_db/db_for_press/230116_PR_digitalHoryuji_38_pdf1.pdf"
+    },
+    "add-skytree-design": {
+      "title": "东京晴空塔｜设计理念与三角形到圆形的变化",
+      "url": "https://www.tokyo-skytree.jp/about/design/"
+    },
+    "add-skytree-height": {
+      "title": "东京晴空塔｜634 米与武藏的命名",
+      "url": "https://www.tokyo-skytree.jp/about/spec/"
+    },
+    "add-skytree-structure": {
+      "title": "东京晴空塔｜心柱制振与结构设计",
+      "url": "https://www.tokyo-skytree.jp/about/spec/structure/"
+    },
+    "add-inui-overview": {
+      "title": "宫内厅｜乾通与沿线树木概要",
+      "url": "https://www.kunaicho.go.jp/event/pdf/inui-r05haru-inuidori.pdf"
+    },
+    "add-inui-2026": {
+      "title": "宫内厅｜2026 年秋季乾通一般公开",
+      "url": "https://www.kunaicho.go.jp/visit/event/inuidori/inui-r08aki.html"
+    },
+    "add-kokyo-history": {
+      "title": "宫内厅｜从江户城到皇居",
+      "url": "https://www.kunaicho.go.jp/learn/institution/shisetsu/kokyo/index.html"
+    },
+    "add-sagano-history": {
+      "title": "嵯峨野观光铁道｜企业沿革与植树",
+      "url": "https://www.sagano-kanko.co.jp/corporate/"
+    },
+    "add-sagano-about": {
+      "title": "嵯峨野观光铁道｜旧线、车厢与沿途风景",
+      "url": "https://www.sagano-kanko.co.jp/en/about/"
+    },
+    "add-sannen-name": {
+      "title": "京都市历史解说牌｜产宁坂名称与葫芦传说",
+      "url": "https://ja.kyoto.travel/komafuda/show.php?id=2239&lang=en"
+    },
+    "add-sannen-plan": {
+      "title": "京都市｜产宁坂传统建筑群保存计划",
+      "url": "https://www.city.kyoto.lg.jp/tokei/page/0000281761.html"
+    },
+    "add-sannen-heritage": {
+      "title": "文化厅文化遗产在线｜京都市产宁坂",
+      "url": "https://online.bunka.go.jp/heritages/detail/125134"
+    },
+    "add-kabuki-history": {
+      "title": "歌舞伎町城镇管理机构｜战后复兴与剧场街",
+      "url": "https://www.d-kabukicho.com/kabukicho_renaissance/"
+    },
+    "add-kabuki-guide": {
+      "title": "东京官方旅游指南｜新宿站周边与歌舞伎町",
+      "url": "https://www.gotokyo.org/book/wp-content/uploads/2025/10/2510_sinjukueki_EN_low.pdf"
     }
   },
   "guides": [
@@ -579,6 +667,312 @@
           "alt": "秋叶原",
           "width": 780,
           "height": 438
+        }
+      ]
+    },
+    {
+      "id": "kabukicho",
+      "placeId": "kabukicho",
+      "city": "tokyo",
+      "region": "东京",
+      "title": "歌舞伎町",
+      "jp": "歌舞伎町",
+      "en": "Kabukicho",
+      "kicker": "一座未建成的歌舞伎剧场，替整片霓虹街区留下了名字",
+      "tagline": "在抵达东京的第一夜，从一块招牌读起，看战后复兴的愿望如何长成今日的新宿夜色。",
+      "intro": [
+        "刚从机场抵达新宿，歌舞伎町的灯光常常比时差更早让人清醒。广告牌一层叠着一层，街道在建筑之间被切成许多小段；抬头看，几乎每一个楼层都在用自己的颜色招呼路过的人。",
+        "这片街区名字里有「歌舞伎」，来历却指向一座没有如愿落成的剧场。读懂这件小事，第一晚的散步就有了另一层线索：今天熟悉的东京夜景，也曾是人们在废墟上为未来画下的草图。"
+      ],
+      "sections": [
+        {
+          "label": "名字先于剧场",
+          "title": "1948 年留下的，是一个重建娱乐街的愿望",
+          "text": "战后，町会长铃木喜兵卫等人推动民间主导的街区重建，希望把剧场、电影院与演艺设施集中起来，建设一片面向大众的娱乐街。计划中的歌舞伎剧场因当时的建设限制等原因未能实现，但 1948 年采用的「歌舞伎町」之名留了下来。下次从一番街入口走入时，可以把招牌里的三个字当作一份旧规划的标题。",
+          "sources": [
+            "add-kabuki-history"
+          ]
+        },
+        {
+          "label": "广场的记忆",
+          "title": "1950 年的博览会，为后来的剧场街留下基础",
+          "text": "1950 年，为纪念战后复兴举办的产业文化博览会在这里举行，围绕今天 Cine City 广场一带建起多种场馆。虽然博览会的经营结果未如预期，留下的设施却成为后来剧场与电影院街形成的基础。慢慢走过较开阔的广场，再回到密集的小街，会发现歌舞伎町的空间一直围绕着「人到哪里聚集、演出在哪里发生」这个问题生长。",
+          "sources": [
+            "add-kabuki-history"
+          ]
+        },
+        {
+          "label": "继续变化的街区",
+          "title": "从电影院到高层综合体，娱乐被垂直叠放",
+          "text": "东京官方旅游指南介绍的东急歌舞伎町塔，把酒店、电影院、剧场和现场音乐空间收进同一座高层建筑；广场又为户外活动留下地面层面的接口。对第一夜的散步来说，无需走遍每一条巷子：沿主要街道看招牌、在广场辨认建筑入口，便能观察一座娱乐街区怎样把不同时间、不同人群的活动叠到一起。",
+          "sources": [
+            "add-kabuki-guide"
+          ]
+        }
+      ],
+      "observe": [
+        "从一番街入口看一眼街道纵深，再看两侧广告牌的楼层分布，感受东京夜景如何向上生长。",
+        "走到 Cine City 广场，比较广场的开阔与周围街巷的密度，想象旧日博览会和剧场街聚集人群的方式。",
+        "第一晚按体力走一段主街即可；给一顿晚餐和回酒店的路也留出时间，让东京从容地开始。"
+      ],
+      "assetIndices": [
+        38
+      ],
+      "images": [
+        {
+          "assetIndex": 38,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/kabukicho-c72f98af.webp",
+          "alt": "歌舞伎町",
+          "width": 1280,
+          "height": 1141,
+          "credit": "Basile Morin · CC BY-SA 4.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:Kabukicho_red_gate_and_colorful_neon_street_signs_at_night,_Shinjuku,_Tokyo,_Japan.jpg",
+          "license": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "kokyo-inui",
+      "placeId": "kokyo-inui",
+      "city": "tokyo",
+      "region": "东京",
+      "title": "皇居乾通",
+      "jp": "皇居乾通り",
+      "en": "Kokyo Inui-dori",
+      "kicker": "约 750 米的季节性通道：沿着旧江户城的石垣，读一段东京深处的秋天",
+      "tagline": "城濠的一侧是层叠石墙，另一侧是树林；在短暂开放的日子，把城市的速度交还给脚步。",
+      "intro": [
+        "东京的中心有一段路，平日并不属于匆忙的通勤。到了春樱与秋叶的时节，人们从坂下门进入，经过宫内厅庁舍前，再沿乾通走向乾门。短短一段步行，把车站和办公楼的声音渐渐留在城濠之外。",
+        "这条路的风景来自两边：本丸一侧的石垣与濠水，把江户城的尺度留到今天；吹上御苑一侧的树木，则让季节按自己的节奏发生。来到这里，不必急着为每一片红叶找一个最好的机位，先看看树与城墙为什么恰好站在彼此身旁。"
+      ],
+      "sections": [
+        {
+          "label": "城与宫",
+          "title": "1868 年之后，江户城有了新的身份",
+          "text": "德川幕府的居城在 1868 年成为皇居；后来经历「宫城」的称呼，1948 年又正式使用「皇居」之名。沿路看到的石垣与水面，因此属于一座不断改变用途的城市核心。把视线放低一些，看石块的体积、墙体的倾斜和城濠的宽度，会比只看远处建筑更直观地感到：今天安静的园林，仍在借用旧城的地形。",
+          "sources": [
+            "add-kokyo-history"
+          ]
+        },
+        {
+          "label": "并木的层次",
+          "title": "樱、枫、松混植，秋色因此有了背景",
+          "text": "宫内厅对乾通的介绍，将它描述为乾濠与莲池濠沿线的道路，樱、枫、松及其他树木混植，背景分别是本丸侧的石垣与濠，以及吹上御苑侧的树林。常绿树让红叶显得更亮，水面又把颜色拉出另一层深浅。现场可以挑一处不妨碍通行的位置，在同一画面里同时寻找叶片、树干、石墙和倒影，体会这段路的丰富并不只来自一种红色。",
+          "sources": [
+            "add-inui-overview"
+          ]
+        },
+        {
+          "label": "短暂打开的门",
+          "title": "从 2014 年的纪念开放，到一年两次的季节相逢",
+          "text": "乾通一般公开始于 2014 年为纪念当时天皇八十寿辰而举办的春、秋开放，随后逐渐成为赏樱与赏枫时节的活动。2026 年秋季安排为 11 月 28 日至 12 月 6 日，9:00–15:00 入场、15:30 前退出，路线由坂下门入、乾门出，约 750 米。这与日常皇居参观、东御苑游览各有安排；出发前再查看当天公告，给入门检查和步行留出余量。",
+          "sources": [
+            "add-inui-2026"
+          ]
+        }
+      ],
+      "observe": [
+        "经过濠边时，比较城墙的硬直线条与树冠的柔软边缘；东京的古老地形在这里特别容易读出来。",
+        "沿途留意常绿松树如何衬出樱、枫的季节色彩，照片中的具体叶色只作参考，以现场物候为准。",
+        "从坂下门进入，顺着现场引导前往乾门；不要从乾门或东御苑寻找反向入口。"
+      ],
+      "assetIndices": [
+        35
+      ],
+      "images": [
+        {
+          "assetIndex": 35,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/imperial-palace-inui-street-286362ff.webp",
+          "alt": "皇居乾通（春季实景参考）",
+          "width": 1280,
+          "height": 960,
+          "credit": "Indiana jo · CC BY-SA 4.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:%E7%9A%87%E5%B1%85%E4%B9%BE%E9%80%9A%E3%82%8A_%E5%AF%8C%E5%A3%AB%E8%A6%8B%E5%A4%9A%E8%81%9E.jpg",
+          "license": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "tnm",
+      "placeId": "tnm",
+      "city": "tokyo",
+      "region": "东京",
+      "title": "东京国立博物馆",
+      "jp": "東京国立博物館",
+      "en": "Tokyo National Museum",
+      "kicker": "上野树林里的时光接力：从汤岛圣堂的博览会，到帝冠式屋顶下的日本美术史",
+      "tagline": "把寺院里匆匆掠过的佛像、漆器与纹样，带到一间安静的展室里重新认识。",
+      "intro": [
+        "走过上野公园，东京国立博物馆的本馆在树后展开：横向铺陈的立面、厚重的墙体，上方却压着一片熟悉的日本式屋顶。还没有进展厅，建筑已经提出了一个问题——一个走向现代的国家，会用什么方式为自己的过去建造居所？",
+        "这次旅程先经过京都与奈良，再来到上野，顺序恰好很美。古寺里隔着庭院望见的佛像、门扉上的金具、屋檐下的装饰，在博物馆里获得了更近的观看距离。那些在路上来不及问出的疑惑，可以在这里一件件拾起来。"
+      ],
+      "sections": [
+        {
+          "label": "博物馆的起点",
+          "title": "1872 年，一场博览会打开了收藏的门",
+          "text": "东京国立博物馆的起点，是 1872 年在汤岛圣堂举办的博览会。今天它收藏、研究并展示日本与亚洲其他地区的美术、考古及历史资料。参观时可以先沿本馆二层的日本美术通史建立时间感，再到一层选择佛教雕刻、漆工等专题细看。这里的展品会为保存需要而轮换，因此比起追逐一份固定的名品清单，更适合从当天实际相遇的器物出发。",
+          "sources": [
+            "add-tnm-about"
+          ]
+        },
+        {
+          "label": "建筑也是展品",
+          "title": "1938 年的本馆：钢筋混凝土穿上一顶传统屋冠",
+          "text": "初代本馆在 1923 年关东大地震中严重受损，今天的本馆由渡边仁设计，1938 年开放，采用常被称为「帝冠样式」的设计语言。站在正门前，把视线从屋顶降到整齐的窗列，能读出两套不同的秩序：传统屋顶强调向外舒展的轮廓，现代馆舍则为大量展室与公共流线提供骨架。走进门厅之后再回望外立面，这座建筑本身就是理解近代日本的一件大型展品。",
+          "sources": [
+            "add-tnm-about",
+            "add-tnm-honkan"
+          ]
+        },
+        {
+          "label": "奈良的回声",
+          "title": "法隆寺宝物馆：让古都记忆在东京继续",
+          "text": "园内的法隆寺宝物馆，收藏并展示 1878 年奈良法隆寺献给皇室的三百余件宝物。现馆由谷口吉生设计，1999 年改建开放，水面与简洁的建筑线条把观看的速度轻轻放慢。若在奈良还未看够古代佛教艺术，可以把这里作为一次延伸；至于具体展出哪些作品，仍应看当天展览。跨过庭院换一栋馆舍，也像把同一段历史翻到了另一页。",
+          "sources": [
+            "add-tnm-horyuji"
+          ]
+        }
+      ],
+      "observe": [
+        "进馆前比较屋顶曲线与下方窗列：先把本馆当成一件 1938 年完成的作品来读。",
+        "在本馆挑一件和京都、奈良所见相呼应的器物，仔细看年代、材质和原用途，让展签回应旅途中真实见过的东西。",
+        "预留一点在馆舍之间行走的时间；若法隆寺宝物馆当日开放，从水面、门厅到展室，留意光线与观看距离的变化。"
+      ],
+      "assetIndices": [
+        33
+      ],
+      "images": [
+        {
+          "assetIndex": 33,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/tokyo-national-museum-bd1d3164.webp",
+          "alt": "东京国立博物馆",
+          "width": 1280,
+          "height": 849,
+          "credit": "Wiiii · CC BY-SA 3.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:Tokyo_National_Museum,_Honkan_2010.jpg",
+          "license": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ]
+    },
+    {
+      "id": "sensoji",
+      "placeId": "sensoji",
+      "city": "tokyo",
+      "region": "东京",
+      "title": "浅草寺",
+      "jp": "浅草寺",
+      "en": "Senso-ji",
+      "kicker": "一尊从河里捞起、却从不示人的观音：读懂雷门之后的江户众生",
+      "tagline": "从隅田川的一张渔网，到战后重新亮起的朱红门楼，浅草把信仰安放在人来人往之中。",
+      "intro": [
+        "走近浅草寺，最先迎接人的常常是雷门下的相机、仲见世的点心香气，以及朝本堂缓缓移动的人流。这里的庄严并不把市井隔在门外；参拜、买卖、闲逛，沿同一条道路发生，热闹本身也成了浅草的声音。",
+        "但这条热闹轴线的起点，却是一段很安静的传说：公元 628 年，两位渔民兄弟在隅田川中发现一尊观音像。寺院把这件事视作开创的缘起，而此后被无数人前来礼拜的本尊，恰恰是一尊不向公众展示的「秘佛」。"
+      ],
+      "sections": [
+        {
+          "label": "不可见的中心",
+          "title": "645 年封藏的观音，如何聚起一座城",
+          "text": "据寺院记载，胜海上人于 645 年在此建立观音堂，并依梦中启示将本尊秘藏，此后不再公开。到了江户时代，德川家康将浅草寺定为幕府祈愿之所，庶民的观音信仰也日益兴盛。今天沿参道走向本堂，眼前未必出现期待中的大佛像；不妨留意这份「看不见」：让人们一次次回来的，是持续的祈愿，以及围绕祈愿长出的城市生活。",
+          "sources": [
+            "add-senso-history"
+          ]
+        },
+        {
+          "label": "雷门身世",
+          "title": "一座缺席 95 年的门，与松下幸之助的谢意",
+          "text": "雷门在 1865 年的大火中焚毁，直到 1960 年才由松下幸之助捐资重建，中间整整相隔 95 年。寺方记述将这次捐赠与他的病愈谢愿联系起来。门两侧的风神、雷神像也有一段修补的生命：大火后只保住头部，后来补做身体，再经修复彩绘。我们眼前那幅熟悉得仿佛从未改变的东京门面，其实由多次灾难、修补和民间的心意共同完成。",
+          "sources": [
+            "add-senso-gate"
+          ]
+        },
+        {
+          "label": "朱红再起",
+          "title": "1958 年的新本堂，承接一条没有中断的参道",
+          "text": "今天的本堂于 1958 年落成，宝藏门、五重塔也在战后陆续重建。辨认这些年份，再看建筑的朱红与屋檐，会发现浅草寺的古老更多存在于持续的使用之中：建筑可以重生，前来参拜的人仍把相似的愿望带到这里。走到常香炉附近，观察香烟如何在人群间散开，再转身望向参道；寺院与街区相互照亮的关系，在这个视角里尤其清楚。",
+          "sources": [
+            "add-senso-rebuild"
+          ]
+        }
+      ],
+      "observe": [
+        "从雷门外侧辨认风神与雷神，穿门之后回头看背面的龙神像；同一座门，两面有不同的守护者。",
+        "到本堂前，把注意力从「寻找本尊」转向参拜者的动作与建筑轴线，感受秘佛信仰留下的空间中心。",
+        "傍晚再看朱红门楼与仲见世屋顶的层次；商铺营业与堂内参拜时间各有安排，夜色中的外观也值得慢慢看。"
+      ],
+      "assetIndices": [
+        32
+      ],
+      "images": [
+        {
+          "assetIndex": 32,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/sensoji-temple-61cc227b.webp",
+          "alt": "浅草寺",
+          "width": 1280,
+          "height": 853,
+          "credit": "Raita Futo from Tokyo, Japan · CC BY 2.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:Lighted-up_Sensoji_Temple_(47410704212).jpg",
+          "license": "https://creativecommons.org/licenses/by/2.0"
+        }
+      ]
+    },
+    {
+      "id": "skytree",
+      "placeId": "skytree",
+      "city": "tokyo",
+      "region": "东京",
+      "title": "晴空塔",
+      "jp": "東京スカイツリー",
+      "en": "Tokyo Skytree",
+      "kicker": "634 米的「武藏」与塔心的一根柱：在现代天际线里寻找古典建筑的身影",
+      "tagline": "从浅草望向隅田川对岸，看一座钢铁之塔怎样把旧地名、柔和曲线与现代工程接在一起。",
+      "intro": [
+        "离开浅草寺向河边走，晴空塔会一次次从屋顶与桥梁之间露出来。它太高了，似乎总在视野里；也正因为如此，我们容易把它看成一个方向标，忘了问它为何长成这个样子。",
+        "先把目光从塔尖移到脚下，再慢慢向上：塔体的轮廓并非一根笔直的圆柱。它的几何形状随着高度改变，带着传统建筑里舒展、收拢的曲线；而 634 米这个精确的数字，也把东京重新接回了旧时的武藏国。"
+      ],
+      "sections": [
+        {
+          "label": "数字里的地理",
+          "title": "六、三、四，为什么能读出「武藏」",
+          "text": "官方说明中，634 可以借日语数字读音联想为「むさし（Musashi，武藏）」。这片地区过去属于武藏国，旧国范围涉及今天的东京、埼玉与神奈川的部分区域。高度于是同时有了工程尺度和地方记忆：登塔时向远处望去，眼前那些无边铺开的街区，也可以被想象成一个更早的地理名称。",
+          "sources": [
+            "add-skytree-height"
+          ]
+        },
+        {
+          "label": "塔身的表情",
+          "title": "从三角形到圆形，曲线里藏着「反」与「起」",
+          "text": "晴空塔的基部为三角形，向上逐渐过渡为圆形；设计又借用了日本传统建筑中的「反（sori）」与「起（mukuri）」曲线意象，使塔体从不同方向看去呈现不一样的轮廓。沿河步行时，不妨在两处相隔稍远的位置各停一下，比较塔身哪一侧显得挺直、哪一侧显得柔和。比起只在正面留下一张全景，这样的观察更接近它的设计用意。",
+          "sources": [
+            "add-skytree-design"
+          ]
+        },
+        {
+          "label": "看不见的结构",
+          "title": "向五重塔致意的现代「心柱」",
+          "text": "塔体中央有一根钢筋混凝土圆筒，与外围钢结构采取分离和连接的工程安排，以不同步的振动帮助减轻摇晃。官方将它称为「心柱制振」，向传统五重塔中的心柱致意；其工作原理采用现代的质量附加制振技术。白天在浅草看到五重塔，晚上再望向晴空塔，可以把两者放进同一个关于「如何向天空站稳」的提问里，感受古典形式怎样继续启发现代工程。",
+          "sources": [
+            "add-skytree-structure"
+          ]
+        }
+      ],
+      "observe": [
+        "在浅草一侧与押上一侧分别看塔，比较同一座建筑如何因视角变化而改变轮廓。",
+        "若天气适合登塔，先寻找隅田川与刚走过的浅草街区，再把视线推远，让一天的路线在脚下接起来。",
+        "不登塔时也可沿河观看夜间轮廓；留意灯光如何强调结构线条，实际配色与点灯安排以当天为准。"
+      ],
+      "assetIndices": [
+        34
+      ],
+      "images": [
+        {
+          "assetIndex": 34,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/tokyo-skytree-3973e539.webp",
+          "alt": "晴空塔",
+          "width": 1280,
+          "height": 1024,
+          "credit": "Basile Morin · CC BY-SA 4.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:Asahi_Breweries_headquarters_building_with_the_Asahi_Flame_and_Skytree_at_blue_hour_with_full_moon,_Sumida-ku,_Tokyo,_Japan.jpg",
+          "license": "https://creativecommons.org/licenses/by-sa/4.0"
         }
       ]
     },
@@ -855,6 +1249,68 @@
           "alt": "清水寺",
           "width": 780,
           "height": 480
+        }
+      ]
+    },
+    {
+      "id": "ninen-sannen",
+      "placeId": "ninen-sannen",
+      "city": "kyoto",
+      "region": "京都 · 东山",
+      "title": "二三年坂",
+      "jp": "二寧坂・産寧坂",
+      "en": "Ninenzaka · Sannenzaka",
+      "kicker": "石阶、虫笼窗与一只葫芦：把二三年坂从明信片里重新读成生活的街道",
+      "tagline": "从清水寺向山下走，看坡道怎样把祈愿、买卖与几代人的住居接成一片东山。",
+      "intro": [
+        "从清水寺往下走，视线会被一连串转折牵着走：石阶尽头是一面店帘，屋檐下面又露出下一段坡道。二年坂与三年坂适合慢行，除了阶梯本身，也因为每转一次弯，街道便重新安排一次你和建筑的距离。",
+        "这些看上去连成一体的「古京都」，其实有不同年代。江户末期、明治、大正的町家与寺社相互依靠，店铺占据临街的一层，生活向屋内延伸。走在这里，最值得带走的也许不是一张空无一人的街景，而是屋檐和石阶怎样让热闹有了尺度。"
+      ],
+      "sections": [
+        {
+          "label": "地名的分岔",
+          "title": "「三年」与「产宁」：一条坡道里的几种记忆",
+          "text": "京都市的解说牌列出三年坂、产宁坂、再念坂等不同写法：有旧书把「三年」与大同三年、即 808 年的开道联系起来；「产宁」则关联清水寺一带的安产祈愿；「再念」又让人想到参拜之后下坡时再次祈念。这些是地名流传中的不同解释，适合并置阅读。顺着石阶走时，能感觉同一条日常道路如何容纳不同人的心愿。",
+          "sources": [
+            "add-sannen-name"
+          ]
+        },
+        {
+          "label": "街道的年轮",
+          "title": "看二层窗口，辨认町家留下的时代",
+          "text": "保存计划将这片街区的传统建筑分成虫笼造町家、明治时期的本二层町家、大正时期的变形町家及数寄屋风建筑等类型。文化厅资料也指出，产宁坂到二年坂附近可见带虫笼窗、底层作店铺的町家，而往高台寺方向又有大正以后不同风格的住居。与其把每座房子都当作同一个遥远时代，不如抬头比较二层的高度、窗形与檐线；街道会变得更具体。",
+          "sources": [
+            "add-sannen-plan",
+            "add-sannen-heritage"
+          ]
+        },
+        {
+          "label": "民间小记",
+          "title": "跌倒的传说，与替人收回魂魄的葫芦",
+          "text": "京都市解说牌记载，早在十七世纪的游览书中，就流传着「在三年坂跌倒会折寿」一类说法；当地还曾有用葫芦收回跌倒时散失魂魄的民间禳解，因此坡旁一度聚有售卖葫芦的店。这是一则民俗传说，不是关于寿命的事实。把它放回石阶的陡缓与往来的人群中听，会读到古人怎样用带一点幽默的故事，提醒旅人放慢脚步。",
+          "sources": [
+            "add-sannen-name"
+          ]
+        }
+      ],
+      "observe": [
+        "在石阶的转折处回头，比较屋顶、檐线与路面高差怎样逐层叠在一起；拍照时给行人留出通路。",
+        "挑两座二层窗形不同的町家观察，寻找虫笼窗与较高二层立面之间的区别。",
+        "把参拜与逛街连着走：留意一层店铺、帘幕与住宅入口的关系，街区的生活感就藏在这些边界里。"
+      ],
+      "assetIndices": [
+        37
+      ],
+      "images": [
+        {
+          "assetIndex": 37,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/ninenzaka-sannenzaka-c4b4ee72.webp",
+          "alt": "二三年坂",
+          "width": 1280,
+          "height": 853,
+          "credit": "Andrea Schaffer from Sydney, Australia · CC BY 2.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:Sannenzaka_street,_Kyoto_(3811257874).jpg",
+          "license": "https://creativecommons.org/licenses/by/2.0"
         }
       ]
     },
@@ -1223,6 +1679,69 @@
       ]
     },
     {
+      "id": "sagano-train",
+      "placeId": "sagano-train",
+      "city": "kyoto",
+      "region": "京都 · 岚山",
+      "title": "岚山小火车",
+      "jp": "嵯峨野トロッコ列車",
+      "en": "Sagano Romantic Train",
+      "kicker": "一段旧铁路的第二次出发：把保津峡的二十五分钟，留给窗外的山与河",
+      "tagline": "当速度放慢，桥、隧道与转弯便不再只是通过的地方，而成为风景展开的方式。",
+      "intro": [
+        "列车从嵯峨一侧慢慢离开，住宅与树梢逐渐退到身后，河谷开始占据车窗。隧道把光短暂收起，再在出口处一下子放开；车厢里的人随之抬起头，看见保津川贴着山脚转弯。",
+        "岚山小火车的浪漫，和这段线路的旧身份有关。今天我们专程来看的峡谷铁路，曾是需要被更高效线路取代的旧线；它后来重新出发，让原本服务于运输的弯道、桥梁和隧道，成为适合慢慢观看的理由。"
+      ],
+      "sections": [
+        {
+          "label": "旧线再生",
+          "title": "1991 年，九个人起步的观光铁路",
+          "text": "为利用 JR 山阴本线改线后留下的轨道，嵯峨野观光铁道公司于 1990 年成立，起初包括社长在内仅有九名员工；1991 年 4 月 27 日开始营业。现在的营业区间连接小火车嵯峨与小火车龟冈，全长 7.3 公里。看懂这个来历，再回看紧贴河谷的线路，旧交通设施便有了新的意义：它留下来的价值，恰恰是能够亲近山水的路径。",
+          "sources": [
+            "add-sagano-history",
+            "add-sagano-about"
+          ]
+        },
+        {
+          "label": "被照料的风景",
+          "title": "窗外的春樱与秋枫，也有人的手笔",
+          "text": "公司沿革记载，线路复兴时在当地协助下沿线种植了千余株樱与枫。于是今日车窗中的四季，既有峡谷原有的地形，也有多年照料的痕迹。经过一片颜色格外密集的坡面时，可以想想这些树从幼苗长到车窗高度的时间；一次约二十五分钟的乘车，轻轻穿过了几十年慢慢形成的景观。",
+          "sources": [
+            "add-sagano-history",
+            "add-sagano-about"
+          ]
+        },
+        {
+          "label": "车窗语法",
+          "title": "木椅、灯泡与隧道：让耳朵也参与旅行",
+          "text": "柴油机车牵引的车厢采用怀旧色彩，内部有木椅与裸露灯泡，官方也以装饰艺术风格介绍它的空间。乘坐时不妨有一段时间收起手机，听轮轨声音在隧道里改变，再听它回到开阔河谷。如果选择开放式车厢，还应按当日天气准备衣物；车厢、座位与运转安排以实际车票及官方信息为准。",
+          "sources": [
+            "add-sagano-about"
+          ]
+        }
+      ],
+      "observe": [
+        "列车过弯时，从自己的车窗看向前后车厢，感受线路如何顺着山体和河流改变方向。",
+        "观察明亮河谷与幽暗隧道交替出现的节奏，让一次观看同时包含声音、光线与风。",
+        "出发前分清小火车车站与 JR 车站，按票面起终点安排接驳；把乘车当成一天中的一段慢游，给两端步行也留出时间。"
+      ],
+      "assetIndices": [
+        36
+      ],
+      "images": [
+        {
+          "assetIndex": 36,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/sagano-romantic-train-53390ade.webp",
+          "alt": "岚山小火车",
+          "width": 1280,
+          "height": 767,
+          "credit": "Streetdeck · CC BY-SA 4.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:Sagano_Romantic_Train.jpg",
+          "license": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
       "id": "jojakkoji",
       "assetIndices": [
         16
@@ -1372,6 +1891,68 @@
           "alt": "宝厳院",
           "width": 780,
           "height": 520
+        }
+      ]
+    },
+    {
+      "id": "nintendo-museum",
+      "placeId": "nintendo-museum",
+      "city": "kyoto",
+      "region": "京都 · 宇治",
+      "title": "任天堂博物馆",
+      "jp": "ニンテンドーミュージアム",
+      "en": "Nintendo Museum",
+      "kicker": "从花札到手柄：一座旧工厂如何把几代人的游戏记忆重新摆在同一张桌上",
+      "tagline": "在宇治的居民街区，沿着纸牌、玩具与控制器，寻找「好玩」这件事不断变化的形状。",
+      "intro": [
+        "在宇治小仓，熟悉的红色 Nintendo 标志从一片安静的街区里浮现。来这里之前，我们也许记得马里奥的一次跳跃、掌机开机时的一段声音，却很少想过：这些陪我们度过漫长下午的东西，曾在哪里被制造、检验，又怎样被送到世界各地？",
+        "这座博物馆把答案留在了原地。它由任天堂宇治小仓工厂改建，2024 年开放；展柜里从花札、玩具一路排到电子游戏产品，像把不同年代的客厅并排打开。走近一只旧手柄时，也可以暂时放下型号和年份，想一想：上一次握住它，你和谁坐在一起。"
+      ],
+      "sections": [
+        {
+          "label": "旧厂新生",
+          "title": "1969 年的工厂，怎样成为记忆的收件地址",
+          "text": "宇治小仓工厂建于 1969 年，起初主要生产玩具。随着任天堂的业务变化，它先后承担仓储、产品检查、纸牌制造与客户服务等工作，直到这些职能陆续迁出，旧址再被赋予博物馆的新用途。今天在这里回看任天堂的产品史，格外有一种空间上的回声：我们作为玩家接触的是一件完成品，而这块土地记得它们成为完成品之前的工序。",
+          "sources": [
+            "add-nintendo-history"
+          ]
+        },
+        {
+          "label": "展柜之间",
+          "title": "把不同地区的包装放在一起，看见另一种游戏史",
+          "text": "展览楼 1 的二层把历代产品集中陈列，官方刻意留下相对克制的文字说明，鼓励观众凭自己的经验建立联系。可以试着先看包装的色彩、按键的位置、机器的大小，再看它们属于哪一代。相似的游玩愿望，怎样随着材料、显示方式和生活场景而改变？在一排排看似熟悉的盒子之间，寻找自己没有见过的版本，往往比按顺序认出每台机器更有趣。",
+          "sources": [
+            "add-nintendo-exhibits"
+          ]
+        },
+        {
+          "label": "把手伸进去",
+          "title": "巨型手柄与四张花札：让身体重新学会玩耍",
+          "text": "一层的互动体验用现代技术重新演绎旧产品，其中巨型控制器需要两个人合作，原本由一双手完成的动作，忽然变成需要说话、等待和配合的小小练习。另有预约并单独收费的花札工坊：从十二个月的图样中选一组，给四张牌着色、折叠、粘合。若时间允许，让一次参观停在手工的触感里，会更容易理解这条从纸牌延伸到屏幕的线。互动体验与工坊的具体安排，以当天官方说明为准。",
+          "sources": [
+            "add-nintendo-exhibits",
+            "add-nintendo-guide"
+          ]
+        }
+      ],
+      "observe": [
+        "在二层选一组你熟悉的产品，比较旁边陌生版本的包装和控制方式；用一个小细节，把展览和自己的记忆接起来。",
+        "若体验巨型手柄，先和同行者分配动作，再留意「操作一个按钮」为何突然需要两个人交流。",
+        "回到庭院再看一次旧厂外墙与博物馆标志；这次旅途中，京都除了古寺，也有一段仍在继续的制造与娱乐史。"
+      ],
+      "assetIndices": [
+        31
+      ],
+      "images": [
+        {
+          "assetIndex": 31,
+          "url": "https://wenchanyuan-travel.bj.bcebos.com/nintendo-museum-9036823c.webp",
+          "alt": "任天堂博物馆",
+          "width": 1280,
+          "height": 760,
+          "credit": "Nagomijirap · CC BY-SA 4.0 · 已缩放并转为 WebP",
+          "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Museum_Entrance.jpg",
+          "license": "https://creativecommons.org/licenses/by-sa/4.0"
         }
       ]
     },
