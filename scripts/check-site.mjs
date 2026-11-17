@@ -34,7 +34,8 @@ for (const place of data.places) {
   assert.match(place.source, /^https:\/\//, 'Place name needs an official source');
 }
 for (const guide of guideData.guides) assert.ok(placeIds.has(guide.placeId), 'Guide needs a shared place name');
-const storiesMatch = html.match(/const CITY_STORIES=([\s\S]*?);\nconst CITIES=/);
+// Read the JSON declaration itself; other code may follow before CITIES.
+const storiesMatch = html.match(/\bconst\s+CITY_STORIES\s*=\s*(\{[\s\S]*?\n\})\s*;/);
 assert.ok(storiesMatch, 'Missing inline city stories');
 const stories = JSON.parse(storiesMatch[1]);
 assert.deepEqual(Object.keys(stories).sort(), ['kyoto', 'nara', 'tokyo'], 'Introduce all three cities');

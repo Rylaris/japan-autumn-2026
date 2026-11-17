@@ -2399,8 +2399,8 @@ function mountMap(){
       map.scrollZoom.disable();
       map.addControl(new maplibregl.NavigationControl({showCompass:true,visualizePitch:true}),'bottom-right');
       map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
-      map.on('click',()=>map.scrollWheelZoom.enable());
-      box.addEventListener('mouseleave',()=>map.scrollWheelZoom.disable());
+      map.on('click',()=>map.scrollZoom.enable());
+      box.addEventListener('mouseleave',()=>map.scrollZoom.disable());
       map.on('style.load',()=>{
         $('#mapStatus')?.setAttribute('hidden','');
         box.classList.remove('offline');
