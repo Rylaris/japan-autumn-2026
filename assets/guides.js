@@ -81,6 +81,7 @@
     el('gcReading').setAttribute('aria-busy','true');
     el('gcReading').innerHTML = `<span class="gc-eyebrow">随景而行</span><h2 class="gc-title" id="gcTitle">${escape(asset.title.replace('（新增）',''))}</h2><p class="gc-status" role="status">正在展开这片风景的故事<span class="gc-loading-line" aria-hidden="true"></span></p>`;
     el('gcPrev').disabled = el('gcNext').disabled = true;
+    window.TravelTypography.apply(dialog);
   };
   const setPhoto = position => {
     if (!currentGuide) return;
@@ -129,6 +130,7 @@
     el('gcPrev').innerHTML = `← ${window.TravelNames.label(window.TravelNames.get(previous.placeId),previous.title)}`;
     el('gcNext').innerHTML = `${window.TravelNames.label(window.TravelNames.get(next.placeId),next.title)} →`;
     el('gcCount').textContent = `${String(guidePosition+1).padStart(2,'0')} / ${data.guides.length}`;
+    window.TravelTypography.apply(dialog);
     resetScroll();
   };
   const openGuide = async index => {
@@ -152,6 +154,7 @@
       if (token !== request || !dialog.open) return;
       el('gcReading').removeAttribute('aria-busy');
       el('gcReading').innerHTML = `<h2 class="gc-title" id="gcTitle">故事暂时未能展开</h2><p class="gc-status" role="status">连接有些慢，可以再试一次，或先返回照片。</p><button class="gc-retry" type="button" id="gcRetry">重新展开</button>`;
+      window.TravelTypography.apply(dialog);
       el('gcRetry').onclick = () => { showInitial(currentIndex); openGuide(currentIndex); };
     }
   };

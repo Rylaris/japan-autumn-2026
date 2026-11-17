@@ -1279,6 +1279,8 @@ body[data-city=nara]{
 [data-city=nara] .pin.sel b{background:var(--accent2);border-color:var(--accent2);color:#fff}
 [data-city=nara] .pin-tip{border-radius:999px;padding:6px 12px;background:var(--accent)}
 [data-city=nara] .pin-tip:before{border-top-color:var(--accent)!important}
+/* Only Kyoto's editorial headings share the Japanese Mincho used by its day titles. */
+:is(body[data-city=kyoto],.guide-card[data-city=kyoto]) .design-title{font-family:"Hiragino Mincho ProN","Yu Mincho",var(--f-serif)}
 /* ----- responsive & motion preferences ----- */
 @media (max-width:1080px){
   .hero-inner{grid-template-columns:1fr;padding-top:40px}
@@ -1461,7 +1463,7 @@ body[data-city=nara]{
 <link rel="preconnect" href="https://tiles.openfreemap.org">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@^5/dist/maplibre-gl.css">
 <script async src="https://unpkg.com/maplibre-gl@^5/dist/maplibre-gl.js" onload="window._onMapLibreReady&&window._onMapLibreReady()"></script>
-<script defer src="assets/guides.js?v=more-guides-20261117"></script>
+<script defer src="assets/guides.js?v=kyoto-title-type-20261117"></script>
 </head>
 <body data-city="tokyo">
 <a class="skip" href="#page">跳到正文</a>
@@ -1504,6 +1506,23 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const REDUCED=matchMedia('(prefers-reduced-motion: reduce)');
 const EASE='cubic-bezier(.16,1,.3,1)',SWEEP='cubic-bezier(.77,0,.18,1)';
 const KANJI_NUM=['一','二','三','四','五','六','七','八','九'];
+/* Kyoto display text uses Japanese Mincho and supported kanji; prose and source data stay Chinese. */
+const KYOTO_TITLE_KANJI={"东":"東","为":"為","乐":"楽","书":"書","买":"買","产":"産","仓":"倉","众":"衆","传":"伝","净":"浄","剧":"劇","动":"動","势":"勢","卖":"売","历":"歴","发":"発","变":"変","团":"団","围":"囲","图":"図","场":"場","墙":"牆","处":"処","头":"頭","实":"実","对":"対","寻":"尋","导":"導","层":"層","岚":"嵐","巅":"巓","应":"応","张":"張","忆":"憶","总":"総","悬":"懸","戏":"戯","战":"戦","摇":"揺","斋":"斎","时":"時","术":"術","枫":"楓","样":"様","桥":"橋","樱":"桜","濑":"瀬","烧":"焼","狮":"獅","现":"現","电":"電","盘":"盤","红":"紅","纸":"紙","线":"線","细":"細","给":"給","绝":"絶","统":"統","绿":"緑","缘":"縁","职":"職","艺":"芸","节":"節","萨":"薩","衔":"銜","见":"見","观":"観","规":"規","览":"覧","认":"認","让":"譲","记":"記","识":"識","话":"話","诞":"誕","语":"語","说":"説","读":"読","谐":"諧","谓":"謂","贵":"貴","赏":"賞","跃":"躍","车":"車","转":"転","轴":"軸","边":"辺","过":"過","还":"還","这":"這","远":"遠","连":"連","选":"選","钉":"釘","铁":"鉄","铺":"舗","锚":"錨","镜":"鏡","长":"長","间":"間","顺":"順","风":"風","馆":"館","验":"験","鸟":"鳥","龙":"竜","优":"優","务":"務","载":"載","须":"須","帧":"幀","暂":"暫"};
+const DESIGN_TITLE_SELECTOR='h1,h2,h3,h4,.hero-tag,.day-no b,.nextcity b,.city-deck,.gc-tagline,.gc-image-title b';
+function applyTitleTypography(root=document){
+  for(const title of root.querySelectorAll(DESIGN_TITLE_SELECTOR)){
+    const kyoto=title.closest('[data-city]')?.dataset.city==='kyoto';
+    title.classList.toggle('design-title',kyoto);
+    if(!kyoto)continue;
+    const walker=document.createTreeWalker(title,NodeFilter.SHOW_TEXT);
+    let node;
+    while((node=walker.nextNode())){
+      const text=Array.from(node.data,char=>KYOTO_TITLE_KANJI[char]||char).join('');
+      if(text!==node.data)node.data=text;
+    }
+  }
+}
+window.TravelTypography={apply:applyTitleTypography};
 const KANJI_DAY_TITLES=new Set(['東山紅葉，古寺晨光','嵐山緩行，庭院深秋','鹿鳴林間，古都告別']);
 
 /* City history copy and primary sources; edit each city independently here. */
@@ -2008,6 +2027,7 @@ async function curtain(to,swap,pt){
 /* ---------- ambient: header, progress, reveal, clock ---------- */
 let revealIO;
 function observeReveal(root=document){
+  applyTitleTypography(root);
   if(!revealIO)revealIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');revealIO.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.06});
   $$('[data-reveal]:not(.is-in)',root).forEach(el=>revealIO.observe(el));
 }
@@ -2531,6 +2551,7 @@ function paintMapUi(){
       <small class="coord">${sel.lat.toFixed(5)}° N · ${sel.lon.toFixed(5)}° E</small>
       <div class="poi-actions"><a href="https://www.google.com/maps/search/?api=1&query=${sel.lat},${sel.lon}" target="_blank" rel="noreferrer">Google 地图 ↗</a><a href="https://maps.apple.com/?ll=${sel.lat},${sel.lon}&q=${encodeURIComponent(sel.name)}" target="_blank" rel="noreferrer">Apple 地图 ↗</a>${sel.photo!=null?`<button data-photo="${sel.photo}">查看照片</button>`:''}<a href="${esc(sel.source)}" target="_blank" rel="noreferrer">坐标来源 ↗</a></div>`
     :`<span class="eyebrow">EXPLORE · ${esc(AREA_NAMES[mapState.area])}</span><h3>${mapState.scope==='day'?`DAY ${dayNo(state.day)}（${day(state.day).date}）动线与住宿`:'区域全部地点'}</h3><p>${todayPois.length?`当前已将 DAY ${dayNo(state.day)} 的点位排在列表最前${isFlex?'（本日景点游览顺序不定，可围绕酒店与交通枢纽自由组合）':'（按当日早晚动线依次排列）'}，并标出专属“宿1–宿4”酒店印章。点击地标或右侧列表查看详情。`:'本区域没有当日安排，显示本区全部酒店与参考点位。'}</p>`;
+  applyTitleTypography($('#poiDetail'));
 }
 function syncMapToDay(){if(!map)return;mapState.area=bestArea();mapState.scope='day';mapState.sel=null;drawArea(true)}
 function setArea(a){if(!map||a===mapState.area)return;mapState.area=a;mapState.sel=null;drawArea(true)}
@@ -2562,7 +2583,7 @@ function stepPhoto(dir){if(lb.set.length<2)return;lb.k=(lb.k+dir+lb.set.length)%
 let ovOpener=null;
 function openOverview(){
   const ov=$('#overview'),panel=$('#ovPanel');
-  panel.innerHTML=overviewMarkup();ovOpener=document.activeElement;
+  panel.innerHTML=overviewMarkup();applyTitleTypography(panel);ovOpener=document.activeElement;
   ov.hidden=false;document.documentElement.classList.add('locked');
   requestAnimationFrame(()=>{ov.classList.add('open');panel.focus({preventScroll:true})});
 }
