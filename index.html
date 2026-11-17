@@ -673,7 +673,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   --on-accent:#fff;--radius:0px;--radius-lg:0px;--shadow:none;
   --f-body:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   --f-serif:"Songti SC","Noto Serif SC","Source Han Serif SC","Source Han Serif CN","SimSun","Songti TC","Noto Serif CJK SC",serif;
-  --f-display:var(--f-body);--f-latin:var(--f-body);
+  --f-display:var(--f-body);--f-japanese:var(--f-display);--f-latin:var(--f-body);
   --f-mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,monospace;
   --top-h:68px;--wrap:1240px;--gut:clamp(20px,4.5vw,56px);
   --ease:cubic-bezier(.16,1,.3,1);--dur:.8s;
@@ -1090,7 +1090,7 @@ body[data-city=tokyo]{
 body[data-city=kyoto]{
   --bg:#f3ede1;--bg2:#e8dfcf;--ink:#2b2420;--mute:#7a6c5d;--line:#d6c9b4;--accent:#b23a2a;--accent2:#1f3a5f;--card:#faf6ee;--on-accent:#fbf7ef;
   --radius:0px;--radius-lg:2px;
-  --f-display:var(--f-serif);--f-latin:"Didot","Bodoni 72",Georgia,var(--f-serif);
+  --f-display:var(--f-serif);--f-japanese:"Hiragino Mincho ProN","Yu Mincho",var(--f-serif);--f-latin:"Didot","Bodoni 72",Georgia,var(--f-serif);
   background-image:url("https://wenchanyuan-travel.bj.bcebos.com/kyoto-paper-texture-c6629197.svg");
 }
 [data-city=kyoto] .brand-mark{letter-spacing:.3em}
@@ -1166,11 +1166,12 @@ body[data-city=kyoto]{
 [data-city=kyoto] .pin b i{transform:rotate(-45deg)}
 [data-city=kyoto] .poi b{border-radius:0}
 [data-city=kyoto] .pin-tip{font-family:var(--f-display);letter-spacing:.1em}
+:is(body[data-city=kyoto],body[data-city=nara]) :is(.ht-jp,.kanji-title){font-family:var(--f-japanese)}
 /* ===== NARA · forest: moss & cream, organic arches, dappled light, drifting leaves ===== */
 body[data-city=nara]{
   --bg:#eef0e4;--bg2:#e1e6d3;--ink:#22301f;--mute:#667060;--line:#cdd5bd;--accent:#4f6b3a;--accent2:#b8863b;--card:#f8f8ef;--on-accent:#f8f8ef;
   --radius:999px;--radius-lg:28px;
-  --f-display:var(--f-serif);--f-latin:"Cormorant Garamond","Iowan Old Style",Georgia,var(--f-serif);
+  --f-display:var(--f-serif);--f-japanese:var(--f-serif);--f-latin:"Cormorant Garamond","Iowan Old Style",Georgia,var(--f-serif);
   background-image:radial-gradient(900px 600px at 0% 0%,#c9d6ab66,transparent 60%),radial-gradient(800px 600px at 100% 100%,#e3d7b166,transparent 60%);background-attachment:fixed;
 }
 [data-city=nara] .brand-mark{font-style:italic;letter-spacing:.08em}
@@ -1321,7 +1322,7 @@ body[data-city=nara]{
 }
 </style>
 <link rel="preconnect" href="https://wenchanyuan-travel.bj.bcebos.com">
-<script defer src="assets/guides.js?v=cjk-20261117"></script>
+<script defer src="assets/guides.js?v=cjk-20261117-2"></script>
 </head>
 <body data-city="tokyo">
 <a class="skip" href="#page">跳到正文</a>
@@ -1364,6 +1365,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const REDUCED=matchMedia('(prefers-reduced-motion: reduce)');
 const EASE='cubic-bezier(.16,1,.3,1)',SWEEP='cubic-bezier(.77,0,.18,1)';
 const KANJI_NUM=['一','二','三','四','五','六','七','八','九'];
+const KANJI_DAY_TITLES=new Set(['東山紅葉，古寺晨光','嵐山緩行，庭院深秋','鹿鳴林間，古都告別']);
 
 const CITIES={
   tokyo:{key:'tokyo',idx:'01',name:'东京',jp:'東京',en:'TOKYO',kicker:'NEON / METROPOLIS',
@@ -1498,8 +1500,8 @@ function heroMarkup(c){
     <div class="hero-inner">
       <div class="hero-copy">
         <p class="kicker"><span>${c.key==='kyoto'?'其の二':c.idx+' / 03'}</span><span>${esc(c.kicker)}</span></p>
-        <h1 class="hero-title"><span class="ht-jp" data-text="${c.jp}">${c.jp}</span><span class="ht-en">${c.key==='nara'?'Nara':c.en}</span></h1>
-        <p class="hero-tag">${esc(c.tagline)}</p>
+        <h1 class="hero-title"><span class="ht-jp" lang="ja" data-text="${c.jp}">${c.jp}</span><span class="ht-en">${c.key==='nara'?'Nara':c.en}</span></h1>
+        <p class="hero-tag${c.key==='tokyo'?'':' kanji-title'}">${esc(c.tagline)}</p>
         <p class="hero-lede">${esc(c.lede)}</p>
         <dl class="hero-meta">${meta.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
         <a class="hero-cta" href="#day" data-jump="day"><span>从 DAY ${dayNo(first)} 开始</span><i aria-hidden="true">↓</i></a>
@@ -1548,7 +1550,7 @@ function renderDay(animate){
   const bike=state.day===1?`<a class="bike-teaser" href="#bike" data-jump="bike"><span class="label">CYCLING · 租车方案已研究</span><p>保留山中湖：在湖边租电助力车 2 小时、原店归还。MOMO 冬季常规 16:00 截止，日落骑行须另约。</p><span class="more">比较 4 家租车点 →</span></a>`:'';
   box.innerHTML=`<div class="day-head" data-reveal>
       <div class="day-no"><small>${c.key==='kyoto'?'第':'DAY'}</small><b>${c.key==='kyoto'?KANJI_NUM[state.day]:dayNo(state.day)}</b><span>${c.key==='kyoto'?'日 / 九':'/ 09'}</span></div>
-      <div class="day-title"><p class="day-date">2026.${d.date} <span>${d.wd}</span> · ${esc(d.place)}</p><h2>${esc(d.title).replace('，','，<br>')}</h2><p class="day-route">${route}</p></div>
+      <div class="day-title"><p class="day-date">2026.${d.date} <span>${d.wd}</span> · ${esc(d.place)}</p><h2 class="${KANJI_DAY_TITLES.has(d.title)?'kanji-title':''}">${esc(d.title).replace('，','，<br>')}</h2><p class="day-route">${route}</p></div>
     </div>
     <div class="day-grid">
       <div class="day-plan" data-reveal>

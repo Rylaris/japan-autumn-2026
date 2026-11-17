@@ -29,7 +29,7 @@
       <button class="gc-close" type="button" aria-label="关闭导游卡，返回照片">×</button></div></header>
     <div class="gc-main" id="gcMain"><figure class="gc-visual"><img class="gc-image" id="gcImage" alt="" decoding="async">
       <div class="gc-photo-switch" id="gcPhotos" aria-label="切换参考照片" hidden></div>
-      <figcaption class="gc-image-title"><span class="gc-region" id="gcRegion"></span><b id="gcJapanese"></b><small id="gcEnglish"></small></figcaption></figure>
+      <figcaption class="gc-image-title"><span class="gc-region" id="gcRegion"></span><b id="gcJapanese" lang="ja"></b><small id="gcEnglish"></small></figcaption></figure>
       <article class="gc-reading" id="gcReading" tabindex="-1"></article></div>
     <footer class="gc-footer"><button class="gc-step" id="gcPrev" type="button" disabled>← 上一处</button><span class="gc-count" id="gcCount">随景而行</span><button class="gc-step" id="gcNext" type="button" disabled>下一处 →</button></footer>
   </div>`;
@@ -108,7 +108,7 @@
     const creditImage = guide.images.find(image => image.credit);
     const credit = creditImage ? `${escape(creditImage.credit)} · <a href="${escape(creditImage.source)}" target="_blank" rel="noreferrer">图片来源 ↗</a> · <a href="${escape(creditImage.license)}" target="_blank" rel="noreferrer">许可 ↗</a>` : '配图沿用原旅行文档，仅作景观参考。';
     el('gcReading').innerHTML = `<span class="gc-eyebrow">${escape(guide.kicker)}</span>
-      <h2 class="gc-title" id="gcTitle">${escape(guide.title)}</h2><p class="gc-tagline">${escape(guide.tagline)}</p>
+      <h2 class="gc-title" id="gcTitle" lang="${guide.city==='tokyo'?'zh-CN':'ja'}">${escape(guide.title)}</h2><p class="gc-tagline">${escape(guide.tagline)}</p>
       <div class="gc-intro">${guide.intro.map(paragraph => `<p>${escape(paragraph)}</p>`).join('')}</div>
       ${guide.sections.map(section => `<section class="gc-section"><div class="gc-section-label">${escape(section.label)}</div><h3>${escape(section.title)}</h3><p>${escape(section.text)}${note(section.sources)}</p></section>`).join('')}
       <section class="gc-observe"><h3>到这里，慢看两眼</h3><ul>${guide.observe.map(text => `<li>${escape(text)}</li>`).join('')}</ul></section>
