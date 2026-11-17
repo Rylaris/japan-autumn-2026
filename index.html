@@ -900,11 +900,15 @@ p{margin:0}
 /* ----- map ----- */
 .map-shell{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(280px,1fr);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:var(--card)}
 .map-stage{position:relative;display:flex;flex-direction:column;min-width:0}
-.map-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 14px;border-bottom:1px solid var(--line)}
-.map-areas,.map-scope{display:flex;gap:6px;flex-wrap:wrap}
+.map-bar{display:flex;justify-content:space-between;align-items:center;gap:10px 14px;flex-wrap:wrap;padding:12px 14px;border-bottom:1px solid var(--line)}
+.map-areas,.map-scope,.map-meta-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .map-bar button{padding:6px 13px;font-size:12px;border:1px solid var(--line);border-radius:var(--radius);transition:background-color .4s,color .4s,border-color .4s}
 .map-bar button[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .map-area-name{font:500 11px var(--f-mono);letter-spacing:.16em;color:var(--accent)}
+.map-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;font:500 11px/1.2 var(--f-body);border-radius:999px;border:1px solid var(--line);color:var(--mute);background:color-mix(in srgb,var(--bg2) 65%,transparent)}
+.map-pill.hotel-pill{border-color:#d9770688;color:#d97706;background:color-mix(in srgb,#d97706 10%,transparent)}
+.map-pill.flex-pill{border-color:color-mix(in srgb,var(--accent) 55%,transparent);color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+[data-city=tokyo] .map-pill.hotel-pill{border-color:#ffb80088;color:#ffc83b;background:#ffb80014}
 .leaf{height:560px;background:var(--bg2);z-index:0}
 .leaf.offline{background:repeating-linear-gradient(0deg,transparent 0 47px,var(--line) 47px 48px),repeating-linear-gradient(90deg,transparent 0 47px,var(--line) 47px 48px),var(--bg2)}
 .map-status{position:absolute;left:14px;right:14px;bottom:44px;z-index:500;padding:10px 14px;font-size:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
@@ -920,14 +924,30 @@ p{margin:0}
 .poi-actions a,.poi-actions button{font-size:12px;color:var(--accent);text-decoration:none}
 .poi-actions a:hover,.poi-actions button:hover{text-decoration:underline}
 .poi-list{list-style:none;margin:0;padding:6px 10px;overflow:auto;flex:1}
+.poi-group-head{padding:10px 8px 4px;font:600 10px/1.4 var(--f-mono);letter-spacing:.14em;color:var(--accent);text-transform:uppercase;border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
 .poi{display:flex;align-items:center;gap:12px;width:100%;padding:11px 8px;text-align:left;font-size:13.5px;border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent);border-radius:var(--radius);transition:background-color .3s,color .3s}
-.poi b{flex:none;display:grid;place-items:center;width:26px;height:26px;font:500 11.5px var(--f-mono);border:1px solid var(--line);border-radius:50%}
+.poi b{flex:none;display:grid;place-items:center;min-width:26px;height:26px;padding-inline:4px;font:500 11.5px var(--f-mono);border:1px solid var(--line);border-radius:50%}
 .poi.today b{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.poi.hotel b{border-radius:6px;border-color:#d97706;color:#d97706;background:color-mix(in srgb,#d97706 12%,transparent);font:600 11px/1 var(--f-body)}
+.poi.hotel.today b{background:#d97706;border-color:#d97706;color:#fff;box-shadow:0 0 0 3px #d9770628}
+[data-city=tokyo] .poi.hotel b{border-color:#ffb800;color:#ffc83b;background:#ffb80018}
+[data-city=tokyo] .poi.hotel.today b{background:#ffb800;border-color:#ffb800;color:#06080e;box-shadow:0 0 12px #ffb80066}
 .poi small{display:block;font-size:11px;color:var(--mute);margin-top:2px}
 .poi:hover{background:color-mix(in srgb,var(--accent) 6%,transparent)}
 .poi[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)}
 .map-credit{margin-top:14px}
-/* leaflet chrome, themed */
+/* maplibre & leaflet chrome, themed */
+.leaf .maplibregl-canvas{outline:none}
+.maplibregl-ctrl-group{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:var(--radius)!important;box-shadow:0 4px 16px #0002!important;overflow:hidden}
+.maplibregl-ctrl-group button{width:34px!important;height:34px!important;color:var(--ink)!important;border-color:var(--line)!important;background:transparent!important}
+.maplibregl-ctrl-group button+button{border-top:1px solid var(--line)!important}
+.maplibregl-ctrl-group button:hover{background:var(--accent)!important;color:var(--on-accent)!important}
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon{filter:none}
+[data-city=tokyo] .maplibregl-ctrl-group button .maplibregl-ctrl-icon{filter:invert(1) brightness(1.4)}
+[data-city=tokyo] .maplibregl-ctrl-group button:hover .maplibregl-ctrl-icon{filter:none}
+.maplibregl-ctrl-attrib{background:color-mix(in srgb,var(--card) 82%,transparent)!important;color:var(--mute)!important;font-size:10px!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.maplibregl-ctrl-attrib a{color:var(--mute)!important}
+.maplibregl-ctrl-scale{background:color-mix(in srgb,var(--card) 78%,transparent)!important;border-color:var(--ink)!important;color:var(--ink)!important;font-size:10px!important}
 .leaflet-container{font:inherit;background:var(--bg2)}
 .leaflet-control-zoom{border:1px solid var(--line)!important;border-radius:var(--radius)!important;overflow:hidden;box-shadow:none!important}
 .leaflet-control-zoom a{background:var(--card)!important;color:var(--ink)!important;border-color:var(--line)!important;width:34px!important;height:34px!important;line-height:32px!important}
@@ -935,15 +955,26 @@ p{margin:0}
 .leaflet-control-attribution{background:color-mix(in srgb,var(--card) 80%,transparent)!important;color:var(--mute)!important;font-size:10px!important}
 .leaflet-control-attribution a{color:var(--mute)!important}
 .leaflet-control-scale-line{background:color-mix(in srgb,var(--card) 70%,transparent);border-color:var(--ink);color:var(--ink);font-size:10px}
-.pin-wrap{background:none;border:0}
-.pin{display:grid;place-items:center;width:34px;height:34px;transition:transform .5s var(--ease)}
-.pin b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;font:600 11.5px/1 var(--f-mono);background:var(--card);color:var(--accent);border:2px solid var(--accent);box-shadow:0 3px 10px #0003;transition:.4s var(--ease)}
+.pin-wrap{background:none;border:0;cursor:pointer}
+.pin{position:relative;display:grid;place-items:center;width:36px;height:36px;transition:transform .45s var(--ease)}
+.pin b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;font:600 11.5px/1 var(--f-mono);background:var(--card);color:var(--accent);border:2px solid var(--accent);box-shadow:0 3px 10px #0003;transition:.35s var(--ease)}
 .pin b i{font-style:normal;display:block}
 .pin.today b{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 22%,transparent),0 4px 14px #0004}
 .pin.rent b{border-style:dashed}
-.pin.sel{transform:scale(1.3)}
-.pin.sel b{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.pin-wrap:hover .pin{transform:scale(1.15)}
+.pin.hotel b{width:32px;height:26px;border-radius:7px;background:#d97706;color:#fff;border:2px solid #fff;font:600 10.5px/1 var(--f-body);letter-spacing:.03em;box-shadow:0 4px 14px #d9770666}
+.pin.hotel.today b{background:#b45309;border-color:#fef3c7;box-shadow:0 0 0 6px #d9770640,0 5px 16px #0005}
+.pin.sel{transform:scale(1.26)}
+.pin.sel b{background:var(--ink);color:var(--bg);border-color:var(--ink);box-shadow:0 6px 18px #0005}
+.pin-wrap:hover .pin{transform:scale(1.16)}
+.pin-tag{position:absolute;left:50%;top:calc(100% + 2px);transform:translateX(-50%);padding:2px 8px;border-radius:999px;font:500 11px/1.35 var(--f-body);white-space:nowrap;pointer-events:none;background:color-mix(in srgb,var(--card) 92%,transparent);color:var(--ink);border:1px solid color-mix(in srgb,var(--line) 85%,transparent);box-shadow:0 3px 12px #0002;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;transition:opacity .25s,transform .25s}
+.pin.today .pin-tag,.pin.hotel .pin-tag,.pin.sel .pin-tag,.pin-wrap:hover .pin-tag{opacity:1}
+.pin.hotel .pin-tag{border-color:#d9770688;background:color-mix(in srgb,var(--card) 95%,#fef3c7);color:#92400e;font-weight:600}
+.pin.sel .pin-tag{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:600}
+[data-city=tokyo] .pin-tag{background:color-mix(in srgb,#0c0f18 90%,transparent);border-color:#22e3ff44;color:#e6edf7}
+[data-city=tokyo] .pin.hotel b{background:linear-gradient(135deg,#ffd152,#ff9900);color:#05070d;border-color:#fff3c4;box-shadow:0 0 16px #ffb80088}
+[data-city=tokyo] .pin.hotel.today b{box-shadow:0 0 0 6px #ffb80038,0 0 24px #ffb800cc}
+[data-city=tokyo] .pin.hotel .pin-tag{background:color-mix(in srgb,#141008 92%,transparent);border-color:#ffb80088;color:#ffd56b}
+[data-city=tokyo] .pin.sel .pin-tag{background:var(--accent2);border-color:var(--accent2);color:#fff}
 .pin-tip{background:var(--ink);color:var(--bg);border:0;border-radius:var(--radius);box-shadow:0 6px 20px #0003;font-size:12px;padding:5px 10px}
 .pin-tip:before{border-top-color:var(--ink)!important}
 /* ----- curtain (city transition) ----- */
@@ -1164,6 +1195,9 @@ body[data-city=kyoto]{
 [data-city=kyoto] .pin b{border-radius:0;transform:rotate(45deg);width:22px;height:22px;font-family:var(--f-display)}
 [data-city=kyoto] .pin.today b{box-shadow:0 0 0 5px #b23a2a22,0 3px 10px #0003}
 [data-city=kyoto] .pin b i{transform:rotate(-45deg)}
+[data-city=kyoto] .pin.hotel b{transform:none;width:32px;height:26px;border-radius:3px;background:#8c2d19;color:#fbf1e4;border:1.5px solid #e2b86b;box-shadow:0 4px 12px #5a180b55}
+[data-city=kyoto] .pin.hotel.today b{background:#731f10;border-color:#f6d58e;box-shadow:0 0 0 6px #8c2d1933,0 5px 14px #0005}
+[data-city=kyoto] .pin.hotel b i{transform:none}
 [data-city=kyoto] .poi b{border-radius:0}
 [data-city=kyoto] .pin-tip{font-family:var(--f-display);letter-spacing:.1em}
 :is(body[data-city=kyoto],body[data-city=nara]) :is(.ht-jp,.kanji-title){font-family:var(--f-japanese)}
@@ -1239,6 +1273,8 @@ body[data-city=nara]{
 [data-city=nara] .map-shell{border-radius:32px}
 [data-city=nara] .leaflet-tile-pane{filter:sepia(.25) hue-rotate(35deg) saturate(.9) brightness(1.03)}
 [data-city=nara] .pin.today b{box-shadow:0 0 0 7px #4f6b3a26,0 4px 14px #0003}
+[data-city=nara] .pin.hotel b{background:#b8863b;color:#fff;border-color:#f8f8ef;border-radius:999px;width:34px;height:26px}
+[data-city=nara] .pin.hotel.today b{background:#9c6e29;box-shadow:0 0 0 6px #b8863b38,0 4px 14px #0004}
 [data-city=nara] .pin.sel b{background:var(--accent2);border-color:var(--accent2);color:#fff}
 [data-city=nara] .pin-tip{border-radius:999px;padding:6px 12px;background:var(--accent)}
 [data-city=nara] .pin-tip:before{border-top-color:var(--accent)!important}
@@ -1421,6 +1457,9 @@ body[data-city=nara]{
 @media(max-width:760px){.day-route{align-items:stretch}.day-route>span{display:flex;align-items:center}.place-name .place-sub{font-size:10px}}
 </style>
 <link rel="preconnect" href="https://wenchanyuan-travel.bj.bcebos.com">
+<link rel="preconnect" href="https://tiles.openfreemap.org">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@^5/dist/maplibre-gl.css">
+<script async src="https://unpkg.com/maplibre-gl@^5/dist/maplibre-gl.js" onload="window._onMapLibreReady&&window._onMapLibreReady()"></script>
 <script defer src="assets/guides.js?v=more-guides-20261117"></script>
 </head>
 <body data-city="tokyo">
@@ -1469,34 +1508,34 @@ const KANJI_DAY_TITLES=new Set(['東山紅葉，古寺晨光','嵐山緩行，�
 /* City history copy and primary sources; edit each city independently here. */
 const CITY_STORIES={
   "tokyo": {
-    "title": "在霓虹之前，先有江户。",
-    "subtitle": "江户 → 东京 · Edo → Tokyo",
-    "deck": "一座城市的记忆，也会藏在它重新开始的地方。",
+    "title": "在霓虹亮起之前，先有一座螺旋生长的江户。",
+    "subtitle": "武藏野与江户湾 → 江户城下町 → 东京 · 1603 — 2026",
+    "deck": "它不靠不变的石墙留住时间，而在一次次归零与重修中，把四百年的城池底稿叠进今日的街巷。",
     "facts": [
       [
-        "旧称",
-        "江户 · Edo"
+        "空间底稿",
+        "「の」字形螺旋城濠 · 山手高台与下町水网"
       ],
       [
         "读城线索",
-        "城濠、街道与重建"
+        "大名屋敷绿地 · 火除地与震后复兴 · 铁道宿场"
       ],
       [
         "此行相遇",
-        "新宿 · 皇居 · 上野 · 浅草"
+        "新宿 · 富士山麓 · 皇居乾通 · 上野 · 浅草 · 晴空塔"
       ]
     ],
     "intro": [
-      "东京常常先以速度抵达我们：新宿站里不断汇合的人流、秋叶原向上叠起的招牌，还有隅田川对岸亮起的晴空塔。等脚步慢下来，另一座城便浮现了——城濠转弯的弧度、寺院前的参道，以及一条仍被旧地名牵引的街。",
-      "把这次旅程的东京分成两次相遇，恰好可以读到它的两种呼吸。第一夜在新宿进入当下，回程再从皇居、上野走到浅草，沿着政治、收藏与庶民信仰，向江户的深处走。古老与新生在这里相互穿插；一座看似年轻的门楼，也可能承接着比楼群更长的记忆。"
+      "人们常以为东京是一座没有过去的未来之城：新宿站日均三百余万人次的换乘洪流、歌舞伎町与秋叶原垂直堆叠的霓虹灯牌、隅田川对岸直刺云霄的 634 米晴空塔，似乎都在宣示速度与当下的胜利。但只要你把地图稍微拉远就会发现，今日东京最繁华的现代肌理，其实严丝合缝地长在四百年前德川幕府画下的「江户底稿」之上——山手线的环线轮廓沿着江户城的边缘与大名郊外下屋敷展开，新宿与浅草的喧嚣则各自对应着甲州街道的宿场驿站与隅田川畔的庶民门前町。",
+      "这次旅程将东京分成了「初见」与「归途」两个乐章：第一夜在新宿与次日的富士山麓，你将顺着江户人西行朝圣的「甲州街道—富士道」走进山岳信仰；而在遍历京都的庭园与奈良的天平古寺之后重返东京，从皇居乾通的巨石城垣、上野东京国立博物馆的法隆寺宝物，一路走到浅草寺的秘佛香火与晴空塔的现代「心柱」，你会忽然看懂这座城市真正的生存哲学——它从不把历史锁在标本柜里，而是在每一次大火、震灾与时代更迭后，用最新的材料把古老的灵魂重新组装一遍。"
     ],
-    "historyLead": "从幕府的城下町，到不断重写的现代都市。先记住四个转折，再把它们放回眼前的街道。",
+    "historyLead": "从德川家康填海筑城的螺旋水系，到明治易名、震后重塑与新干线纪元——读懂这四个年份，就读懂了东京为何总能在废墟上长出新森林。",
     "eras": [
       {
         "year": "1603",
-        "label": "江户幕府",
-        "title": "从一座城，长成全国往来的中心",
-        "text": "1603 年，德川家康在江户开设幕府。武家政权在此运转，商人、工匠与往来旅人也逐渐塑造出庞大的城市生活。今日看东京，可以同时想起两种尺度：城与政权的尺度，和参道、店铺、街坊的尺度。浅草的人声，是读懂后者的一把钥匙。",
+        "label": "江户开府 · 螺旋筑城",
+        "title": "山手与下町：用一道「の」字形螺旋城濠，切出双面江户",
+        "text": "1603 年德川家康受封征夷大将军、在江户开设幕府时，这里还是一片芦苇丛生的河口湿地。幕府历时数十年削平神田山、填平日比谷入海口，围绕江户城开凿出顺时针向外延展的「の」字形螺旋护城河（内濠与外濠），并确立了延续至今的城市双面基因：西侧地势较高的武藏野台地称为「山手（Yamanote）」，分封给全国两百余家诸侯建造上、中、下屋敷（今日的新宿御苑、明治神宫与外苑皆源于这批大名与皇室绿地）；东侧靠近隅田川与河口冲积平原的低地称为「下町（Shitamachi）」，聚集了占人口半数以上的工匠与商贾。而在江户城东北鬼门方向，幕府尊崇已有千年历史的浅草寺为祈愿所，催生出江户最热闹的庶民市集与娱乐中心。",
         "sources": [
           0,
           1
@@ -1504,9 +1543,9 @@ const CITY_STORIES={
       },
       {
         "year": "1868",
-        "label": "名字与身份",
-        "title": "「东边的京都」，在旧城里展开新生活",
-        "text": "明治维新之际，江户改称东京；旧江户城成为皇居所在。权力的转换既改变了城市的名字，也改变了许多空间的用途。1872 年，后来发展为东京国立博物馆的博览会在汤岛圣堂举行。此行从皇居城濠走向上野展室，便能把近代国家如何安置权力、整理文化遗产的两条线连在一起。",
+        "label": "明治维新 · 江户改称东京",
+        "title": "天皇东幸与「帝都」重塑：当武家旧垒变成国家的新玄关",
+        "text": "1868 年（庆应 4 年 / 明治元年），持续 265 年的德川幕府落幕，明治政府颁布诏书将江户改名为「东京」（意为东方的京都），明治天皇随即由京都迁居旧江户城，将其定为「皇居」。一场剧烈的空间身份转换自此展开：昔日戒备森严的将军居城化作近代国家的象征；1869 年神田大火后开辟的三万平方米防火隔离空地「火除地」，因供奉镇火神社而得名「秋叶之原」；而在汤岛圣堂举办的 1872 年博览会，则孕育出日本第一座公共博物馆——上野的东京国立博物馆，把来自京都、奈良古寺的千年文物纳入近代国民视野。",
         "sources": [
           1,
           2,
@@ -1515,9 +1554,9 @@ const CITY_STORIES={
       },
       {
         "year": "1923",
-        "label": "震灾与战火 · 1945",
-        "title": "街道里的断裂，和重新生活的勇气",
-        "text": "1923 年关东大地震与 1945 年的空袭，先后给东京带来沉重创伤。震后道路与街区的重整、战后的复兴，又改变了城市的形态。因此读东京的历史，也要留意建筑上的重建年代：许多熟悉的城市面孔，是在失去之后重新立起的。浅草寺战后复兴的朱红，与新宿街区重新亮起的灯，都可以放在这段历史中理解。",
+        "label": "关东大地震与 1945 战后复兴",
+        "title": "木与火的宿命：在两次灰烬之上画出的现代棋盘",
+        "text": "江户时代便有「火灾与吵架是江户之花」的谚语，而 20 世纪的东京更接连经历了两次严峻的物质重创：1923 年 9 月 1 日的关东大地震引发连日大火，烧毁了大半个下町；1945 年的战火又令城市再度化为焦土。然而正是这两次重建，锻造了东京独特的「新陈代谢」体质：1938 年落成的东京国立博物馆本馆用抗震钢筋混凝土披上传统「帝冠样式」屋顶；1948 年新宿町会领袖铃木喜兵卫等人在废墟上规划大众演艺街，留下了「歌舞伎町」的名字；1958 至 1960 年间，浅草寺本堂与缺席了 95 年的雷门也以钢筋混凝土重获朱红金身。在东京，判断一处古迹的年龄，不能只看砖瓦的新旧，更要看那条从未中断的参道与人潮。",
         "sources": [
           4,
           5
@@ -1525,33 +1564,33 @@ const CITY_STORIES={
       },
       {
         "year": "1964",
-        "label": "都市加速",
-        "title": "车站相连，新的中心不断生长",
-        "text": "1964 年，东京举办奥运会，东海道新干线开通。交通把更远的地方带入日常，也让东京与这次旅程里的古都重新发生联系。夜里回到新宿，看轨道、人流与高层建筑如何汇合，不妨把这幅景象理解为一座持续生长的城市：它的历史，也写在每一次出发和抵达之中。",
+        "label": "东海道新干线与垂直都市",
+        "title": "从铁道宿场到 634 米天际线：把古典木构智慧装进未来工程",
+        "text": "1964 年东京奥运会开幕前夕，全球第一条高速铁路「东海道新干线」正式通车，将东京与京都、大阪的时空距离压缩至数小时之内，也在城市上空织起了多层立体的高架道路与轨道网。半个世纪后的 2012 年，高 634 米（谐音东京所在的古代令制国名「武藏 Musashi」）的东京晴空塔在隅田川东岸落成——工程师为了抵御强震，特意借鉴了浅草寺与奈良法隆寺五重塔千年不倒的木构智慧，在现代钢塔中央植入了一根独立减振的钢筋混凝土「心柱（心柱制振）」。从地底纵横的轨道网到云端的制振塔心，东京始终在用最先锋的工程，回应最古老的风土。",
         "sources": [
           1
         ]
       }
     ],
-    "lens": "这次可以先在新宿看「城市怎样聚人」，再到皇居看旧城的地形，最后把上野的器物与浅草的参道并读。同一天里，东京会从一个抽象的大都市，慢慢变成几种有来历的生活。",
+    "lens": "这趟旅程读东京，最妙的顺序是「先看它的锋芒，再摸它的年轮」：落地首夜在新宿歌舞伎町感受战后复兴的垂直霓虹，次日沿甲州街道奔赴富士山麓；待从京都、奈良归来后，用整整两天走过新宿御苑与神宫外苑的百年林木、皇居乾通的江户巨石、上野博物馆里的天平真迹，最后在浅草寺的秘佛香烟与晴空塔的 634 米夜色中收束全篇。",
     "stops": [
       {
         "day": 0,
         "placeId": "kabukicho",
         "label": "歌舞伎町",
-        "hint": "重建之后的第一夜"
+        "hint": "1948 年废墟蓝图里长出的垂直不夜城"
       },
       {
         "day": 6,
         "placeId": "kokyo-inui",
         "label": "皇居乾通",
-        "hint": "沿城濠读江户的尺度"
+        "hint": "沿着旧江户城本丸石垣走过 750 米深秋"
       },
       {
         "day": 7,
         "placeId": "sensoji",
         "label": "浅草寺",
-        "hint": "参道里延续的庶民生活"
+        "hint": "628 年隅田川秘佛与战后重生的下町烟火"
       }
     ],
     "sources": [
@@ -1582,34 +1621,34 @@ const CITY_STORIES={
     ]
   },
   "kyoto": {
-    "title": "山水之间，都城仍在续写。",
-    "subtitle": "平安京 → 京都 · Heian-kyo → Kyoto",
-    "deck": "一千多年的古都，也靠一代代人重新发明日常。",
+    "title": "三面青山围合的棋盘，一千年未散的都城烟火。",
+    "subtitle": "山城盆地 → 平安京 → 洛中与洛外 · 794 — 2026",
+    "deck": "朝廷给它画下了唐风的方格，禅僧在山麓借来了宋元的山水，而真正让它在战火与迁都后活下来的，是街巷里世代守望的町众。",
     "facts": [
       [
-        "都城起点",
-        "794 · 平安京"
+        "空间底稿",
+        "三山环抱盆地 · 长安式条坊棋盘 · 鸭川与桂川"
       ],
       [
         "读城线索",
-        "格子街道、町家与水"
+        "洛中町家与洛外禅林 · 净土慈悲与枯山水 · 琵琶湖疏水"
       ],
       [
         "此行相遇",
-        "东山 · 岚山 · 宇治"
+        "清水寺与二三年坂 · 永观堂与天授庵 · 岚山 · 宇治"
       ]
     ],
     "intro": [
-      "京都的方向感，常常来自山。东、北、西三面山岭环抱盆地，鸭川与桂川向南流去；古寺的屋顶、庭院的树影，与远处山线彼此照应。清晨从东山抬起头，或在岚山回望河岸，城市的轮廓先于一份地图被记住。",
-      "而山之间的京都，一直有人生活、经营、创造。宫廷的审美进入器物，寺院的门前长出街市，町家里延续着手艺，也不断迎来新的用途。读它的历史，既要看平安京的起点，也要看战乱之后是谁重新开门做生意，又是谁在失去都城地位后，为这座城寻找下一种可能。"
+      "初到京都的人，很容易被它「三步一古刹、五步一庭园」的密度迷住，误以为这是一座静止在平安时代的古典标本。但若站在东山的清水舞台或岚山的小仓山腰俯瞰整座盆地，你会首先读懂它的地理底牌：京都东有东山三十六峰、北有北山、西有西山，唯独南面向宇治川与淀川水系敞开，构成中国风水学中「四神相应（左青龙、右白虎、前朱雀、后玄武）」的天然藏风聚气盆地。山麓渗出的丰沛软水与鸭川、桂川两道水脉，既滋养了终年苍翠的庭院青苔，也孕育了极其讲究水质的京友禅染织、豆腐汤叶、伏见清酒与宇治制茶。",
+      "更迷人的是京都「洛中」与「洛外」的双重空间性格：平坦的盆地中央（洛中）曾是模仿唐代长安城严整划一的棋盘街区，商贾与手工业者（町众）在狭长的木造「京町家」里把日常起居经营得精致入微；而四周起伏的山麓（洛外——如东山与岚山），则是皇室离宫、净土宗名刹与禅宗五山逃离都城礼法、直面自然无常的精神退路。读懂了棋盘里的世俗秩序与山林间的出世美学，你才能真正看懂京都的秋天。"
     ],
-    "historyLead": "从朝廷的方格，到町众的街坊，再到近代水道。京都的绵长，来自一次次接续。",
+    "historyLead": "从摆脱奈良寺院干政的平安迁都，到应仁之乱后的町众自治、丰臣秀吉的城市大改造，直至明治失都后的水利自救——四道年轮，刻出了京都外柔内刚的骨相。",
     "eras": [
       {
         "year": "794",
-        "label": "平安京",
-        "title": "一张方格，铺进山水之间",
-        "text": "794 年，桓武天皇迁都平安京。新都借鉴唐代长安的规划，以南北中轴和格子状街路组织宫城与城区。今天京都许多道路仍能让人感到这种整齐的底稿，但脚下的城市经历过多次增改。看一条直路，再看它怎样遇上山麓与河流，会更容易读懂人工秩序与自然地形之间的商量。",
+        "label": "平安迁都 · 唐风条坊制",
+        "title": "告别奈良古寺的阴影：在三山盆地里铺开唐长安的棋盘",
+        "text": "为什么桓武天皇要在公元 784 年毅然离开经营了七十余年的奈良（平城京），并在 794 年最终定都山背国，命名为「平安京」？核心原因之一，正是为了摆脱奈良东大寺、兴福寺等旧佛教势力日益膨胀的政治干预，在全新的盆地里重建律令皇权。平安京南北长约 5.2 公里、东西宽约 4.5 公里，效仿唐代长安城，以宽达 85 米的朱雀大路为南北中轴，分设左京（洛阳）与右京（长安），用横平竖直的「条（东西向）」与「坊（南北向）」切出规整的方格。有意思的是，为了防止寺院再次干预朝政，桓武天皇当年规定除官寺东寺、西寺外，城内原则上不准新建佛寺——这恰恰解释了为什么我们此行探访的清水寺、永观堂、南禅寺、东福寺与岚山天龙寺，全都像一串珍珠般分布在平安京棋盘边缘的东山与西山山麓（「洛外」）。",
         "sources": [
           0,
           1,
@@ -1618,9 +1657,9 @@ const CITY_STORIES={
       },
       {
         "year": "1467",
-        "label": "应仁之乱 · 至 1477",
-        "title": "把城市重新接起来的人，叫「町众」",
-        "text": "应仁之乱使京都遭受严重破坏，重建依靠的也包括商人、工匠组成的町众。他们经营生意、组织街坊，延续祭礼与地方自治。1500 年，因战乱中断的祇园祭由下京町众推动复兴。于是京都的文化史里，除了天皇与将军，也应给一条街共同守护的生活，留下一个位置。",
+        "label": "应仁之乱 · 町众与枯山水",
+        "title": "十一年战火烧平古都后，是禅僧的留白与「町众」接住了京都",
+        "text": "1467 至 1477 年爆发的「应仁之乱」，将室町幕府治下的京都变成了长达十一年的战场，公家贵族的宅邸与百余座大寺几乎损毁殆尽。然而废墟之上却长出了两样深刻改变日本文化史的事物：在寺院里，失去庞大庄园财力的禅僧无法再开凿耗资巨大的真山真水大池，转而在方丈前不过几十平米的狭小空地上，仅用白砂与几块岩石凝练出直指本心的「枯山水」与「借景」庭园（如南禅寺天授庵与岚山宝严院）；而在市井间，不再指望贵族庇护的工匠与富商结成自治互助的共同体——「町众（Machishu）」。正是这群下京町众，在 1500 年凭民间财力恢复了中断三十余年的祇园祭，让京都从一座「天子与公卿的都城」，蜕变为一座由市民共同守护的手艺之城。",
         "sources": [
           0,
           2
@@ -1628,9 +1667,9 @@ const CITY_STORIES={
       },
       {
         "year": "1591",
-        "label": "街区再编",
-        "title": "今日的古街，也曾是一次新的城市设计",
-        "text": "丰臣秀吉的改造为京都增加御土居、调整地块，并集中寺院，形成寺町一带。此后即使幕府设于江户，京都仍延续宫廷生活与商工传统。今天东山坡道旁的町家，又多保留江户末至大正时期的建筑层次。眼前的「古京都」因而有许多年龄；抬头看窗形、檐线和店屋的关系，能把它们一层层分辨出来。",
+        "label": "太阁改造 · 天正地割与町家",
+        "title": "丰臣秀吉的重划手术：用「御土居」围墙与细长町家重塑古街",
+        "text": "我们今天在京都走过的街巷肌理，很大一部分其实是丰臣秀吉在 1590—1591 年（天正年间）大刀阔斧重绘的杰作：他下令修筑全长 22.5 公里的夯土防洪城垣「御土居」明确划定洛中与洛外，将散落城内的寺院集中迁往东侧边界排成「寺町」，并在原本正方形的平安京街坊中间纵向切开南北新路（史称「天正地割」）。由于临街面宽（间口）直接关联赋税基准，市民们纷纷建造面宽狭窄、向院内深深延伸的木造住宅——被昵称为「鳗鱼寝床」的「京町家」。当你走下清水寺外的二三年坂（产宁坂重要传统建造物群保存地区），抬头看到的江户末期「虫笼窗」低矮二层、明治时期的「本二层」町家与大正时期的数寄屋风铺面，正是这四百年商住共生演变的立体切片。",
         "sources": [
           0,
           2,
@@ -1639,9 +1678,9 @@ const CITY_STORIES={
       },
       {
         "year": "1890",
-        "label": "近代转身",
-        "title": "失去都城地位之后，引一湖水来",
-        "text": "1869 年皇室与朝廷东移，京都面对人口与产业衰退。1890 年完成的琵琶湖疏水，以及随后发展的水力发电，为城市带来新的动力。走到南禅寺一带，可以把水道与庭园放在一起看；再到宇治的任天堂博物馆，沿着旧工厂读另一段制造史。京都对美与创造的投入，也在这些新的材料和用途里延伸。",
+        "label": "琵琶湖疏水 · 近代产业自救",
+        "title": "天皇迁往东京之后：劈开东山引来琵琶湖水，也引来第一座水电站",
+        "text": "1869 年明治天皇迁居东京，当了一千零七十五年都城的京都瞬间面临人口流失与产业萧条的危机。京都人没有守着千年古迹坐吃山空，而是倾全城之力启动了一项破局工程：年仅 21 岁的工部大学校毕业生田边朔郎主持凿穿东山群峰，于 1890 年修通「琵琶湖疏水」运河，并于次年建成日本第一座商业水力发电站（蹴上发电所），让京都于 1895 年跑起了全日本第一辆有轨电车。这股流经南禅寺与永观堂脚下的琵琶湖活水，不仅被直接引入天授庵与东山名园化作潺潺清流，更点燃了京都近代创新的火种——同在 1889 年于京都创立、从手工花札纸牌一路走到宇治小仓工厂与全球电子游戏舞台的任天堂，正是京都「传统匠心与现代创造一体两面」的最佳印证。",
         "sources": [
           4,
           2,
@@ -1649,25 +1688,25 @@ const CITY_STORIES={
         ]
       }
     ],
-    "lens": "这三日，先在清水寺与二三年坂读「寺院怎样和街市相邻」，再到岚山看山水怎样进入庭院，最后去宇治看旧工厂怎样成为博物馆。古都的层次，会在脚步从一处移向另一处时，逐渐显出来。",
+    "lens": "在京都的三天，恰好对应着它的三重空间维度：第一天在东山（清水寺、二三年坂、天授庵与永观堂），看平安京城外山麓的净土慈悲、禅院枯山水如何与门前町家的烟火无缝咬合；第二天深入西郊岚山（小火车、渡月桥、常寂光寺与宝严院），在保津峡谷与竹林风声里读懂王朝离宫向禅宗借景庭园的蜕变；第三天南下宇治走进任天堂博物馆，看古都延续百年的手艺耐心，如何在当代化作风靡世界的游戏记忆。",
     "stops": [
       {
         "day": 2,
         "placeId": "ninen-sannen",
         "label": "二三年坂",
-        "hint": "檐下的买卖与住居"
+        "hint": "从虫笼窗到本二层，在参道石阶上读懂京町家的三百年年轮"
       },
       {
         "day": 3,
         "placeId": "arashiyama",
         "label": "岚山",
-        "hint": "山水与庭园彼此借景"
+        "hint": "从平安贵族舟游赏月的离宫，到室町五山之首的借景禅林"
       },
       {
         "day": 4,
         "placeId": "nintendo-museum",
         "label": "任天堂博物馆",
-        "hint": "旧厂址里的创造记忆"
+        "hint": "1889 年京都花札匠心在宇治旧工厂里的当代回响"
       }
     ],
     "sources": [
@@ -1698,34 +1737,34 @@ const CITY_STORIES={
     ]
   },
   "nara": {
-    "title": "都城远去，林间仍有回声。",
-    "subtitle": "平城京 → 南都 · Heijo-kyo → Nanto",
-    "deck": "在鹿与树林之间，曾有一个向世界张开的都城。",
+    "title": "在成为森林与神鹿的故乡之前，这里曾是盛唐海风吹抵的帝国都城。",
+    "subtitle": "飞鸟 → 平城京 → 南都（Nanto）· 710 — 2026",
+    "deck": "朝廷只在平城京停留了七十四年，但正因为皇权早早抽身离去，八世纪天平时代的唐风佛殿、千年禁伐的原始神山与一千三百头野生神鹿，才得以在没有围墙的原野上完整呼吸至今。",
     "facts": [
       [
         "都城起点",
-        "710 · 平城京"
+        "710 · 平城京（日本首座大型国际律令都城）"
       ],
       [
         "读城线索",
-        "都城、寺社与森林"
+        "外京社寺群 · 神佛习合与常若 · 鹿食线生态闭环"
       ],
       [
         "此行相遇",
-        "飞火野 · 春日 · 东大寺"
+        "飞火野鹿寄 · 春日大社 · 浮见堂 · 奈良公园 · 东大寺大佛殿"
       ]
     ],
     "intro": [
-      "奈良的第一印象往往很轻：一头鹿走过草地，树叶落在石灯笼旁，通向社殿的路被林荫遮住一半。等走到东大寺抬头，木构建筑的体量忽然把时间拉远——这片安静的地方，曾经承接过建造一座国家都城的雄心。",
-      "奈良也有一种特别的开放。八世纪的平城京吸收来自中国等地的制度、技艺与艺术，留下今天仍能在佛像、建筑和器物中辨认的交流痕迹。此行只有一天，可以把注意力从「看了多少处」移向「它们为什么留在一起」：寺院、神社、森林与人，怎样在迁都以后继续相伴。"
+      "当你从京都乘车南下进入奈良盆地，最直观的感受是城市建筑忽然退到了地平线以下，天空与草坡豁然敞开。没有高墙检票口的奈良公园里，上千头野生梅花鹿在松树与红枫下从容踱步，树冠底部被鹿群修剪出一条离地两米、整齐如尺量的「鹿食线」。然而就在这片看似无比松弛的田园牧歌深处，一旦你抬眼望见东大寺大佛殿高达 49 米的重檐与金色鸱尾，时间便会瞬间倒退一千三百年——在京都尚未诞生的公元 8 世纪，这里曾是整个东亚文明圈最耀眼的终端之一，是遣唐使与鉴真大和尚跨越惊涛骇浪最终抵达的帝国首都「平城京」。",
+      "理解奈良，有一把极其关键的地理与历史钥匙：为什么我们今天游览的春日大社、兴福寺与东大寺全都集中在城市东侧的山麓，而真正的「平城宫遗址」却在西边四公里外？原来，公元 710 年仿照唐长安城建造的平城京，起初也是一个标准的南北长方形棋盘；但为了容纳藤原氏族的氏寺兴福寺、皇家总国分寺东大寺以及御盖山麓的春日大社，都城东北角特意朝东山方向扩出了一大块矩形区域——史称「外京（Gekyo）」。公元 784 年天皇迁都离开后，西侧的皇宫与朱雀大路很快荒芜并化为农田，唯独东侧这片「外京」社寺群凭借深厚的信仰根基留存下来，演变为中世被称为「南都（Nanto）」的宗教文化圣地，最终长成了今天你脚下这座寺社、森林与城市完全无界的奈良。"
     ],
-    "historyLead": "都城的时间很短，地方的生命很长。从平城京出发，读到今天树荫下的城市。",
+    "historyLead": "从模仿唐长安的平城京与举国二百万人共铸卢舍那大佛，到迁都后的「南都」门前町与千年神鹿生态——四段记忆，为你还原日本文明最初的黎明。",
     "eras": [
       {
         "year": "710",
-        "label": "平城京",
-        "title": "面向大陆的都城，落在奈良盆地",
-        "text": "710 年，朝廷迁入平城京。以格子街路、宽阔中轴和北部宫城组织空间的新都，借鉴了中国都城规划。它既是行政中心，也是大陆文化汇入的重要场所。古代宫城遗址与我们此行游览的东部寺社区，并非同一个位置；心里留住这幅更大的城市轮廓，再看大佛与古寺，尺度便会不同。",
+        "label": "平城迁都 · 唐长安与外京格局",
+        "title": "丝绸之路的东端终点：在奈良盆地筑起模仿大唐长安的「平城京」",
+        "text": "公元 710 年（和铜 3 年），元明天皇将都城从南方的藤原京迁至奈良盆地北端的「平城京」，开启了日本历史上气魄最为恢弘的「奈良时代（天平文化）」。平城京南北长约 4.8 公里、东西宽约 4.3 公里，不仅以宽达 74 米的朱雀大路复刻了唐代长安城的坊里棋盘，更通过频繁派遣「遣唐使」船队，将盛唐的律令制度、汉字典籍、建筑营造、乐舞与佛教造像源源不断引入日本。更独特的是平城京向东山延展出的「外京」设计：显赫的藤原氏将家族佛寺兴福寺与氏神总社春日大社安放在东侧御盖山麓，使都城从一开始便呈现出「西侧皇权宫城、东侧神佛圣境」的双核格局。",
         "sources": [
           0,
           1
@@ -1733,9 +1772,9 @@ const CITY_STORIES={
       },
       {
         "year": "752",
-        "label": "大佛开眼",
-        "title": "一尊大佛，也是一代人的共同愿望",
-        "text": "圣武天皇推动造立卢舍那大佛，寄望以佛教凝聚人心、安定国家。752 年，东大寺举行大佛开眼供养。站在佛殿前，不妨把巨大的形体理解为一种公共愿望：许多人的劳动、材料与技术，在这里汇合。佛教艺术也让远方的思想，以可以被看见的方式来到奈良。",
+        "label": "卢舍那大佛开眼 · 天平盛世",
+        "title": "「一枝草、一捧土」的举国愿力：二百万人与盛唐海风共同托起的大佛",
+        "text": "公元 8 世纪中叶，疫病与连年灾荒席卷列岛。为了以《华严经》卢舍那佛的慈悲光明护佑天下，圣武天皇于 743 年颁布《大佛造立诏》，委托民间高僧行基菩萨发起了一场打破阶层壁垒的全国募捐（劝进）——无论贵族还是平民，「哪怕每日只献出一枝草、一捧土」皆可共同造佛，最终动员了全国近半数人口（逾 200 万人）参与。公元 752 年（天平胜宝 4 年）4 月 9 日，高近 15 米的卢舍那大佛在东大寺举行了盛大的「开眼供养会」，来自天竺（印度）的菩提僊那僧正执开眼笔，上万名僧侣与各国使节齐聚殿前；仅一年后的 753 年冬，唐代高僧鉴真大和尚历尽六次东渡磨难抵达平城京，在大佛殿前筑坛授戒。那是奈良最辉煌的国际主义时刻。",
         "sources": [
           2,
           1
@@ -1743,9 +1782,9 @@ const CITY_STORIES={
       },
       {
         "year": "784",
-        "label": "迁都之后",
-        "title": "朝廷离开了，寺院与街坊留下来",
-        "text": "784 年迁都长冈京，794 年再迁平安京。东大寺、兴福寺、元兴寺等寺院仍留在旧都，人们围绕寺院的工作与往来逐渐形成门前聚落，后来发展出奈良町。奈良也经历过 1180 年的兵火与此后的复兴。如今看到的安静街坊，承载着迁移、损毁与重建留下的许多层次。",
+        "label": "迁都之后 · 南都再兴与奈良町",
+        "title": "当皇宫化为稻田：留在旧都的寺院、运庆快庆的巨木与「奈良町」",
+        "text": "公元 784 年桓武天皇迁都长冈京（十年后再迁平安京），政治中心永久离开了奈良。西侧昔日宏伟的平城宫殿宇在数十年间化作阡陌稻田，但东侧「外京」的东大寺、兴福寺与元兴寺却并未随之迁走，因而被京都人尊称为「南都（南方的旧都）」。在 1180 年兵火焚毁南都之后，重源上人引入中国南宋建筑结构（「大佛样」），并起用雕刻巨匠运庆、快庆雕出南大门金刚力士像，完成了镰仓时代的再兴；与此同时，围绕元兴寺等大寺境内发展起来的手工业者与商贾聚落，逐渐演化为紧密相连的传统町家街区——「奈良町（Naramachi）」，让旧都在朝廷离去后依然保有了鲜活的市民脉搏。",
         "sources": [
           0,
           3
@@ -1753,34 +1792,34 @@ const CITY_STORIES={
       },
       {
         "year": "1880",
-        "label": "公园与守护",
-        "title": "让寺社、树林和城市继续相邻",
-        "text": "奈良公园在 1880 年开设，后来不断扩展、整备；更早的春日山保护，则与神山信仰相连。1998 年列入世界遗产的「古都奈良的文化财」，把寺院、神社、宫城遗址与春日山原始林一同纳入。今天的景观因此既有古老信仰的延续，也有近代以来的照料。沿参道前行时，林间的留白也值得认真看。",
+        "label": "奈良公园 · 神佛习合与天然纪念物",
+        "title": "拆掉围墙的 660 公顷古都：把神山、佛寺与 1300 头野鹿交给同一片草地",
+        "text": "在明治维新颁布「神佛分离令」之前，奈良曾实践了长达千年的「神佛习合」——人们相信春日大社的神明与兴福寺、东大寺的佛菩萨本是一体，因此从春日山原始林（自公元 841 年颁布禁伐令守护至今）走出的神使梅花鹿，可以毫无阻碍地漫步在佛教寺院的草坪上。1880 年（明治 13 年）官方设立占地 660 公顷的「奈良公园」时，完整保留了这片自天平时代便连成一体的无墙格局；1998 年，「古都奈良的文化财」更将佛教寺院、神道神社、平城宫考古遗址与春日山原始自然林一并纳入世界文化遗产。在这里，人类建筑与野生生态从来不是对立的两端，而是彼此成全了整整一千三百年。",
         "sources": [
           4,
           1
         ]
       }
     ],
-    "lens": "从飞火野的鹿寄走入春日大社，再到东大寺，短短一条线可以依次遇见草地、神域与佛教寺院。听一段鹿蹄落地的声音，再抬头看殿宇的尺度；这座城的温柔与庄重，就在两次观看之间相接。",
+    "lens": "虽然在奈良只有一整天，但我们设计的动线恰好是一部从「自然生灵」走向「氏族神道」、最终抵达「国家佛寺」的浓缩文明史：清晨 10 点先在飞火野草坪听一把法国自然圆号吹响贝多芬《田园交响曲》，看上百头野生神鹿从森林奔涌而出；随后踏着两千座石灯笼夹道的青苔参道走进每二十年重修一次的春日大社；午后穿过奈良公园 2 米高的「鹿食线」树林，最终站在东大寺大佛殿前，在一片天平时代的青铜莲花瓣上，与公元 8 世纪的盛唐海风迎面相逢。",
     "stops": [
       {
         "day": 5,
         "placeId": "nara-shikayose",
         "label": "鹿寄（招鹿）",
-        "hint": "从草地与动物开始"
+        "hint": "1892 年传下的圆号《田园》旋律与野生神鹿的百年听觉默契"
       },
       {
         "day": 5,
         "placeId": "kasuga-taisha",
         "label": "春日大社",
-        "hint": "沿参道走向森林"
+        "hint": "禁伐 1200 年的御盖山神域、三千座灯笼与 60 次式年造替"
       },
       {
         "day": 5,
         "placeId": "todaiji",
         "label": "东大寺大佛殿",
-        "hint": "在殿前感受古都尺度"
+        "hint": "200 万人「一枝草、一捧土」铸就的天平巨像与莲华藏世界"
       }
     ],
     "sources": [
@@ -1807,19 +1846,96 @@ const CITY_STORIES={
     ]
   }
 };
+(function syncItineraryAndPois(){
+  const oldPoi=new Map(MAP_POIS.map(p=>[p.id,p]));
+  const pSrc=id=>DATA.places.find(p=>p.id===id)?.source||oldPoi.get(id)?.source||'';
+  DATA.days=[
+    ['11.28','土','tokyo','东京','城市初见，夜色新宿',38,'北京 → 成田机场 → 新宿站 → 东横INN-新宿歌舞伎町 → 歌舞伎町','11月28日第一天：从北京抵达东京，住宿在新宿附近（东横INN-新宿歌舞伎町），晚上在歌舞伎町散步观赏夜景。','落地成田后留出入境与取行李时间，乘轨道交通至新宿站（约 1.5 小时），先办理东横INN-新宿歌舞伎町入住，晚间漫步歌舞伎町观赏霓虹夜景。','16:00｜抵达成田机场（IJ018 航班计划）;傍晚｜前往新宿站，入住东横INN-新宿歌舞伎町（订单）;晚间｜歌舞伎町散步观赏夜景','东横INN-新宿歌舞伎町','机场至新宿 1 小时偏乐观，建议按 1.5 小时规划；首晚散步看夜景即可，不要预约太早的晚餐。',[24,25,38]],
+    ['11.29','日','fuji','富士山麓','追一场山与湖的落日',2,'新宿站 → 河口湖 / 下吉田 → 山中湖 → 河口湖站 → 京都站','第二天：从新宿前往富士山河口湖，早上在河口湖镇及下吉田一带游玩，下午前往山中湖观赏湖景和富士山日落，日落后返回河口湖镇，坐夜行巴士前往京都。','早间从新宿前往河口湖镇与下吉田一带（新仓山浅间公园、富士吉田街区），下午前往山中湖观赏湖景与富士山日落（可湖畔短租电助力车约 2 小时、原店归还；MOMO 冬季常规 16:00 截止还车）。日落后返回河口湖站，建议 19:30 前到站衔接 20:32 夜行巴士赴京都。','上午｜新宿出发，游览河口湖镇、下吉田与新仓山浅间公园;下午｜前往山中湖观赏湖景与富士山日落;19:30｜日落后返回河口湖站休整取行李;20:32｜河口湖站夜行巴士出发前往京都（订单）','夜行巴士 · 河口湖站 20:32 → 京都站 05:57','夜巴订单指定河口湖站 20:32 发车，日落后务必返回河口湖站乘车，切勿误去富士山站候车；若在山中湖租车须确认冬季还车截止时间与返程巴士班次。',[0,1,2,7,8,28,29]],
+    ['11.30','月','kyoto','京都','東山紅葉，古寺晨光',6,'京都站 → 清水寺 · 伏见稻荷等京都东部景点（顺序不定） → 京都M’s 二条城御池酒店','第三天：游玩京都以清水寺、伏见稻荷大社等景点为主的、位于京都东部的那些景点（含二三年坂、东福寺、天授庵、永观堂、真如堂等），顺序不定。','05:57 夜巴抵京都站后先寄存行李、吃早餐。全天游览京都东部（洛东—东山—伏见）红叶与社寺群：以清水寺、二三年坂、伏见稻荷大社为核心，结合东福寺、南禅寺天授庵、永观堂、真如堂灵活取舍（顺序不定，视体力保留 3–4 处重点）。16:00 后入住京都M’s 二条城御池酒店。','05:57｜京都站八条口 F3 到达（夜巴订单）;全天（顺序不定）｜清水寺、二三年坂、伏见稻荷大社及京都东部红叶名刹（东福寺 / 天授庵 / 永观堂 / 真如堂灵活组合）;16:00后｜入住京都M’s 二条城御池酒店（订单）','京都M’s 二条城御池酒店 · 第 1 晚','京都东部景点南北跨度较大且本日为夜巴抵达首日，各点游览顺序不定，建议按“南线（伏见稻荷·东福寺）→ 中线（清水寺·二三年坂）→ 北线（天授庵·永观堂·真如堂）”就近串联，11/30 亦为清水寺秋季夜间特别拜观最后一天。',[6,9,10,11,12,13,26,37]],
+    ['12.01','火','kyoto','京都','嵐山緩行，庭院深秋',14,'京都M’s 二条城御池酒店 → 岚山 · 渡月桥 · 常寂光寺 · 宝严院（顺序不定）','第四天：游玩以岚山为主的、京都以西的景点（渡月桥、岚山竹林、岚山小火车、常寂光寺、宝严院，备选琉璃光院），顺序不定。','全天留给京都西郊岚山片区（顺序不定）：围绕渡月桥、岚山竹林、岚山小火车、常寂光寺与宝严院慢游一整天，根据小火车实际票面时段灵活决定先后次序；琉璃光院位于洛北八濑，路途较远，仅作备选。','上午至下午（顺序不定）｜岚山、渡月桥、岚山小火车、常寂光寺、宝严院（按小火车票面时段灵活调整顺序）;傍晚｜返回京都市区，续住京都M’s 二条城御池酒店','京都M’s 二条城御池酒店 · 第 2 晚','岚山各点紧邻大堰川与小仓山麓，游览顺序不定，以小火车实际发车时刻为锚点顺时针或逆时针串联最省体力。',[14,15,16,18,17,36]],
+    ['12.02','水','kyoto','京都 · 宇治 · 奈良','从游戏记忆，走入古都',31,'京都M’s 二条城御池酒店 → 京都市区收尾 → 任天堂博物馆 → JR奈良站 → 御宿野乃奈良天然温泉酒店','第五天：早上在京都市区简单逛逛收尾，前往任天堂博物馆，参观完博物馆后前往奈良简单逛逛，入住御宿野乃奈良天然温泉酒店。','上午 10:00 前退房，在二条城御池或京都站周边简单逛逛收尾；按预约时段前往宇治参观任天堂博物馆。结束后乘 JR 奈良线前往奈良，入住 JR 奈良站东口旁的御宿野乃奈良天然温泉酒店，傍晚在奈良简单散步、泡天然温泉休整。','上午｜京都酒店退房（10:00前），京都市区简单逛逛收尾;预约时段｜前往宇治参观任天堂博物馆（实名制预约）;傍晚 / 晚间｜抵达 JR 奈良站，入住御宿野乃奈良天然温泉酒店，奈良街头与奈良公园外围简单散步','御宿野乃奈良天然温泉酒店','任天堂博物馆实行严格实名预约与入场核验（需携带护照原件），请根据票面时段倒推从京都市区出发的时间。',[12,31]],
+    ['12.03','木','nara','奈良','鹿鳴林間，古都告別',20,'御宿野乃奈良天然温泉酒店 → 奈良公园 · 春日大社 · 东大寺 · 飞火野 · 浮见堂（顺序不定） → 京都站 → 东京塞罗林之光酒店','第六天：参观奈良以奈良公园、春日大社为主的景点（含飞火野鹿寄、东大寺大佛殿、浮见堂），顺序不定；晚上从奈良返回京都，乘坐新干线返回东京，入住东京塞罗林之光酒店。','全天游览奈良公园核心区（顺序不定）：若赶 10:00 飞火野“鹿寄”可先赴飞火野，其余时段自由串联奈良公园、春日大社、东大寺大佛殿与鹭池浮见堂。傍晚回御宿野乃取行李，从奈良返回京都站转乘东海道新干线回东京，入住东京塞罗林之光酒店。','10:00（可选固定点）｜飞火野鹿寄（官方日程约 15 分钟）;全天（顺序不定）｜奈良公园、春日大社、东大寺大佛殿、浮见堂漫步;晚间｜从奈良返回京都站，换乘新干线返回东京，入住东京塞罗林之光酒店（订单）','东京塞罗林之光酒店 · 第 1 晚','奈良各景点均分布在奈良公园步行动线内，顺序不定；东大寺大佛殿冬季（11–3月）8:00–17:00 开放。晚间经京都站乘新干线返东京，注意预留取行李与换乘时间。',[19,20,30,21,22,27]],
+    ['12.04','金','tokyo','东京','银杏与皇居，一日秋光',4,'东京塞罗林之光酒店 → 新宿御苑 · 明治神宫外苑 · 明治神宫 · 皇居乾通 · 靖国神社（顺序不定）','第七天：参观以新宿御苑、明治神宫外苑、明治神宫、皇居乾通、靖国神社为主的林苑皇家建筑，顺序不定。','全天游览东京皇室苑囿与近代神社建筑群（顺序不定）：串联新宿御苑、明治神宫外苑、明治神宫、皇居乾通与靖国神社。唯需注意皇居乾通秋季特别开放 15:00 截止入场（坂下门单向进入、乾门出，出乾门后即达靖国神社），其余林苑可按体力灵活安排先后。','上午至午后（顺序不定）｜新宿御苑、明治神宫外苑、明治神宫林苑漫步;13:30–15:00前｜皇居乾通（坂下门入场，15:00 截止进入）;傍晚（顺序不定）｜靖国神社（紧邻皇居乾门北侧），返回东京塞罗林之光酒店','东京塞罗林之光酒店 · 第 2 晚','本日五大林苑与皇家建筑游览顺序不定，但皇居乾通 15:00 停止入场且仅限坂下门单向进入，建议将皇居乾通与紧邻的靖国神社排在午后时段。',[3,4,5,23,35]],
+    ['12.05','土','tokyo','东京','博物馆的历史，浅草的灯',33,'东京塞罗林之光酒店 → 东京国立博物馆 → 浅草寺 → 秋叶原（及晴空塔夜景）','第八天：参观东京国立博物馆、浅草寺、秋叶原（可远眺或顺访晴空塔夜景）。','从台東区酒店出发极为顺路：上午至午后深度参观上野东京国立博物馆（建议预留 3–4 小时），下午前往浅草寺感受江户下町香火，傍晚至晚间漫步秋叶原电器与次文化街区（可顺路远眺晴空塔夜景）。','上午至午后｜上野 · 东京国立博物馆（本馆 / 法隆寺宝物馆 / 东洋馆）;下午｜浅草寺（雷门 · 仲见世通 · 本堂）;傍晚至晚间｜秋叶原散步（及晴空塔夜景），返回东京塞罗林之光酒店','东京塞罗林之光酒店 · 第 3 晚','入住的东京塞罗林之光酒店位于台東区新御徒町，去往上野（东京国立博物馆）、浅草寺和秋叶原均在 10–15 分钟生活圈内，动线极佳。',[33,32,24,34]],
+    ['12.06','日','tokyo','东京','把最后半日，留给余韵',3,'东京塞罗林之光酒店 → 东京剩余景点收尾 → 成田机场 → 北京','第九天：如果还有剩余景点进行收尾，下午从成田机场返回北京。','上午 11:00 前办理东京塞罗林之光酒店退房，上午至午后就近补齐前几日未尽的剩余景点或查漏补缺购物；约 14:00 从市区出发前往成田机场，搭乘 18:00 IJ017 航班返回北京。','11:00前｜东京塞罗林之光酒店退房;上午至午后｜剩余景点收尾漫步或伴手礼采买;15:00–15:30｜抵达成田机场办理值机与出境;18:00｜IJ017 成田起飞（日本时间）→ 21:30 北京 T3 到达（北京时间）','返回北京','18:00 国际航班意味着下午需预留充足的成田快线 / Skyliner 往返时间，上午收尾景点建议选在交通枢纽沿线。',[3]]
+  ];
+  DATA.bookings=[
+    ['宿1 · 东横INN-新宿歌舞伎町（11/28–11/29）','¥1,057.87 CNY','15:00 后入住，10:00 前退房；双床无烟，2 人，14㎡，含 2 份早餐。订单确认后不可取消。地址：東京都新宿区歌舞伎町2-20-15。',25],
+    ['宿2 · 京都M’s 二条城御池酒店（11/30–12/02）','¥1,293.18 CNY','16:00 后入住，10:00 前退房，连住 2 晚（DAY 03–04）；另付住宿税。地址：京都市中京区大宮通御池下る三坊大宮町134。订单 1128152263910747。',26],
+    ['宿4 · 东京塞罗林之光酒店（12/03–12/06）','¥2,534.42 CNY + ¥4,000 JPY','入住 15:00–次日 00:00，11:00 前退房，连住 3 晚（DAY 06–08）；地址：東京都台東区小島2-7-7（新御徒町站 A4 口步行 3 分钟）。订单 1128152269954280。',27],
+    ['夜巴 · 河口湖站 → 京都站（11/29–11/30）','¥20,400 JPY / 2 人','预约 3311461，0101 班，服务号 05017702，01 号车，20 / 23 座。20:32 河口湖站 → 次日 05:57 京都站八条口 F3。',28]
+  ];
+  const hotelPlaces=[
+    {id:'hotel-toyoko-kabukicho',zh:'东横INN-新宿歌舞伎町',ja:'東横INN新宿歌舞伎町',latin:'Toyoko Inn Tokyo Shinjuku Kabukicho',same:false,aliases:['东横INN-新宿歌舞伎町','东横 INN 新宿歌舞伎町','东横INN新宿歌舞伎町','Toyoko Inn Tokyo Shinjuku Kabukicho'],source:'https://www.toyoko-inn.com/eng/search/detail/00078/'},
+    {id:'hotel-ms-nijojo',zh:'京都M’s 二条城御池酒店',ja:'エムズホテル 二条城OIKE',latin:"M's Hotel Nijojo Oike",same:false,aliases:['京都M’s 二条城御池酒店',"京都M's 二条城御池酒店",'M’s Hotel Nijojo Oike',"M's Hotel Nijojo Oike"],source:'https://kyohotel.jp/en/hotel/mshotel-nijojooike-en/'},
+    {id:'hotel-onyado-nono-nara',zh:'御宿野乃奈良天然温泉酒店',ja:'天然温泉 吉野桜の湯 御宿 野乃奈良',latin:'Onyado Nono Nara Natural Hot Spring',same:false,aliases:['御宿野乃奈良天然温泉酒店','御宿野乃 奈良天然温泉','Onyado Nono Nara Natural Hot Spring'],source:'https://www.booking.com/hotel/jp/oyado-nono-nara.en-gb.html'},
+    {id:'hotel-serorin-light-tokyo',zh:'东京塞罗林之光酒店',ja:'Serorin Light Hotel Tokyo',latin:'Serorin Light Hotel Tokyo',same:false,aliases:['东京塞罗林之光酒店','Serorin Light Hotel Tokyo','Serorin Light'],source:'https://www.booking.com/hotel/jp/serorin-light-tokyo-tokyo.html'}
+  ];
+  hotelPlaces.forEach(hp=>{if(!DATA.places.some(p=>p.id===hp.id))DATA.places.push(hp)});
+  const nextPois=[
+    {id:'narita',name:'成田机场',area:'airport',lat:35.771986,lon:140.39285,days:[0,8],daySeq:{0:1,8:99},kind:'交通',note:'DAY 01 16:00 IJ018 落地东京起点；DAY 09 18:00 IJ017 起飞返程北京 T3。',source:pSrc('narita')||pSrc('narita-airport')},
+    {id:'shinjuku',name:'新宿站',area:'tokyo',lat:35.6896,lon:139.700571,days:[0,1],daySeq:{0:2,1:1},kind:'交通',note:'DAY 01 成田抵京进城枢纽；DAY 02 早间由此乘车前往富士山河口湖。',source:pSrc('shinjuku')||pSrc('shinjuku-station')},
+    {id:'hotel-toyoko-kabukicho',name:'东横INN-新宿歌舞伎町',shortTag:'宿1 · 东横INN新宿',area:'tokyo',lat:35.697339,lon:139.704263,days:[0],daySeq:{0:3},kind:'住宿',hotelOrder:1,stayNights:'11/28（第 1 晚）',address:'東京都新宿区歌舞伎町2-20-15',photo:25,note:'【第 1 站住宿 · 11/28 入住 1 晚】位于新宿区歌舞伎町 2-20-15（东新宿站 A1 口步行约 3–5 分钟）。15:00 后入住，10:00 前退房，安顿后步行即达歌舞伎町核心街区。',source:'https://www.toyoko-inn.com/eng/search/detail/00078/'},
+    {id:'kabukicho',name:'歌舞伎町',area:'tokyo',lat:35.69466,lon:139.70244,days:[0],daySeq:{0:4},kind:'景点',photo:38,note:'DAY 01 晚间散步看夜景核心区：从东横INN步行数分钟即达一番街红门与靖国通霓虹街景。',source:pSrc('kabukicho')},
+    {id:'hotel-serorin-light-tokyo',name:'东京塞罗林之光酒店',shortTag:'宿4 · 塞罗林之光',area:'tokyo',lat:35.705302,lon:139.783706,days:[5,6,7,8],daySeq:{5:10,6:1,7:1,8:1},kind:'住宿',hotelOrder:4,stayNights:'12/03–12/06（连住 3 晚）',address:'東京都台東区小島2-7-7',photo:27,note:'【第 4 站住宿 · 12/03–12/06 连住 3 晚】位于台東区小島 2-7-7（都营大江户线/筑波快线“新御徒町站”A4 口步行约 3 分钟）。毗邻上野、浅草与秋叶原，是返程东京后三天的住宿大本营。',source:'https://www.booking.com/hotel/jp/serorin-light-tokyo-tokyo.html'},
+    {id:'gyoen',name:'新宿御苑',area:'tokyo',lat:35.685176,lon:139.710052,days:[6,8],daySeq:{6:2,8:2},kind:'景点',photo:3,note:'DAY 07 林苑与皇家建筑游览（顺序不定）；若当日未逛完也可留作 DAY 09 上午收尾。',source:pSrc('gyoen')||pSrc('shinjuku-gyoen')},
+    {id:'gaien',name:'明治神宫外苑',area:'tokyo',lat:35.679306,lon:139.717139,days:[6],daySeq:{6:3},kind:'景点',photo:4,note:'DAY 07 林苑与皇家建筑游览（顺序不定）：青山通至圣德纪念绘画馆的四列银杏并木。',source:pSrc('gaien')||pSrc('meiji-jingu-gaien')},
+    {id:'meiji',name:'明治神宫',area:'tokyo',lat:35.676389,lon:139.699333,days:[6],daySeq:{6:4},kind:'景点',photo:5,note:'DAY 07 林苑与皇家建筑游览（顺序不定）：百年人工常绿杜与南参道巨型木鸟居。',source:pSrc('meiji')||pSrc('meiji-jingu')},
+    {id:'inui',name:'皇居乾通 · 坂下门入口',area:'tokyo',lat:35.683389,lon:139.756806,days:[6],daySeq:{6:5},kind:'景点',photo:35,note:'DAY 07 皇家建筑核心：秋季乾通开放仅限坂下门单向进入（9:00–15:00 截止入场）、乾门出，不可反向。',source:pSrc('inui')||pSrc('kokyo-inui')},
+    {id:'yasukuni',name:'靖国神社',area:'tokyo',lat:35.694139,lon:139.742917,days:[6],daySeq:{6:6},kind:'景点',photo:23,note:'DAY 07 林苑与皇家建筑游览（顺序不定）：紧邻皇居北之丸公园与乾门出口，顺路串联最自然。',source:pSrc('yasukuni')},
+    {id:'tnm',name:'东京国立博物馆',area:'tokyo',lat:35.718889,lon:139.776389,days:[7,8],daySeq:{7:2,8:3},kind:'景点',photo:33,note:'DAY 08 首站：从塞罗林之光酒店出发约 10 分钟即达上野公园，建议预留 3–4 小时细看国宝。',source:pSrc('tnm')},
+    {id:'sensoji',name:'浅草寺',area:'tokyo',lat:35.714722,lon:139.796667,days:[7,8],daySeq:{7:3,8:4},kind:'景点',photo:32,note:'DAY 08 第二站：东京最古老寺院，雷门、仲见世通与本堂相连，午后至傍晚氛围最佳。',source:pSrc('sensoji')},
+    {id:'akiba',name:'秋叶原',area:'tokyo',lat:35.69836,lon:139.77313,days:[7,8],daySeq:{7:4,8:5},kind:'景点',photo:24,note:'DAY 08 第三站：中央通与无线电会馆街区，距离塞罗林之光酒店仅一站地铁或步行可达。',source:pSrc('akiba')||pSrc('akihabara')},
+    {id:'skytree',name:'晴空塔',area:'tokyo',lat:35.710056,lon:139.810722,days:[7],daySeq:{7:5},kind:'景点',photo:34,note:'DAY 08 浅草寺隔隅田川相望的夜景地标，可视天气与预约情况登塔或在隅田川畔远眺。',source:pSrc('skytree')},
+    {id:'kawaguchiko',name:'河口湖站',area:'fuji',lat:35.498228,lon:138.768658,days:[1],daySeq:{1:1},kind:'交通',photo:28,note:'DAY 02 核心枢纽：早上抵达河口湖镇游玩，下午赴山中湖看日落后返回此站，20:32 乘夜巴前往京都。',source:pSrc('kawaguchiko')},
+    {id:'shimoyoshida',name:'下吉田站',area:'fuji',lat:35.497978,lon:138.804731,days:[1],daySeq:{1:2},kind:'交通',note:'DAY 02 上午：河口湖线紧邻站点，出站步行约 10 分钟即达新仓山浅间公园。',source:pSrc('shimoyoshida')},
+    {id:'arakura',name:'新仓山浅间公园',area:'fuji',lat:35.501233,lon:138.800719,days:[1],daySeq:{1:3},kind:'景点',photo:2,note:'DAY 02 上午：登 398 级咲耶姬阶梯至忠灵塔，上午顺光拍摄红叶、五重塔与富士山同框。',source:pSrc('arakura')||pSrc('arakura-fuji-sengen')},
+    {id:'fujisan',name:'富士山站 · 富士吉田散步',area:'fuji',lat:35.483503,lon:138.795858,days:[1],daySeq:{1:4},kind:'景点',photo:0,note:'DAY 02 上午至中午：富士吉田本町通街景散步，随后由此或河口湖乘巴士前往山中湖。',source:pSrc('fujisan')||pSrc('fujisan-station')},
+    {id:'yamanaka',name:'山中湖',area:'fuji',lat:35.4194,lon:138.8706,days:[1],daySeq:{1:5},kind:'景点',photo:7,note:'DAY 02 下午重头戏：富士五湖海拔最高处，下午环湖赏景并等候富士山日落与暮色逆富士，日落后返回河口湖站。',source:pSrc('yamanaka')||pSrc('lake-yamanaka')},
+    {id:'momo',name:'MOMO Lake Yamanaka',area:'fuji',lat:35.4126,lon:138.8439,days:[1],daySeq:{1:6},kind:'租车',note:'DAY 02 下午山中湖租车首选：山中 212-5；11–4 月营业 6:30–16:00，必须原店归还。',source:pSrc('momo')},
+    {id:'soranoshita',name:'そらのした 河口湖店',area:'fuji',lat:35.4994,lon:138.7689,days:[],daySeq:{},kind:'租车',note:'河口湖站前租车备选：船津 3631-2；营业 9:00–18:00，提供行李寄存。',source:pSrc('soranoshita')},
+    {id:'tbk',name:'Tourist Base Kawaguchiko',area:'fuji',lat:35.4987,lon:138.7685,days:[],daySeq:{},kind:'租车',note:'河口湖站前普通车备选：船津 3636（站前步行 1 分钟），16:45 前还车。',source:pSrc('tbk')},
+    {id:'aloha',name:'Aloha Biketrip（下吉田站）',area:'fuji',lat:35.4979,lon:138.8049,days:[],daySeq:{},kind:'租车',note:'异地还车备选：默认下吉田站交接，可预约河口湖异地还车（另收配送费）。',source:pSrc('aloha')},
+    {id:'kyotost',name:'京都站（八条口）',area:'kyoto',lat:34.985849,lon:135.758767,days:[2,4,5],daySeq:{2:1,4:2,5:99},kind:'交通',photo:28,note:'DAY 03 05:57 夜巴抵达八条口 F3；DAY 05 由此乘 JR 前往宇治与奈良；DAY 06 晚由奈良返此换乘新干线回东京。',source:pSrc('kyotost')||pSrc('kyoto-station')},
+    {id:'hotel-ms-nijojo',name:'京都M’s 二条城御池酒店',shortTag:'宿2 · 京都M’s酒店',area:'kyoto',lat:35.010111,lon:135.748991,days:[2,3,4],daySeq:{2:9,3:1,4:1},kind:'住宿',hotelOrder:2,stayNights:'11/30–12/02（连住 2 晚）',address:'京都市中京区大宮通御池下る三坊大宮町134',photo:26,note:'【第 2 站住宿 · 11/30–12/02 连住 2 晚】位于中京区大宮通御池下る三坊大宮町 134（地铁东西线“二条城前站”步行约 6 分钟）。地处洛中核心，DAY 05 早间可在周边御池通、二条城外围简单散步收尾。',source:'https://kyohotel.jp/en/hotel/mshotel-nijojooike-en/'},
+    {id:'kiyomizu',name:'清水寺',area:'kyoto',lat:34.994856,lon:135.785046,days:[2],daySeq:{2:2},kind:'景点',photo:6,note:'DAY 03 京都东部核心（顺序不定）：悬造清水舞台与锦云溪红叶海，6:00 即开门，11/30 亦为秋夜特别拜观末日。',source:pSrc('kiyomizu')||pSrc('kiyomizu-dera')},
+    {id:'ninen',name:'二三年坂',area:'kyoto',lat:34.99728,lon:135.78103,days:[2],daySeq:{2:3},kind:'景点',photo:37,note:'DAY 03 京都东部（顺序不定）：连接清水寺北侧的传统石阶坡道与町家保存区，与清水寺连走最顺。',source:pSrc('ninen-sannen')},
+    {id:'inari',name:'伏见稻荷大社',area:'kyoto',lat:34.967139,lon:135.772667,days:[2],daySeq:{2:4},kind:'景点',photo:12,note:'DAY 03 京都东部核心（顺序不定）：千本鸟居与稻荷山信仰总本宫，全天开放，与东福寺仅相隔一站。',source:pSrc('inari')||pSrc('fushimi-inari')},
+    {id:'tofukuji',name:'东福寺',area:'kyoto',lat:34.976528,lon:135.773944,days:[2],daySeq:{2:5},kind:'景点',photo:11,note:'DAY 03 京都东部（顺序不定）：通天桥俯瞰洗玉涧两千株三叶枫与重森三玲本坊枯山水，紧邻伏见稻荷北侧。',source:pSrc('tofukuji')},
+    {id:'tenjuan',name:'天授庵（南禅寺塔头）',area:'kyoto',lat:35.011056,lon:135.792444,days:[2],daySeq:{2:6},kind:'景点',photo:13,note:'DAY 03 京都东部（顺序不定）：南禅寺塔头，菱形铺石枯山水与池泉回游双庭院红叶。',source:pSrc('tenjuan')},
+    {id:'eikando',name:'永观堂（禅林寺）',area:'kyoto',lat:35.014472,lon:135.795306,days:[2],daySeq:{2:7},kind:'景点',photo:9,note:'DAY 03 京都东部（顺序不定）：“秋之永观堂”，三千株岩垣红叶、回首阿弥陀如来与卧龙廊。',source:pSrc('eikando')},
+    {id:'shinnyodo',name:'真如堂（真正极乐寺）',area:'kyoto',lat:35.021167,lon:135.792556,days:[2],daySeq:{2:8},kind:'景点',photo:10,note:'DAY 03 京都东部（顺序不定）：神乐冈山丘上的天台宗古刹，三重塔与红叶交织出静谧清雅的洛东秋色。',source:pSrc('shinnyodo')},
+    {id:'arashiyama',name:'岚山',area:'kyoto',lat:35.01542,lon:135.67083,days:[3],daySeq:{3:2},kind:'景点',photo:15,note:'DAY 04 京都西部核心（顺序不定）：天龙寺北门竹林小径、大堰川峡谷与小仓山锦秋。',source:pSrc('arashiyama')},
+    {id:'togetsu',name:'渡月桥',area:'kyoto',lat:35.012864,lon:135.67775,days:[3],daySeq:{3:3},kind:'景点',photo:14,note:'DAY 04 京都西部核心（顺序不定）：横跨桂川（大堰川）的岚山门户，远眺岚山层林尽染。',source:pSrc('togetsu')||pSrc('togetsukyo')},
+    {id:'sagano',name:'岚山小火车',area:'kyoto',lat:35.018028,lon:135.666944,days:[3],daySeq:{3:4},kind:'景点',photo:36,note:'DAY 04 京都西部（顺序不定）：嵯峨野观光铁道保津川峡谷红叶列车（以实际票面上下车站与时刻为准）。',source:pSrc('sagano-train')},
+    {id:'jojakkoji',name:'常寂光寺',area:'kyoto',lat:35.019722,lon:135.668583,days:[3],daySeq:{3:5},kind:'景点',photo:16,note:'DAY 04 京都西部（顺序不定）：小仓山腰茅葺仁王门、青苔石阶与多宝塔，俯瞰嵯峨野盆地全景。',source:pSrc('jojakkoji')},
+    {id:'hogonin',name:'宝严院',area:'kyoto',lat:35.014139,lon:135.673639,days:[3],daySeq:{3:6},kind:'景点',photo:18,note:'DAY 04 京都西部（顺序不定）：天龙寺塔头，室町名园“狮子吼之庭”借景岚山，秋季特别开放。',source:pSrc('hogonin')},
+    {id:'rurikoin',name:'琉璃光院',area:'kyoto',lat:35.066361,lon:135.806556,days:[3],daySeq:{3:7},kind:'景点',photo:17,note:'DAY 04 洛北八濑备选：书院二楼黑漆长案红叶倒影；因与西郊岚山分处城市两端，作为备选保留。',source:pSrc('rurikoin')},
+    {id:'nintendo',name:'任天堂博物馆（宇治小仓）',area:'kyoto',lat:34.8926,lon:135.7834,days:[4],daySeq:{4:3},kind:'景点',photo:31,note:'DAY 05 核心行程：早间京都市区简单收尾后前往宇治小仓站，实名预约入场；参观后乘 JR 奈良线南下奈良。',source:pSrc('nintendo')||pSrc('nintendo-museum')},
+    {id:'narast',name:'JR 奈良站',area:'nara',lat:34.680556,lon:135.818889,days:[4,5],daySeq:{4:1,5:99},kind:'交通',note:'DAY 05 傍晚从宇治抵达奈良；DAY 06 晚上由此返回京都站换乘新干线回东京。',source:pSrc('narast')||pSrc('nara-station')},
+    {id:'hotel-onyado-nono-nara',name:'御宿野乃奈良天然温泉酒店',shortTag:'宿3 · 御宿野乃奈良',area:'nara',lat:34.68227,lon:135.820104,days:[4,5],daySeq:{4:2,5:1},kind:'住宿',hotelOrder:3,stayNights:'12/02（第 5 晚）',address:'奈良県奈良市大宮町1-1-6',note:'【第 3 站住宿 · 12/02 入住 1 晚】位于奈良市大宮町 1-1-6（JR 奈良站东口步行仅 1 分钟）。全馆榻榻米铺设，内设天然温泉“吉野樱之汤”，DAY 05 傍晚入住、DAY 06 游毕取行李返京。',source:'https://www.booking.com/hotel/jp/oyado-nono-nara.en-gb.html'},
+    {id:'narapark',name:'奈良公园',area:'nara',lat:34.685047,lon:135.843012,days:[4,5],daySeq:{4:3,5:2},kind:'景点',photo:22,note:'DAY 05 傍晚简单散步 & DAY 06 奈良核心（顺序不定）：若草山麓无围墙神鹿原野，串联春日大社与东大寺。',source:pSrc('nara-park')},
+    {id:'kasuga',name:'春日大社',area:'nara',lat:34.681361,lon:135.848389,days:[5],daySeq:{5:3},kind:'景点',photo:20,note:'DAY 06 奈良核心（顺序不定）：御盖山原始神山脚下，参道两千石灯笼与回廊千盏钓灯笼。',source:pSrc('kasuga')||pSrc('kasuga-taisha')},
+    {id:'tobihino',name:'飞火野 · 鹿寄',area:'nara',lat:34.6822,lon:135.8427,days:[5],daySeq:{5:4},kind:'景点',photo:19,note:'DAY 06 奈良公园草甸（顺序不定，若看鹿寄则固定 10:00 到场）：春日大社参道南侧，圆号呼唤群鹿奔林。',source:pSrc('tobihino')},
+    {id:'todaiji',name:'东大寺大佛殿',area:'nara',lat:34.688985,lon:135.839816,days:[5],daySeq:{5:5},kind:'景点',photo:30,note:'DAY 06 奈良核心（顺序不定）：南大门金钢力士像与世界最大级木造佛殿、卢舍那大佛（11–3月 8:00–17:00）。',source:pSrc('todaiji')},
+    {id:'ukimido',name:'浮见堂',area:'nara',lat:34.6789,lon:135.8407,days:[5],daySeq:{5:6},kind:'景点',photo:21,note:'DAY 06 奈良公园南侧（顺序不定）：鹭池水面之上的桧皮葺六角亭，秋水与红叶倒影极静。',source:pSrc('ukimido')}
+  ];
+  MAP_POIS.splice(0,MAP_POIS.length,...nextPois);
+})();
 const CITIES={
   tokyo:{key:'tokyo',idx:'01',name:'东京',jp:'東京',en:'TOKYO',kicker:'NEON / METROPOLIS',
-    tagline:'霓虹之下，城市仍在生长。',lede:'抵达与归途都在这里：新宿的第一夜、富士山麓的一场落日，以及最后三天的银杏、博物馆与浅草灯火。',
-    days:[0,1,6,7,8],hero:24,range:'11.28–29 · 12.04–06',stay:'东横 INN · Serorin Light',coord:'35.6895°N 139.6917°E',
+    tagline:'霓虹之下，四百年的江户底稿仍在生长。',lede:'旅程的起点与终章都在这里：从新宿不夜城与富士山麓的浅间信仰出发，归来时再沿皇居石垣、上野国宝与浅草灯火，读懂一座不断重生的现代都城。',
+    days:[0,1,6,7,8],hero:24,range:'11.28–29 · 12.04–06',stay:'东横INN新宿歌舞伎町 · 东京塞罗林之光酒店',coord:'35.6895°N 139.6917°E',
     groups:['东京','富士'],bookings:[0,2,3],reviews:[0,3,4,5],sources:[0,5,7,8,9,10,11],areas:['tokyo','fuji','airport'],
     ticker:['新宿 SHINJUKU','新倉山 ARAKURAYAMA','山中湖 YAMANAKAKO','河口湖 KAWAGUCHIKO','皇居 KOKYO','上野 UENO','浅草 ASAKUSA','晴空塔 SKYTREE','成田 NARITA']},
   kyoto:{key:'kyoto',idx:'02',name:'京都',jp:'京都',en:'KYOTO',kicker:'庭を巡り、秋を知る',
-    tagline:'一庭一葉，静候深秋。',lede:'夜巴清晨抵达，东山的古寺、岚山的庭院与宇治的游戏记忆。三日，把脚步放在红叶最深的地方。',
-    days:[2,3,4],hero:6,range:'11.30 – 12.02',stay:'M’s Hotel Nijojo Oike',coord:'35.0116°N 135.7681°E',
+    tagline:'三面青山抱棋盘，一庭一叶藏千年。',lede:'夜巴破晓抵洛，三日穿行于东山的净土红叶、岚山的借景禅林与宇治的花札旧厂，在洛中町家与洛外山寺之间触摸古都的呼吸。',
+    days:[2,3,4],hero:6,range:'11.30 – 12.02',stay:'京都M’s 二条城御池酒店',coord:'35.0116°N 135.7681°E',
     groups:['京都'],bookings:[1],reviews:[1,2,5],sources:[1,3,4],areas:['kyoto']},
   nara:{key:'nara',idx:'03',name:'奈良',jp:'奈良',en:'NARA',kicker:'FOREST / SLOW LIVING',
-    tagline:'在林間，把時間放慢。',lede:'飞火野的鹿寄、春日大社的石灯笼与东大寺的大佛殿。只有一天，留给林间的光和慢下来的呼吸。',
-    days:[5],hero:22,range:'12.03',stay:'御宿野乃 奈良天然温泉',coord:'34.6851°N 135.8048°E',
+    tagline:'都城退入森林深处，盛唐海风吹拂至今。',lede:'飞火野的圆号鹿寄、春日大社的三千灯笼与东大寺的天平巨佛。用一整天走进没有围墙的社寺原野，回到日本文明最初的黎明。',
+    days:[5],hero:22,range:'12.03',stay:'御宿野乃奈良天然温泉酒店',coord:'34.6851°N 135.8048°E',
     groups:['奈良'],bookings:[],reviews:[6,5],sources:[2,6],areas:['nara']}
 };
 const ORDER=['tokyo','kyoto','nara'];
@@ -2073,17 +2189,19 @@ function setMode(m){
 /* ---------- city sections ---------- */
 function mapSection(c){
   const tabs=c.areas.length>1?`<div class="map-areas" role="group" aria-label="区域">${c.areas.map(a=>`<button data-area="${a}">${AREA_NAMES[a]}</button>`).join('')}</div>`:`<span class="map-area-name">${AREA_NAMES[c.areas[0]]}</span>`;
+  const totalCount=MAP_POIS.filter(p=>c.areas.includes(p.area)).length;
+  const hotelCount=MAP_POIS.filter(p=>c.areas.includes(p.area)&&p.kind==='住宿').length;
   return `<section class="sec mapsec wrap" id="map">
-    ${secHead('PLACES · 地图','把旅程放回地图',`${MAP_POIS.filter(p=>c.areas.includes(p.area)).length} 个地点 · 高亮为当日安排，点击查看详情`)}
+    ${secHead('PLACES · 地图与落脚点','把九日行程与四处宿所放回地图',`${totalCount} 个行程点位（含 ${hotelCount} 处特标酒店 宿1–宿4）· 按当日动线自动排序`)}
     <div class="map-shell" data-reveal>
       <div class="map-stage">
-        <div class="map-bar">${tabs}<div class="map-scope" role="group" aria-label="范围"><button data-scope="day">当日重点</button><button data-scope="all">区域全览</button></div></div>
+        <div class="map-bar">${tabs}<div class="map-meta-tags" id="mapMetaTags"></div><div class="map-scope" role="group" aria-label="范围"><button data-scope="day">当日重点</button><button data-scope="all">区域全览</button></div></div>
         <div class="leaf" id="leaf" role="region" aria-label="${c.name}地图"></div>
         <p class="map-status" id="mapStatus" hidden>底图加载失败（可能处于离线状态），点位与列表仍可使用。</p>
       </div>
       <div class="map-side"><div class="poi-detail" id="poiDetail" aria-live="polite"></div><ol class="poi-list" id="poiList"></ol></div>
     </div>
-    <p class="fine map-credit">点位为景区中心或地址级近似位置，未绘制道路与导航路线。坐标参考维基百科 / Wikidata、国土地理院地址查询。店铺定位仅供找路，实际交车点请联系店家。</p>
+    <p class="fine map-credit">底图采用 OpenFreeMap 矢量切片（OpenStreetMap 数据）与 MapLibre GL 渲染；“宿1–宿4”琥珀金印章为全程四家下榻酒店专属标记。坐标参考 Zenrin / NAVITIME、维基百科与国土地理院。</p>
   </section>`;
 }
 
@@ -2110,8 +2228,8 @@ function staysSection(c){
       <div class="pass big"><span class="label">RETURN · 回程</span><b>IJ017</b><div class="pass-route"><span><strong>NRT</strong>成田<br>12/6 18:00</span><i aria-hidden="true">✈</i><span><strong>PEK</strong>北京 T3<br>21:30</span></div></div>
       <div class="pass big" data-set="29"><span class="label">NIGHT BUS · 时刻表</span>${photoBtn(29,'receipt wide')}</div></div>`;
   }
-  if(c.key==='nara')cards=`<article class="stay-card empty" data-reveal><div class="stay-txt"><span class="eyebrow">NO RECORD</span><h3>御宿野乃奈良天然温泉酒店</h3><p class="price">原文未附订单凭证与价格</p><p>12/2 晚入住（从宇治前往）。12/3 下午取行李，经京都乘新干线前往东京；新干线同样未见订单，以实际票面为准。</p></div></article>`;
-  if(c.key==='kyoto')extra=`<p class="fine">12/2 晚住奈良（御宿野乃），见奈良篇。任天堂博物馆与岚山小火车未见票据。</p>`;
+  if(c.key==='nara')cards=`<article class="stay-card empty" data-reveal><div class="stay-txt"><span class="eyebrow">HOTEL 03 · 宿3</span><h3>御宿野乃奈良天然温泉酒店</h3><p class="price">奈良市大宮町 1-1-6（JR奈良站东口步行 1 分钟）</p><p>12/02（DAY 05）晚入住 1 晚，全馆铺设榻榻米并设天然温泉“吉野樱之汤”；12/03（DAY 06）游毕奈良公园与春日大社后取行李，经京都站乘新干线返东京。</p></div></article>`;
+  if(c.key==='kyoto')extra=`<p class="fine">12/02（DAY 05）晚住奈良（宿3 · 御宿野乃奈良天然温泉酒店），见奈良篇。任天堂博物馆与岚山小火车未见票据。</p>`;
   return `<section class="sec stays wrap" id="stays">
     ${secHead('RESERVATIONS · 住宿与票据','让确定的时间，成为旅途的锚点。','以下信息来自订单截图，点击缩略图查看原图。')}
     <div class="stay-grid">${cards}</div>${extra}</section>`;
@@ -2162,18 +2280,40 @@ function overviewMarkup(){
     <div class="ov-block"><span class="eyebrow">REVIEW · 全部评审意见</span>${DATA.reviews.map(r=>`<div class="ov-review"><span class="tag">${esc(r[0])}</span><b>${esc(r[1])}</b><p>${esc(r[2])}</p></div>`).join('')}</div>
     <div class="ov-block"><span class="eyebrow">OFFICIAL · 官方核查</span><div class="ov-links">${DATA.sources.map(s=>`<a href="${esc(s[1])}" target="_blank" rel="noreferrer">${esc(s[0])} ↗</a>`).join('')}</div></div>`;
 }
-/* ---------- map: Leaflet + CARTO/OSM raster tiles, inlined so it never depends on a CDN ---------- */
-let map=null,pinLayer=null,tiles=null,markers={};
+/* ---------- map: OpenFreeMap vector tiles via MapLibre GL JS (with inlined Leaflet + GSI fallback) ---------- */
+let map=null,pinLayer=null,routeLayer=null,tiles=null,markers={},mapEngine='none';
 const mapState={area:null,scope:'day',sel:null,fallback:false,ok:0,fail:0};
-/* 国土地理院 tiles: keyless, Japanese labels, work from file:// (CARTO now needs an API key, OSM blocks requests without a Referer) */
+const OFM_STYLES={
+  tokyo:'https://tiles.openfreemap.org/styles/dark',
+  kyoto:'https://tiles.openfreemap.org/styles/positron',
+  nara:'https://tiles.openfreemap.org/styles/positron'
+};
+const CITY_MAP_THEME={
+  tokyo:{route:'#22e3ff',bg:'#090c14',water:'#0f1726',park:'#101a21'},
+  kyoto:{route:'#b23a2a',bg:'#f3ede1',water:'#d7e0e2',park:'#e4e6d5'},
+  nara:{route:'#4f6b3a',bg:'#eef0e4',water:'#d5e0d8',park:'#dce5cf'}
+};
 const TILE_URL='https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png';
 const TILE_FALLBACK='https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png';
 const ATTR='<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noreferrer">地理院タイル</a>';
 
-const areaPois=a=>MAP_POIS.filter(p=>p.area===a);
+const FLEXIBLE_DAYS=new Set([2,3,5,6]);
+const poiSeqForDay=(p,d)=>(p.daySeq&&p.daySeq[d]!=null)?p.daySeq[d]:999;
+function areaPois(a){
+  const raw=MAP_POIS.filter(p=>p.area===a);
+  const d=state.day;
+  const todayList=raw.filter(p=>p.days.includes(d)).sort((x,y)=>poiSeqForDay(x,d)-poiSeqForDay(y,d));
+  const otherList=raw.filter(p=>!p.days.includes(d));
+  const combined=[...todayList,...otherList];
+  let spotNo=1;
+  return combined.map(p=>({...p,_badge:p.kind==='住宿'?`宿${p.hotelOrder}`:String(spotNo++)}));
+}
 function bestArea(){
-  const c=CITIES[state.city];let best=c.areas[0],n=-1;
-  c.areas.forEach(a=>{const k=areaPois(a).filter(p=>p.days.includes(state.day)).length;if(k>n){n=k;best=a}});
+  const c=CITIES[state.city];
+  const dArea=DATA.days[state.day]?.[2];
+  if(dArea&&c.areas.includes(dArea))return dArea;
+  let best=c.areas[0],n=-1;
+  c.areas.forEach(a=>{const k=MAP_POIS.filter(p=>p.area===a&&p.days.includes(state.day)).length;if(k>n){n=k;best=a}});
   return best;
 }
 function addTiles(url){
@@ -2187,35 +2327,134 @@ function addTiles(url){
       else{$('#mapStatus')?.removeAttribute('hidden');$('#leaf')?.classList.add('offline')}
     }).addTo(map);
 }
-function mountMap(){
-  if(map){map.remove();map=null}
+function pinMarkup(p,badge){
+  const isHotel=p.kind==='住宿';
+  const cls=['pin',p.days.includes(state.day)?'today':'',isHotel?'hotel':'',p.kind==='租车'?'rent':'',p.kind==='交通'?'transit':'',mapState.sel===p.id?'sel':''].filter(Boolean).join(' ');
+  const tagTxt=isHotel?(p.shortTag||`宿${p.hotelOrder} · ${p.name}`):p.name;
+  return `<span class="${cls}"><b><i>${esc(badge)}</i></b><span class="pin-tag">${esc(tagTxt)}</span></span>`;
+}
+function pinIcon(p,badge){
+  return L.divIcon({className:'pin-wrap',html:pinMarkup(p,badge),iconSize:[36,36],iconAnchor:[18,18],tooltipAnchor:[0,-20]});
+}
+function dayRouteCoords(ps){
+  const focus=ps.filter(p=>p.days.includes(state.day)&&p.kind!=='租车').sort((x,y)=>poiSeqForDay(x,state.day)-poiSeqForDay(y,state.day));
+  return focus.length>=2?focus.map(p=>[p.lon,p.lat]):[];
+}
+function applyMapLibreTheme(){
+  if(!map||mapEngine!=='maplibre')return;
+  const th=CITY_MAP_THEME[state.city]||CITY_MAP_THEME.tokyo;
+  try{
+    if(map.getLayer('background'))map.setPaintProperty('background','background-color',th.bg);
+    if(map.getLayer('water'))map.setPaintProperty('water','fill-color',th.water);
+    ['park','landcover_grass','landuse_residential'].forEach(id=>{
+      if(map.getLayer(id))map.setPaintProperty(id,'fill-color',th.park);
+    });
+  }catch{}
+  try{
+    if(!map.getSource('day-route')){
+      map.addSource('day-route',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:[]}}});
+      map.addLayer({id:'day-route-glow',type:'line',source:'day-route',layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':th.route,'line-width':6,'line-opacity':0.18}});
+      map.addLayer({id:'day-route-line',type:'line',source:'day-route',layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':th.route,'line-width':2.2,'line-opacity':0.85,'line-dasharray':[2.2,2.2]}});
+    }else{
+      map.setPaintProperty('day-route-glow','line-color',th.route);
+      map.setPaintProperty('day-route-line','line-color',th.route);
+    }
+    updateMapLibreRoute();
+  }catch{}
+}
+function updateMapLibreRoute(){
+  if(!map||mapEngine!=='maplibre'||!map.getSource('day-route'))return;
+  const isFlex=FLEXIBLE_DAYS.has(state.day);
+  try{
+    map.setPaintProperty('day-route-line','line-dasharray',isFlex?[1.2,2.8]:[2.4,2.0]);
+    map.setPaintProperty('day-route-line','line-opacity',isFlex?0.62:0.88);
+  }catch{}
+  const coords=dayRouteCoords(areaPois(mapState.area));
+  map.getSource('day-route').setData({type:'Feature',geometry:{type:'LineString',coordinates:coords}});
+}
+function mountLeaflet(){
   if(typeof L==='undefined'||!$('#leaf'))return;
+  mapEngine='leaflet';
   map=L.map('leaf',{zoomControl:false,scrollWheelZoom:false,zoomSnap:.25,zoomDelta:.5,wheelPxPerZoomLevel:90,attributionControl:true,fadeAnimation:true});
   map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noreferrer">Leaflet</a>');
   L.control.zoom({position:'bottomright',zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(map);
   L.control.scale({position:'bottomleft',imperial:false}).addTo(map);
   mapState.fallback=false;addTiles(TILE_URL);
-  // only capture the wheel once the user has engaged with the map, so page scrolling is never hijacked
   map.on('click focus',()=>map.scrollWheelZoom.enable());
   map.getContainer().addEventListener('mouseleave',()=>map.scrollWheelZoom.disable());
+  routeLayer=L.layerGroup().addTo(map);
   pinLayer=L.layerGroup().addTo(map);
-  mapState.area=bestArea();mapState.scope='day';mapState.sel=null;
   drawArea(false);
 }
-function pinIcon(p,n){
-  const cls=['pin',p.days.includes(state.day)?'today':'',p.kind==='租车'?'rent':'',p.kind==='交通'?'transit':'',mapState.sel===p.id?'sel':''].join(' ');
-  return L.divIcon({className:'pin-wrap',html:`<span class="${cls}"><b><i>${n}</i></b></span>`,iconSize:[34,34],iconAnchor:[17,17],tooltipAnchor:[0,-20]});
+window._onMapLibreReady=()=>{if($('#leaf')&&mapEngine!=='maplibre')mountMap()};
+function mountMap(){
+  if(map){map.remove();map=null;markers={};mapEngine='none'}
+  const box=$('#leaf');if(!box)return;
+  mapState.area=bestArea();mapState.scope='day';mapState.sel=null;
+  if(typeof window.maplibregl!=='undefined'){
+    try{
+      mapEngine='maplibre';
+      const styleUrl=OFM_STYLES[state.city]||OFM_STYLES.positron;
+      map=new maplibregl.Map({container:'leaf',style:styleUrl,center:[139.74,35.68],zoom:11,pitch:REDUCED.matches?0:20,attributionControl:true});
+      map.scrollZoom.disable();
+      map.addControl(new maplibregl.NavigationControl({showCompass:true,visualizePitch:true}),'bottom-right');
+      map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-left');
+      map.on('click',()=>map.scrollWheelZoom.enable());
+      box.addEventListener('mouseleave',()=>map.scrollWheelZoom.disable());
+      map.on('style.load',()=>{
+        $('#mapStatus')?.setAttribute('hidden','');
+        box.classList.remove('offline');
+        applyMapLibreTheme();
+      });
+      map.on('error',e=>{
+        if(e&&e.error&&/webgl|context/i.test(String(e.error))){
+          try{map.remove()}catch{}
+          map=null;mountLeaflet();
+        }
+      });
+      drawArea(false);
+      return;
+    }catch{map=null}
+  }
+  mountLeaflet();
+}
+function clearMarkers(){
+  if(mapEngine==='maplibre'){Object.values(markers).forEach(r=>r.m.remove());markers={}}
+  else if(pinLayer){pinLayer.clearLayers();routeLayer?.clearLayers();markers={}}
 }
 function drawArea(animate){
   if(!map)return;
   const ps=areaPois(mapState.area);
-  pinLayer.clearLayers();markers={};
-  ps.forEach((p,k)=>{
-    const m=L.marker([p.lat,p.lon],{icon:pinIcon(p,k+1),title:p.name,alt:p.name,riseOnHover:true,zIndexOffset:p.days.includes(state.day)?500:0})
-      .bindTooltip(esc(p.name),{direction:'top',className:'pin-tip',permanent:mapState.sel===p.id})
-      .on('click',()=>selectPoi(p.id));
-    m.addTo(pinLayer);markers[p.id]={m,p,n:k+1};
-  });
+  clearMarkers();
+  if(mapEngine==='maplibre'){
+    ps.forEach(p=>{
+      const badge=p._badge;
+      const el=document.createElement('button');
+      el.type='button';
+      el.className='pin-wrap';
+      el.setAttribute('aria-label',p.name);
+      el.innerHTML=pinMarkup(p,badge);
+      el.onclick=e=>{e.stopPropagation();selectPoi(p.id)};
+      const m=new maplibregl.Marker({element:el,anchor:'center'}).setLngLat([p.lon,p.lat]).addTo(map);
+      el.style.zIndex=p.kind==='住宿'?'8':p.days.includes(state.day)?'5':'1';
+      markers[p.id]={m,el,p,n:badge};
+    });
+    updateMapLibreRoute();
+  }else{
+    const coords=dayRouteCoords(ps).map(c=>[c[1],c[0]]);
+    if(coords.length>=2){
+      const th=CITY_MAP_THEME[state.city]||CITY_MAP_THEME.tokyo;
+      const isFlex=FLEXIBLE_DAYS.has(state.day);
+      L.polyline(coords,{color:th.route,weight:2.2,opacity:isFlex?.6:.82,dashArray:isFlex?'3 7':'6 6'}).addTo(routeLayer);
+    }
+    ps.forEach(p=>{
+      const badge=p._badge;
+      const zOff=p.kind==='住宿'?700:p.days.includes(state.day)?500:0;
+      const m=L.marker([p.lat,p.lon],{icon:pinIcon(p,badge),title:p.name,alt:p.name,riseOnHover:true,zIndexOffset:zOff})
+        .on('click',()=>selectPoi(p.id));
+      m.addTo(pinLayer);markers[p.id]={m,p,n:badge};
+    });
+  }
   fitArea(animate);
   paintMapUi();
 }
@@ -2223,6 +2462,17 @@ function fitArea(animate){
   const ps=areaPois(mapState.area),focus=ps.filter(p=>p.days.includes(state.day));
   const rel=mapState.scope==='day'&&focus.length?focus:ps;
   const fly=animate&&!REDUCED.matches;
+  if(mapEngine==='maplibre'){
+    if(!rel.length)return;
+    if(rel.length===1){
+      map[fly?'flyTo':'jumpTo']({center:[rel[0].lon,rel[0].lat],zoom:14.2,pitch:REDUCED.matches?0:24,duration:950});
+      return;
+    }
+    const b=new maplibregl.LngLatBounds([rel[0].lon,rel[0].lat],[rel[0].lon,rel[0].lat]);
+    rel.forEach(p=>b.extend([p.lon,p.lat]));
+    map.fitBounds(b,{padding:68,maxZoom:15,pitch:REDUCED.matches?0:18,duration:fly?1050:0});
+    return;
+  }
   if(rel.length===1){map[fly?'flyTo':'setView']([rel[0].lat,rel[0].lon],14.5,fly?{duration:1}:{});return}
   const b=L.latLngBounds(rel.map(p=>[p.lat,p.lon])),o={padding:[56,56],maxZoom:15.5};
   fly?map.flyToBounds(b,{...o,duration:1.1}):map.fitBounds(b,o);
@@ -2230,10 +2480,15 @@ function fitArea(animate){
 function selectPoi(id){
   const r=markers[id];if(!r)return;
   const prev=mapState.sel;mapState.sel=id;
-  [prev,id].forEach(k=>{const x=markers[k];if(!x)return;x.m.setIcon(pinIcon(x.p,x.n));x.m.unbindTooltip().bindTooltip(esc(x.p.name),{direction:'top',className:'pin-tip',permanent:k===id})});
-  r.m.openTooltip();
-  const z=Math.max(map.getZoom(),15.5);
-  REDUCED.matches?map.setView([r.p.lat,r.p.lon],z):map.flyTo([r.p.lat,r.p.lon],z,{duration:.9});
+  if(mapEngine==='maplibre'){
+    [prev,id].forEach(k=>{const x=markers[k];if(!x)return;x.el.innerHTML=pinMarkup(x.p,x.n);x.el.style.zIndex=k===id?'12':x.p.kind==='住宿'?'8':x.p.days.includes(state.day)?'5':'1'});
+    const z=Math.max(map.getZoom(),15);
+    map[REDUCED.matches?'jumpTo':'flyTo']({center:[r.p.lon,r.p.lat],zoom:z,pitch:REDUCED.matches?0:28,duration:850});
+  }else{
+    [prev,id].forEach(k=>{const x=markers[k];if(!x)return;x.m.setIcon(pinIcon(x.p,x.n))});
+    const z=Math.max(map.getZoom(),15.5);
+    REDUCED.matches?map.setView([r.p.lat,r.p.lon],z):map.flyTo([r.p.lat,r.p.lon],z,{duration:.9});
+  }
   paintMapUi();
   $(`#poiList [data-poi="${id}"]`)?.scrollIntoView({block:'nearest',behavior:REDUCED.matches?'auto':'smooth'});
 }
@@ -2241,20 +2496,45 @@ function paintMapUi(){
   const ps=areaPois(mapState.area),sel=ps.find(p=>p.id===mapState.sel);
   $$('#map [data-area]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.area===mapState.area));
   $$('#map [data-scope]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.scope===mapState.scope));
-  const status=p=>p.days.includes(state.day)?'当日安排':p.kind==='租车'?'租车备选':p.days.length?'其他日':'备选 / 参考';
-  $('#poiList').innerHTML=ps.map((p,k)=>`<li><button data-poi="${p.id}" class="poi ${p.days.includes(state.day)?'today':''}" aria-pressed="${p.id===mapState.sel}"><b>${k+1}</b><span>${placeText(p.name,'stack')}<small>${esc(p.kind)} · ${status(p)}</small></span></button></li>`).join('');
+  const isFlex=FLEXIBLE_DAYS.has(state.day);
+  const metaBox=$('#mapMetaTags');
+  if(metaBox){
+    const areaHotels=ps.filter(p=>p.kind==='住宿');
+    metaBox.innerHTML=`${areaHotels.length?`<span class="map-pill hotel-pill">宿1–宿4 专属标记</span>`:''}${isFlex?`<span class="map-pill flex-pill">⇄ DAY ${dayNo(state.day)} 景点游览顺序不定</span>`:`<span class="map-pill">→ DAY ${dayNo(state.day)} 按行程动线排序</span>`}`;
+  }
+  const status=p=>{
+    if(p.kind==='住宿'){
+      return p.days.includes(state.day)?`当日下榻（${p.stayNights||'已排期'}）`:`全程第 ${p.hotelOrder} 站酒店（${p.stayNights||''}）`;
+    }
+    if(p.days.includes(state.day))return isFlex&&p.kind==='景点'?'当日安排 · 顺序不定':'当日安排';
+    if(p.kind==='租车')return '租车备选';
+    if(p.days.length)return `DAY ${p.days.map(d=>dayNo(d)).join('/')} 行程`;
+    return '备选 / 参考';
+  };
+  const todayPois=ps.filter(p=>p.days.includes(state.day));
+  const otherPois=ps.filter(p=>!p.days.includes(state.day));
+  const renderPoiRow=p=>`<li><button data-poi="${p.id}" class="poi ${p.days.includes(state.day)?'today':''} ${p.kind==='住宿'?'hotel':''}" aria-pressed="${p.id===mapState.sel}"><b>${esc(p._badge)}</b><span>${placeText(p.name,'stack')}<small>${esc(p.kind)} · ${esc(status(p))}</small></span></button></li>`;
+  let listHtml='';
+  if(todayPois.length){
+    listHtml+=`<li class="poi-group-head">DAY ${dayNo(state.day)} · ${esc(day(state.day).date)} 当日行程与住宿${isFlex?'（景点顺序不定）':'（按动线排序）'}</li>`+todayPois.map(renderPoiRow).join('');
+  }
+  if(otherPois.length){
+    listHtml+=`<li class="poi-group-head">${todayPois.length?'本区其他日程 / 备选点位':'本区域全部点位'}</li>`+otherPois.map(renderPoiRow).join('');
+  }
+  $('#poiList').innerHTML=listHtml;
   const dayTags=p=>p.days.map(n=>`<button class="poi-day" data-city="${cityOf(n)}" data-day="${n}">DAY ${dayNo(n)} · ${day(n).date}</button>`).join('');
-  $('#poiDetail').innerHTML=sel?`<span class="eyebrow">${esc(sel.kind)} · No.${markers[sel.id]?.n??''}</span><h3>${placeText(sel.name,'stack')}</h3>
+  $('#poiDetail').innerHTML=sel?`<span class="eyebrow">${esc(sel.kind)} · ${sel.kind==='住宿'?`全程第 ${sel.hotelOrder} 站下榻酒店（宿${sel.hotelOrder}）`:`编号 ${markers[sel.id]?.n??''}`}</span><h3>${placeText(sel.name,'stack')}</h3>
       <p>${esc(sel.note||'景点中心近似位置；以现场开放、入口与实际交通为准。')}</p>
+      ${sel.address?`<p class="fine" style="margin-top:6px">地址：${esc(sel.address)}</p>`:''}
       ${sel.days.length?`<div class="poi-days">${dayTags(sel)}</div>`:''}
       <small class="coord">${sel.lat.toFixed(5)}° N · ${sel.lon.toFixed(5)}° E</small>
       <div class="poi-actions"><a href="https://www.google.com/maps/search/?api=1&query=${sel.lat},${sel.lon}" target="_blank" rel="noreferrer">Google 地图 ↗</a><a href="https://maps.apple.com/?ll=${sel.lat},${sel.lon}&q=${encodeURIComponent(sel.name)}" target="_blank" rel="noreferrer">Apple 地图 ↗</a>${sel.photo!=null?`<button data-photo="${sel.photo}">查看照片</button>`:''}<a href="${esc(sel.source)}" target="_blank" rel="noreferrer">坐标来源 ↗</a></div>`
-    :`<span class="eyebrow">EXPLORE · ${esc(AREA_NAMES[mapState.area])}</span><h3>${mapState.scope==='day'?`DAY ${dayNo(state.day)} 的地点`:'区域全部地点'}</h3><p>${ps.filter(p=>p.days.includes(state.day)).length?'高亮标记为当日安排或择一候选；点击地图上的数字或右侧列表查看位置、提示与照片。':'本区域没有当日安排，显示全部参考点位。'}</p>`;
+    :`<span class="eyebrow">EXPLORE · ${esc(AREA_NAMES[mapState.area])}</span><h3>${mapState.scope==='day'?`DAY ${dayNo(state.day)}（${day(state.day).date}）动线与住宿`:'区域全部地点'}</h3><p>${todayPois.length?`当前已将 DAY ${dayNo(state.day)} 的点位排在列表最前${isFlex?'（本日景点游览顺序不定，可围绕酒店与交通枢纽自由组合）':'（按当日早晚动线依次排列）'}，并标出专属“宿1–宿4”酒店印章。点击地标或右侧列表查看详情。`:'本区域没有当日安排，显示本区全部酒店与参考点位。'}</p>`;
 }
 function syncMapToDay(){if(!map)return;mapState.area=bestArea();mapState.scope='day';mapState.sel=null;drawArea(true)}
 function setArea(a){if(!map||a===mapState.area)return;mapState.area=a;mapState.sel=null;drawArea(true)}
 function setScope(s){if(!map)return;mapState.scope=s;mapState.sel=null;drawArea(true)}
-function refreshMapSize(){if(map)map.invalidateSize({pan:false})}
+function refreshMapSize(){if(map)mapEngine==='maplibre'?map.resize():map.invalidateSize({pan:false})}
 /* ---------- lightbox with prev/next inside the clicked set ---------- */
 const lb={set:[],k:0,opener:null};
 function openPhoto(btn){
