@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "researchedAt": "2026-11-17",
   "sources": {
     "station": {
@@ -254,7 +254,8 @@
           "width": 1080,
           "height": 800
         }
-      ]
+      ],
+      "placeId": "shinjuku-gyoen"
     },
     {
       "id": "meiji-jingu-gaien",
@@ -303,7 +304,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "meiji-jingu-gaien"
     },
     {
       "id": "meiji-jingu",
@@ -351,7 +353,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "meiji-jingu"
     },
     {
       "id": "yasukuni",
@@ -400,7 +403,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "yasukuni"
     },
     {
       "id": "akihabara",
@@ -449,7 +453,8 @@
           "width": 780,
           "height": 438
         }
-      ]
+      ],
+      "placeId": "akihabara"
     },
     {
       "id": "fujisan-station",
@@ -497,7 +502,8 @@
           "width": 780,
           "height": 1012
         }
-      ]
+      ],
+      "placeId": "fujisan-station"
     },
     {
       "id": "fujiyoshida",
@@ -546,7 +552,8 @@
           "width": 780,
           "height": 1170
         }
-      ]
+      ],
+      "placeId": "fujiyoshida"
     },
     {
       "id": "arakura-fuji-sengen",
@@ -594,7 +601,8 @@
           "width": 960,
           "height": 640
         }
-      ]
+      ],
+      "placeId": "arakura-fuji-sengen"
     },
     {
       "id": "lake-yamanaka",
@@ -651,7 +659,8 @@
           "width": 700,
           "height": 460
         }
-      ]
+      ],
+      "placeId": "lake-yamanaka"
     },
     {
       "id": "kiyomizu-dera",
@@ -700,7 +709,8 @@
           "width": 780,
           "height": 480
         }
-      ]
+      ],
+      "placeId": "kiyomizu-dera"
     },
     {
       "id": "eikando",
@@ -748,7 +758,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "eikando"
     },
     {
       "id": "shinnyodo",
@@ -797,7 +808,8 @@
           "width": 780,
           "height": 654
         }
-      ]
+      ],
+      "placeId": "shinnyodo"
     },
     {
       "id": "tofukuji",
@@ -846,7 +858,8 @@
           "width": 780,
           "height": 585
         }
-      ]
+      ],
+      "placeId": "tofukuji"
     },
     {
       "id": "fushimi-inari",
@@ -895,7 +908,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "fushimi-inari"
     },
     {
       "id": "tenjuan",
@@ -943,7 +957,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "tenjuan"
     },
     {
       "id": "togetsukyo",
@@ -992,7 +1007,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "togetsukyo"
     },
     {
       "id": "arashiyama",
@@ -1041,7 +1057,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "arashiyama"
     },
     {
       "id": "jojakkoji",
@@ -1089,7 +1106,8 @@
           "width": 900,
           "height": 600
         }
-      ]
+      ],
+      "placeId": "jojakkoji"
     },
     {
       "id": "rurikoin",
@@ -1138,7 +1156,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "rurikoin"
     },
     {
       "id": "hogonin",
@@ -1186,7 +1205,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "hogonin"
     },
     {
       "id": "nara-shikayose",
@@ -1235,7 +1255,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "nara-shikayose"
     },
     {
       "id": "kasuga-taisha",
@@ -1283,7 +1304,8 @@
           "width": 780,
           "height": 976
         }
-      ]
+      ],
+      "placeId": "kasuga-taisha"
     },
     {
       "id": "ukimido",
@@ -1332,7 +1354,8 @@
           "width": 780,
           "height": 520
         }
-      ]
+      ],
+      "placeId": "ukimido"
     },
     {
       "id": "nara-park",
@@ -1380,7 +1403,8 @@
           "width": 780,
           "height": 1297
         }
-      ]
+      ],
+      "placeId": "nara-park"
     },
     {
       "id": "todaiji",
@@ -1432,7 +1456,8 @@
           "source": "https://commons.wikimedia.org/wiki/File:TodaijiDaibutsuden.jpg",
           "license": "https://creativecommons.org/licenses/by/2.5/"
         }
-      ]
+      ],
+      "placeId": "todaiji"
     }
   ]
 }

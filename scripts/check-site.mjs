@@ -15,6 +15,15 @@ assert.ok(dataMatch, 'Missing travel data');
 const data = JSON.parse(dataMatch[1]);
 assert.ok(data.assets.length > 0, 'Missing travel images');
 const guideData = JSON.parse(readFileSync('assets/guide-data.json', 'utf8'));
+const placeIds = new Set(data.places.map(place => place.id));
+assert.equal(placeIds.size, data.places.length, 'Duplicate place ID');
+for (const place of data.places) {
+  assert.ok(place.zh && place.ja && /[A-Za-z]/.test(place.latin), 'Missing Chinese, Japanese or Latin place name');
+  assert.equal(typeof place.same, 'boolean', 'Specify whether near-identical names share a line');
+  assert.ok(Array.isArray(place.aliases) && place.aliases.length, 'Missing place aliases');
+  assert.match(place.source, /^https:\/\//, 'Place name needs an official source');
+}
+for (const guide of guideData.guides) assert.ok(placeIds.has(guide.placeId), 'Guide needs a shared place name');
 const covered = guideData.guides.flatMap(guide => guide.assetIndices).sort((a,b) => a-b);
 const landscape = data.assets.flatMap((asset,index) => asset.group === '票据' ? [] : [index]);
 assert.deepEqual(covered, landscape, 'Every landscape photo needs exactly one guide card');

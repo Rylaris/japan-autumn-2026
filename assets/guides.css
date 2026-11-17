@@ -94,3 +94,13 @@ html.gc-open{overflow:hidden}
 
 /* Japanese place names use the city typeface as a whole; Chinese prose keeps full CJK coverage. */
 .guide-card:is([data-city=kyoto],[data-city=nara]) :is(.gc-image-title b,.gc-title[lang=ja]){font-family:var(--gc-japanese)}
+
+/* Keep language lines clear without repeating near-identical Chinese and Japanese names. */
+.gc-title{margin-bottom:7px}
+.gc-place-names{display:flex;flex-direction:column;gap:3px;margin:0 0 22px;color:var(--gc-muted);font-size:12px;line-height:1.6;letter-spacing:.025em;overflow-wrap:anywhere}
+.gc-place-jp{font-family:var(--f-body)}
+.gc-place-latin{font-family:var(--gc-latin);font-size:13px}
+.gc-step{display:flex;align-items:center;gap:7px;max-width:43%;min-width:0}
+.gc-step:last-child{justify-content:flex-end}.gc-step:last-child .place-name{align-items:flex-end;text-align:end}
+.gc-step .place-name .place-sub{font-size:10px}
+@media(max-width:720px){.gc-place-names{font-size:11px;margin-bottom:20px}.gc-place-latin{font-size:12px}.gc-step .place-name .place-sub{font-size:9px}.gc-step{max-width:41%;gap:4px}.gc-footer{gap:6px}}

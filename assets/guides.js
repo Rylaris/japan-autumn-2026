@@ -97,6 +97,9 @@
     currentGuide = guide;
     dialog.dataset.city = guide.city;
     const guidePosition = data.guides.indexOf(guide);
+    const place = window.TravelNames.get(guide.placeId);
+    const primaryTitle = place.same ? guide.title : place.zh;
+    const titleLanguage = place.same && guide.city !== 'tokyo' ? 'ja' : 'zh-CN';
     const sourceIds = [...new Set(guide.sections.flatMap(section => section.sources))];
     const note = ids => `<span class="gc-notes">${ids.map(id => `<a href="#gc-source-${escape(id)}" data-gc-source="${escape(id)}" aria-label="查看资料 ${sourceIds.indexOf(id)+1}">[${sourceIds.indexOf(id)+1}]</a>`).join('')}</span>`;
     el('gcRegion').textContent = `${guide.region} / ${String(guidePosition+1).padStart(2,'0')}`;
@@ -108,7 +111,8 @@
     const creditImage = guide.images.find(image => image.credit);
     const credit = creditImage ? `${escape(creditImage.credit)} · <a href="${escape(creditImage.source)}" target="_blank" rel="noreferrer">图片来源 ↗</a> · <a href="${escape(creditImage.license)}" target="_blank" rel="noreferrer">许可 ↗</a>` : '配图沿用原旅行文档，仅作景观参考。';
     el('gcReading').innerHTML = `<span class="gc-eyebrow">${escape(guide.kicker)}</span>
-      <h2 class="gc-title" id="gcTitle" lang="${guide.city==='tokyo'?'zh-CN':'ja'}">${escape(guide.title)}</h2><p class="gc-tagline">${escape(guide.tagline)}</p>
+      <h2 class="gc-title" id="gcTitle" lang="${titleLanguage}">${escape(primaryTitle)}</h2>
+      <p class="gc-place-names">${place.same?'':`<span class="gc-place-jp" lang="ja">${escape(place.ja)}</span>`}<span class="gc-place-latin" lang="en">${escape(guide.en)}</span></p><p class="gc-tagline">${escape(guide.tagline)}</p>
       <div class="gc-intro">${guide.intro.map(paragraph => `<p>${escape(paragraph)}</p>`).join('')}</div>
       ${guide.sections.map(section => `<section class="gc-section"><div class="gc-section-label">${escape(section.label)}</div><h3>${escape(section.title)}</h3><p>${escape(section.text)}${note(section.sources)}</p></section>`).join('')}
       <section class="gc-observe"><h3>到这里，慢看两眼</h3><ul>${guide.observe.map(text => `<li>${escape(text)}</li>`).join('')}</ul></section>
@@ -117,13 +121,13 @@
       <p>资料查阅：${escape(data.researchedAt)}。现场观察提示为导览建议。</p></details><p class="gc-credit">${credit}</p>`;
     el('gcReading').removeAttribute('aria-busy');
     const groups = [...new Set(data.guides.map(item => item.region))];
-    el('gcSelect').innerHTML = groups.map(group => `<optgroup label="${escape(group)}">${data.guides.filter(item => item.region === group).map(item => `<option value="${escape(item.id)}"${item === guide ? ' selected' : ''}>${escape(item.title)}</option>`).join('')}</optgroup>`).join('');
+    el('gcSelect').innerHTML = groups.map(group => `<optgroup label="${escape(group)}">${data.guides.filter(item => item.region === group).map(item => `<option value="${escape(item.id)}"${item === guide ? ' selected' : ''}>${escape(item.title)} · ${escape(item.en)}</option>`).join('')}</optgroup>`).join('');
     el('gcSelect').disabled = false;
     el('gcPrev').disabled = el('gcNext').disabled = false;
     const previous = data.guides[(guidePosition-1+data.guides.length)%data.guides.length];
     const next = data.guides[(guidePosition+1)%data.guides.length];
-    el('gcPrev').textContent = `← ${previous.title}`;
-    el('gcNext').textContent = `${next.title} →`;
+    el('gcPrev').innerHTML = `← ${window.TravelNames.label(window.TravelNames.get(previous.placeId),previous.title)}`;
+    el('gcNext').innerHTML = `${window.TravelNames.label(window.TravelNames.get(next.placeId),next.title)} →`;
     el('gcCount').textContent = `${String(guidePosition+1).padStart(2,'0')} / ${data.guides.length}`;
     resetScroll();
   };
