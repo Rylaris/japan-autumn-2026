@@ -1137,13 +1137,14 @@ body[data-city=kyoto]{
   background:radial-gradient(circle at 50% 100%,transparent 18px,var(--accent2) 19px 20px,transparent 21px 26px,var(--accent2) 27px 28px,transparent 29px 34px,var(--accent2) 35px 36px,transparent 37px) 0 0/80px 40px;
   mask-image:linear-gradient(transparent,#000);-webkit-mask-image:linear-gradient(transparent,#000)}
 [data-city=kyoto] .hero-inner{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
-[data-city=kyoto] .hero-copy{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto auto auto 1fr;column-gap:clamp(28px,4vw,56px)}
+[data-city=kyoto] .hero-copy{display:grid;min-width:0;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto auto auto 1fr;column-gap:clamp(28px,4vw,56px)}
 [data-city=kyoto] .hero-title{grid-row:1/6;writing-mode:vertical-rl;flex-direction:row;gap:18px;margin:0;align-items:flex-start}
 [data-city=kyoto] .ht-jp{font-size:clamp(96px,11vw,150px);letter-spacing:.2em;font-weight:600}
 [data-city=kyoto] .ht-en{letter-spacing:.8em;font-size:11px}
 [data-city=kyoto] .kicker{flex-direction:column;gap:8px;font-family:var(--f-display);letter-spacing:.3em;font-size:13px}
 [data-city=kyoto] .kicker span:first-child{font-size:11px;color:var(--mute)}
-[data-city=kyoto] .hero-tag{font-size:clamp(20px,2vw,28px);letter-spacing:.18em;white-space:nowrap}
+[data-city=kyoto] .hero-copy>*{min-width:0}
+[data-city=kyoto] .hero-tag{font-size:clamp(20px,2vw,28px);letter-spacing:.18em;white-space:normal;text-wrap:balance;overflow-wrap:anywhere}
 [data-city=kyoto] .hero-lede{line-height:2.1;letter-spacing:.04em}
 [data-city=kyoto] .hero-meta{grid-template-columns:repeat(2,auto);justify-content:start;border-top:0;padding:0;gap:18px 40px}
 [data-city=kyoto] .hero-meta div{border-left:1px solid var(--accent);padding-left:12px}
@@ -1307,7 +1308,7 @@ body[data-city=nara]{
   .hero-meta{grid-template-columns:1fr 1fr;gap:16px}
   .hero-meta dd{white-space:normal}
   [data-city=tokyo] .hud.bl{display:none}
-  [data-city=kyoto] .hero-copy{grid-template-columns:auto 1fr;column-gap:22px}
+  [data-city=kyoto] .hero-copy{grid-template-columns:auto minmax(0,1fr);column-gap:22px}
   [data-city=kyoto] .ht-jp{font-size:clamp(72px,19vw,100px)}
   [data-city=kyoto] .hero-meta{grid-template-columns:1fr}
   [data-city=kyoto] .hero-tag{white-space:normal;font-size:20px;letter-spacing:.12em}
@@ -2077,7 +2078,7 @@ function heroMarkup(c){
       <div class="hero-copy">
         <p class="kicker"><span>${c.key==='kyoto'?'其の二':c.idx+' / 03'}</span><span>${esc(c.kicker)}</span></p>
         <h1 class="hero-title"><span class="ht-jp" lang="ja" data-text="${c.jp}">${c.jp}</span><span class="ht-en">${c.key==='nara'?'Nara':c.en}</span></h1>
-        <p class="hero-tag${c.key==='tokyo'?'':' kanji-title'}">${esc(c.tagline)}</p>
+        <p class="hero-tag">${c.key==='kyoto'?esc(c.tagline).replace('，','，<br>'):esc(c.tagline)}</p>
         <p class="hero-lede">${esc(c.lede)}</p>
         <dl class="hero-meta">${meta.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
         <div class="hero-actions"><a class="hero-cta" href="#day" data-jump="day"><span>从 DAY ${dayNo(first)} 开始</span><i aria-hidden="true">↓</i></a><a class="hero-story-link" href="#city-story" data-jump="city-story">阅读${esc(c.name)}的城市故事 ↓</a></div>
